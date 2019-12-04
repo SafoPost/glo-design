@@ -1,40 +1,25 @@
-const gulp = require('gulp');
+const {src, dest, watch} = require('gulp');
 const browserSync = require('browser-sync').create();
-const minifyCSS = require('gulp-minify-css');
-const concat = require('gulp-concat');
-const cssnano = require('cssnano');
-const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 
-
-gulp.task('hello', function(done) {
-  console.log('Привет, мир!');
-  done();
-});
-
 // Static server
-gulp.task('browser-sync', function () {
+function bs() {
+  serveSass();
   browserSync.init({
     server: {
       baseDir: "./"
     }
   });
-  gulp.watch("./*.html").on('change', browserSync.reload);
-  gulp.watch("./*.css").on('change', browserSync.reload);
-});
+  watch("./*.html").on('change', browserSync.reload);
+  watch("./sass/**/*.sass", serveSass);
+  watch("./js/*.js").on('change', browserSync.reload);
+};
 
-// Minify CSS
-gulp.task('styles', function () {
-  return gulp.src(['css/style.css']) // Выбираем файл для минификации
-    .pipe(concat('style.css')) // Сжимаем
-    .pipe(minifyCSS({keepBreaks: true}))
-    .pipe(rename({ suffix: '.min' })) // Добавляем суффикс .min
-    .pipe(gulp.dest('css')); // Выгружаем в папку css
-});
+function serveSass() {
+  return src("./sass/*.sass")
+    .pipe(sass())
+    .pipe(dest("./css"))
+    .pipe(browserSync.stream());
+};
 
-// Подключаем SASS
-gulp.task('sass', function () { // Создаем таск "sass"
-  return gulp.src('sass/style.sass') // Берем источник
-    .pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
-    .pipe(gulp.dest('css')) // Выгружаем результата в папку app/css
-});
+exports.serve = bs;
