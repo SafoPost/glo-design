@@ -1,6 +1,11 @@
 const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
-const minifyCss = require('minify-css');
+const minifyCSS = require('gulp-minify-css');
+const concat = require('gulp-concat');
+const cssnano = require('cssnano');
+const rename = require('gulp-rename');
+const sass = require('gulp-sass');
+
 
 gulp.task('hello', function(done) {
   console.log('Привет, мир!');
@@ -19,8 +24,17 @@ gulp.task('browser-sync', function () {
 });
 
 // Minify CSS
-gulp.task('minify-css', function () {
-  return gulp.src('./*.css') // пути к файлам .css
-    .pipe(minifyCss({keepBreaks:true}))
-    .pipe(gulp.dest('./css/'))
+gulp.task('styles', function () {
+  return gulp.src(['css/style.css']) // Выбираем файл для минификации
+    .pipe(concat('style.css')) // Сжимаем
+    .pipe(minifyCSS({keepBreaks: true}))
+    .pipe(rename({ suffix: '.min' })) // Добавляем суффикс .min
+    .pipe(gulp.dest('css')); // Выгружаем в папку css
+});
+
+// Подключаем SASS
+gulp.task('sass', function () { // Создаем таск "sass"
+  return gulp.src('sass/style.sass') // Берем источник
+    .pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
+    .pipe(gulp.dest('css')) // Выгружаем результата в папку app/css
 });
