@@ -318,7 +318,7 @@ template {
   display: none; }
 
 .button {
-  padding: 13px 20px;
+  padding: 11px 25px;
   border: none;
   border-radius: 2px;
   text-transform: uppercase;
@@ -335,6 +335,7 @@ template {
       box-shadow: none; }
   .button--outline {
     border: 1px solid #fff;
+    width: 207px;
     background: transparent;
     color: #fff; }
 
@@ -384,13 +385,14 @@ body {
 
 .logo {
   color: #E3B873;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-size: 1.078rem; }
 
 .nav__item {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  margin-right: 2.85rem;
+  margin-right: 2.7rem;
   transition: color 0.2s; }
   .nav__item:hover {
     color: #E3B873; }
@@ -398,8 +400,10 @@ body {
 .phone {
   color: #E3B873; }
 
-.contacts__phone {
-  margin-right: 45px; }
+.contacts {
+  text-align: right; }
+  .contacts__phone {
+    margin-right: 45px; }
 
 .hero {
   position: relative;
@@ -425,9 +429,15 @@ body {
     margin-left: 4.28rem; }
   .hero__text {
     font-size: 1.57rem;
-    max-width: 500px; }
+    line-height: 135%;
+    max-width: 500px;
+    margin: 0;
+    margin-bottom: 3.2rem; }
+  .hero__title {
+    margin-bottom: 1.1rem; }
   .hero__button {
-    margin-right: 20px; }
+    margin-right: 18px;
+    padding: 18px 28px; }
   .hero__instagram {
     position: absolute;
     left: 0;
@@ -471,25 +481,32 @@ body {
     text-decoration: none;
     color: #E3B873;
     transform: rotate(90deg);
-    line-height: 0.8; }
+    line-height: 0.8;
+    font-size: 1.08rem; }
     .instagram__link::after {
       content: '';
       width: 50px;
       height: 1px;
       background-color: #E3B873;
-      margin-left: 8px; }
+      margin-left: 15px; }
 
 .title {
-  margin: 0;
   font-family: 'Yeseva One', cursive;
   text-transform: uppercase;
-  font-size: 2.857rem; }
+  font-size: 2.857rem;
+  line-height: 1.35; }
   .title--primary {
     color: #E3B873; }
 
+@media screen and (max-width: 1270px) {
+  html {
+    font-size: 13px; }
+    html__item {
+      margin-right: 2rem; } }
+
 @media screen and (max-width: 1200px) {
   html {
-    font-size: 12pz; }
+    font-size: 12px; }
     html__item {
       margin-right: 1rem; } }
 
