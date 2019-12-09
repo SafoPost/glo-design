@@ -411,7 +411,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 90px;
+  margin-top: 82px;
   background: #131313 url("../img/hero_bg.jpg") no-repeat center/cover;
   height: 90vh;
   color: #fff; }
@@ -510,6 +510,10 @@ body {
     html__item {
       margin-right: 1rem; } }
 
+@media screen and (max-width: 1120px) {
+  .contacts__button {
+    display: none; } }
+
 @media screen and (max-width: 992px) {
   .nav {
     display: none; }
@@ -523,8 +527,6 @@ body {
     margin-right: 0;
     color: #fff;
     text-decoration: none; }
-  .contacts__button {
-    display: none; }
   .title {
     font-size: 1.64rem; }
   .hero__scroll-down {
