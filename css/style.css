@@ -359,9 +359,10 @@ img {
 
 .section-title {
   margin-bottom: 2.2rem;
-  text-align: center;
-  text-transform: uppercase;
-  font-family: 'Yeseva One', cursive; }
+  text-align: center; }
+  .section-title__heading {
+    font-family: 'Yeseva One', cursive;
+    text-transform: uppercase; }
   .section-title__image {
     display: flex;
     justify-content: center;
@@ -372,6 +373,12 @@ img {
       height: 2px;
       background-color: #E3B873;
       margin: 0 10px; }
+  .section-title__description {
+    margin: auto;
+    margin-top: 1.64rem;
+    font-size: 1.07rem;
+    line-height: 135.84%;
+    max-width: 21.86rem; }
 
 .header {
   position: fixed;
@@ -527,79 +534,10 @@ img {
   .title--primary {
     color: #E3B873; }
 
-.types {
-  margin-bottom: 2.21rem; }
-
-h2 {
-  color: #181818;
-  font-size: 1.43rem; }
-
-.row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 100px; }
-
-.col {
-  flex-basis: 32%; }
-
-.card__text {
-  position: relative;
-  max-width: 23.6rem;
-  margin: 0 auto;
-  margin-top: -9.4rem;
-  padding: 1.79rem 2.4rem 2.5rem;
-  background-color: #fff;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.03); }
-
-.card__title {
-  font-family: 'Yeseva One', cursive;
-  font-size: 1.29rem;
-  color: #363636;
-  margin-top: 0;
-  margin-bottom: 0.7rem; }
-
-.card__list {
-  padding: 0 0 1.64rem 1.1rem;
-  margin: 0;
-  color: #959595;
-  font-size: 1.07rem;
-  line-height: 1.788rem; }
-
-.card__pricetag {
-  position: absolute;
-  font-size: 1.29rem;
-  font-family: 'Yeseva One', cursive;
-  text-transform: uppercase;
-  background-color: #E3B873;
-  color: #fff;
-  padding: 1.2rem 1.28rem;
-  text-align: center;
-  min-width: 16.3rem;
-  left: 0;
-  bottom: -1.79rem; }
-
-@media screen and (max-width: 760px) {
-  h2 {
-    font-size: 1.8rem; }
-  .row {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 3.4rem; }
-  .types__card {
-    max-width: 98%;
-    padding-left: 1rem;
-    margin-bottom: 6.64rem; }
-  .card__text {
-    margin-left: 0;
-    margin-top: -11.9rem;
-    max-width: 22.5rem; }
-  .card__list {
-    line-height: 1.9rem;
-    padding-bottom: 0.8rem; }
-  .card__pricetag {
-    padding: 1rem 1rem;
-    min-width: 16rem; } }
+.design {
+  background-color: #131313; }
+  .design__section-title {
+    color: #fff; }
 
 @media screen and (min-width: 1900px) {
   html {
