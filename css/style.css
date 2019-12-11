@@ -340,7 +340,7 @@ template {
     color: #fff; }
 
 .container {
-  width: 95%;
+  width: 91%;
   max-width: 1256px;
   margin: auto; }
 
@@ -362,7 +362,8 @@ img {
   text-align: center; }
   .section-title__heading {
     font-family: 'Yeseva One', cursive;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    font-size: 1.8rem; }
   .section-title__image {
     display: flex;
     justify-content: center;
@@ -376,9 +377,9 @@ img {
   .section-title__description {
     margin: auto;
     margin-top: 1.64rem;
-    font-size: 1.07rem;
+    font-size: 1.29rem;
     line-height: 135.84%;
-    max-width: 21.86rem; }
+    max-width: 23.6rem; }
 
 .header {
   position: fixed;
@@ -535,9 +536,72 @@ img {
     color: #E3B873; }
 
 .design {
-  background-color: #131313; }
+  background-color: #131313;
+  padding-top: 5rem; }
   .design__section-title {
-    color: #fff; }
+    color: #fff;
+    margin-bottom: 3.1rem; }
+    .design__section-title__description {
+      font-size: 1.30rem; }
+  .design__card {
+    margin-bottom: 6.71rem; }
+
+.card__image {
+  display: block;
+  margin: 0 auto;
+  width: 100%; }
+
+.card__text {
+  position: relative;
+  max-width: 22.6rem;
+  margin-top: -12.1rem;
+  padding: 1.77rem 2.4rem 2.56rem;
+  background-color: #fff;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.03); }
+
+.card__title {
+  font-family: 'Yeseva One', cursive;
+  font-size: 1.29rem;
+  color: #363636;
+  margin-top: 0;
+  margin-bottom: 0.7rem; }
+
+.card__list {
+  padding: 0 0 1rem 1.1rem;
+  margin: 0;
+  color: #959595;
+  font-size: 1.07rem;
+  line-height: 1.85rem; }
+
+.card__pricetag {
+  position: absolute;
+  font-size: 1.29rem;
+  font-family: 'Yeseva One', cursive;
+  text-transform: uppercase;
+  background-color: #E3B873;
+  color: #fff;
+  padding: 0.9rem 0.8rem;
+  text-align: center;
+  min-width: 16rem;
+  left: 0;
+  bottom: -1.59rem; }
+
+.row {
+  display: flex;
+  flex-direction: column; }
+
+@media screen and (min-width: 760px) {
+  .design {
+    background-color: #fff; }
+    .design__section-title {
+      color: #131313; }
+      .design__section-title__heading {
+        color: #131313; }
+  .row {
+    flex-direction: row;
+    justify-content: space-between; }
+  .card {
+    flex-basis: 32%; } }
 
 @media screen and (min-width: 1900px) {
   html {
