@@ -341,7 +341,7 @@ template {
 
 .container {
   width: 95%;
-  max-width: 1238px;
+  max-width: 1256px;
   margin: auto; }
 
 *, *:before, *:after {
@@ -354,25 +354,24 @@ body {
   font-family: 'Futura Book', sans-serif;
   font-size: 1rem; }
 
-.section {
-  padding: 60px 0; }
-  .section img {
-    max-width: 100%; }
-  .section-title {
-    margin-bottom: 2.2rem;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: 'Yeseva One', cursive; }
-    .section-title__image {
-      display: flex;
-      justify-content: center;
-      align-items: center; }
-      .section-title__image::before, .section-title__image::after {
-        content: '';
-        width: 32px;
-        height: 2px;
-        background-color: #E3B873;
-        margin: 0 10px; }
+img {
+  max-width: 100%; }
+
+.section-title {
+  margin-bottom: 2.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Yeseva One', cursive; }
+  .section-title__image {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .section-title__image::before, .section-title__image::after {
+      content: '';
+      width: 32px;
+      height: 2px;
+      background-color: #E3B873;
+      margin: 0 10px; }
 
 .header {
   position: fixed;
@@ -528,6 +527,9 @@ body {
   .title--primary {
     color: #E3B873; }
 
+.types {
+  margin-bottom: 2.21rem; }
+
 h2 {
   color: #181818;
   font-size: 1.43rem; }
@@ -578,9 +580,26 @@ h2 {
   bottom: -1.79rem; }
 
 @media screen and (max-width: 760px) {
+  h2 {
+    font-size: 1.8rem; }
   .row {
     flex-direction: column;
-    align-items: center; } }
+    align-items: center;
+    margin-top: 3.4rem; }
+  .types__card {
+    max-width: 98%;
+    padding-left: 1rem;
+    margin-bottom: 6.64rem; }
+  .card__text {
+    margin-left: 0;
+    margin-top: -11.9rem;
+    max-width: 22.5rem; }
+  .card__list {
+    line-height: 1.9rem;
+    padding-bottom: 0.8rem; }
+  .card__pricetag {
+    padding: 1rem 1rem;
+    min-width: 16rem; } }
 
 @media screen and (min-width: 1900px) {
   html {
