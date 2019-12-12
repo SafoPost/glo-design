@@ -362,8 +362,7 @@ img {
   text-align: center; }
   .section-title__heading {
     font-family: 'Yeseva One', cursive;
-    text-transform: uppercase;
-    font-size: 1.8rem; }
+    text-transform: uppercase; }
   .section-title__image {
     display: flex;
     justify-content: center;
@@ -377,9 +376,8 @@ img {
   .section-title__description {
     margin: auto;
     margin-top: 1.64rem;
-    font-size: 1.29rem;
     line-height: 135.84%;
-    max-width: 23.6rem; }
+    margin-bottom: 3.1rem; }
 
 .header {
   position: fixed;
@@ -535,16 +533,35 @@ img {
   .title--primary {
     color: #E3B873; }
 
-.design {
+.main-background {
   background-color: #131313;
+  position: absolute;
+  width: 100vh;
+  height: 270%;
+  margin-top: -10rem; }
+
+.container {
+  position: relative; }
+
+.design {
+  margin-top: 10rem;
   padding-top: 5rem; }
   .design__section-title {
     color: #fff;
     margin-bottom: 3.1rem; }
-    .design__section-title__description {
-      font-size: 1.30rem; }
   .design__card {
     margin-bottom: 6.71rem; }
+
+.section-title__heading {
+  font-size: 1.8rem; }
+
+.section-title__description {
+  font-size: 1.30rem;
+  margin: auto;
+  margin-top: 1.64rem;
+  font-size: 1.29rem;
+  line-height: 135.84%;
+  max-width: 23.6rem; }
 
 .card__image {
   display: block;
@@ -586,22 +603,60 @@ img {
   left: 0;
   bottom: -1.59rem; }
 
+.image-desktop {
+  display: none; }
+
+.list-desktop {
+  display: none; }
+
 .row {
   display: flex;
   flex-direction: column; }
 
 @media screen and (min-width: 760px) {
+  .main-background {
+    display: none; }
   .design {
     background-color: #fff; }
     .design__section-title {
-      color: #131313; }
-      .design__section-title__heading {
-        color: #131313; }
+      color: #131313;
+      margin: auto; }
+  .section-title__heading {
+    color: #131313;
+    font-size: 1.43rem; }
+  .section-title__description {
+    max-width: 52.93rem;
+    font-size: 1.41rem;
+    line-height: 142.84%;
+    margin-bottom: 3.2rem;
+    margin-top: 1.2rem; }
   .row {
+    padding: 0 0.7rem;
     flex-direction: row;
     justify-content: space-between; }
   .card {
-    flex-basis: 32%; } }
+    flex-basis: 32%; }
+    .card__text {
+      margin: auto;
+      margin-top: -9.3rem;
+      max-width: 23.6rem;
+      padding-bottom: 2.6rem; }
+    .card__list {
+      padding-bottom: 1.4rem;
+      line-height: 1.86rem; }
+    .card__pricetag {
+      padding: 1.2rem 5.5rem 1.2rem 1.5rem;
+      min-width: 16.3rem; }
+  .image-mobile {
+    display: none; }
+  .image-desktop {
+    display: block;
+    margin: 0 auto;
+    width: 100%; }
+  .list-mobile {
+    display: none; }
+  .list-desktop {
+    display: block; } }
 
 @media screen and (min-width: 1900px) {
   html {
