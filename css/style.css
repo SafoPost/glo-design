@@ -692,6 +692,8 @@ img {
     display: block; } }
 
 .modal {
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
   z-index: 199;
   top: 0;
@@ -704,6 +706,9 @@ img {
   display: flex;
   align-items: center;
   justify-content: center; }
+  .modal--visible {
+    opacity: 1;
+    visibility: visible; }
   .modal__dialog {
     max-width: 36.36rem;
     position: relative;
@@ -719,7 +724,8 @@ img {
     background: transparent url("../img/close.svg") no-repeat center;
     border: none;
     margin: 12px;
-    cursor: pointer; }
+    cursor: pointer;
+    outline: none; }
   .modal__title {
     font-family: 'Yeseva One', cursive;
     font-size: 1.357rem;
