@@ -14,10 +14,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   closeBtn.addEventListener('click', switchModal);
 
+  document.onclick = function (event) {
+    if (event.target == modal) {
+      modal.classList.toggle('modal--visible');
+    }
+  };
   
+  document.addEventListener('keydown', function (event) {
+    if (event.keyCode === 27) {
+      modal.classList.remove('modal--visible');
+    }
+  });
 
 });
 */
+
 
 $(document).ready(function() {
   var modal = $('.modal'),
@@ -30,4 +41,6 @@ $(document).ready(function() {
   closeBtn.on('click', function () {
     modal.toggleClass('modal--visible');
   });
+
 });
+
