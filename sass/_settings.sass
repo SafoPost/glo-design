@@ -7,14 +7,36 @@ body
   font-size: 1rem
 img 
   max-width: 100%
+
 .section
+  padding: 60px 0
+  &--dark
+    background-color: $dark
+    color: $light
   &-title
     margin-bottom: 2.2rem
     text-align: center
+    &--left
+      text-align: left
     &__heading
       font-family: 'Yeseva One', cursive
       text-transform: uppercase
-      // font-size: 1.43rem
+      line-height: 138.6%
+      &--primary
+        color: $primary
+    &__word
+      display: flex
+      align-items: center
+      &::after
+        content: ''
+        width: 90px
+        height: 1px
+        background-color: $primary
+        margin-left: 2rem
+    &__text
+      font-size: 1.28rem
+      line-height: 2.07rem
+      max-width: 31.57rem
     &__image
       display: flex
       justify-content: center
