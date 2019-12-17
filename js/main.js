@@ -60,7 +60,7 @@ $(document).ready(function() {
   var prev = $('.swiper-button-prev');
   var bullets = $('.swiper-pagination');
 
-  next.css('left', prev.width() + 19.5 + bullets.width() + 19.5)
+  next.css('left', prev.width() + 19.5 + bullets.width() + 19.5),
   bullets.css('left', prev.width() + 19.5)
 
 });
