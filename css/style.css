@@ -426,7 +426,7 @@ img {
       margin: 0; }
       .section-title__heading--primary {
         color: #E3B873;
-        font-size: 1.8rem;
+        font-size: 1.75rem;
         margin-bottom: 1.8rem; }
     .section-title__word {
       display: flex;
@@ -434,9 +434,9 @@ img {
       .section-title__word::after {
         content: '';
         width: 90px;
-        height: 1px;
+        height: 2px;
         background-color: #E3B873;
-        margin-left: 2rem; }
+        margin-left: 2.2rem; }
     .section-title__text {
       font-size: 1.28rem;
       line-height: 2.07rem;
@@ -630,32 +630,31 @@ img {
     .swiper-slide__value {
       font-size: 1.1rem;
       line-height: 1.43rem; }
-  .swiper-pagination {
-    padding-top: 3.5rem; }
-    .swiper-pagination-bullet {
-      background-color: rgba(255, 255, 255, 0.3);
-      margin: 0 10px; }
-      .swiper-pagination-bullet-active {
-        background-color: #fff; }
-  .swiper-button {
-    margin-top: 3.5rem; }
-    .swiper-button-prev, .swiper-button-next {
-      bottom: 0;
-      top: auto;
-      background-size: 42px;
-      width: 42px;
-      height: 14px; }
-      .swiper-button-prev::after, .swiper-button-next::after {
-        display: none; }
-    .swiper-button-prev {
-      left: 0;
-      background: url(../img/arrow-prev.svg) no-repeat center; }
-    .swiper-button-next {
-      background: url(../img/arrow-next.svg) no-repeat center; }
+  .swiper-pagination-bullet {
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 0 9.7px; }
+    .swiper-pagination-bullet-active {
+      background-color: #fff; }
+  .swiper-button-prev, .swiper-button-next {
+    bottom: 0;
+    top: auto;
+    background-size: 42px;
+    width: 42px;
+    height: 14px; }
+    .swiper-button-prev::after, .swiper-button-next::after {
+      display: none; }
+  .swiper-button-prev {
+    left: 0;
+    background: url(../img/arrow-prev.svg) no-repeat center; }
+  .swiper-button-next {
+    background: url(../img/arrow-next.svg) no-repeat center; }
+  .swiper-navigation {
+    height: 30px;
+    margin-top: 3.5rem;
+    margin-bottom: -1rem; }
 
 .swiper-container-horizontal > .swiper-pagination-bullets {
-  width: auto;
-  bottom: -0.04rem; }
+  width: auto; }
 
 .types {
   margin-bottom: 2.21rem; }
