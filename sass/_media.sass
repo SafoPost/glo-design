@@ -63,11 +63,25 @@
         display: block
         min-width: 22.86rem
         margin-bottom: 1.85rem
+  .section
+    &-title
+      &__text
+        max-width: 250px
+  .swiper
+    &-slide
+      &__text
+        flex-basis: 50%
+      &__heading
+        font-size: 1.2rem
+@media screen and ( max-width: 760px )
   .swiper-slider
     &-image
-      height: 100%
-      margin-top: 0
+      margin-top: 3.5rem
       margin-bottom: 2.8rem
+  .swiper
+    &-navigation
+      height: 2.1rem
+      margin-top: 1rem
 @media screen and ( max-width: 600px )
   .header
     height: 57px
@@ -96,12 +110,8 @@
         flex-basis: 46%
       &__heading
         margin-bottom: 0.8rem
-    &-navigation
-      height: 2.1rem
-      margin-top: 1rem
   .mobile-top
     order: -1
-  
   .image
     &-mobile
       display: block
