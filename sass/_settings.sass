@@ -8,7 +8,7 @@ body
 img 
   max-width: 100%
 .section
-  padding: 130px 0
+  padding: 210px 0
   &--dark
     background-color: $dark
     color: $light
@@ -29,7 +29,7 @@ img
       &--primary
         color: $primary
         font-size: 1.75rem
-        margin-bottom: 1.8rem
+        margin-bottom: 1.7rem
     &__word
       display: flex
       align-items: center
@@ -38,12 +38,11 @@ img
         width: 90px
         height: 2px
         background-color: $primary
-        margin-left: 2.2rem
+        margin-left: 2.4rem
     &__text
       font-size: 1.28rem
       line-height: 2.07rem
       max-width: 31.57rem
-
     &__image
       display: flex
       justify-content: center
@@ -61,3 +60,28 @@ img
       line-height: 135.84%
       // max-width: 23.6rem
       margin-bottom: 3.1rem
+// @media screen and ( max-width: 992px )
+//   .section
+//     &-title
+//       &__text
+//         max-width: 250px
+@media screen and ( max-width: 600px )
+  .section
+    padding: 90px 0
+    &-title
+      &--left
+        text-align: center
+      &__heading
+        &--primary
+          margin-bottom: 1.8rem
+      &__word
+        // display: flex
+        justify-content: center
+        &::after
+          display: none
+      &__text
+        max-width: 300px
+        margin: auto
+        font-size: 1.2rem
+        line-height: 1.9rem
+        

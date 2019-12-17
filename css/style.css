@@ -374,24 +374,35 @@ template {
 
 .container {
   width: 91%;
-  max-width: 1256px;
-  margin: auto; }
+  max-width: 1260px;
+  margin: auto;
+  padding: 0 10px; }
 
 .row {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 100px;
-  padding: 0 0.7rem; }
+  padding: 0; }
 
 .col-32 {
   flex-basis: 32%; }
 
 .col-40 {
-  width: 40%; }
+  width: 45%; }
 
 .col-60 {
-  width: 60%; }
+  width: 55%; }
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 0 auto; }
+  .col {
+    text-align: center; }
+    .col-40 {
+      width: 100%; }
+    .col-60 {
+      width: 100%; } }
 
 *, *:before, *:after {
   box-sizing: border-box; }
@@ -407,7 +418,7 @@ img {
   max-width: 100%; }
 
 .section {
-  padding: 130px 0; }
+  padding: 210px 0; }
   .section--dark {
     background-color: #131313;
     color: #fff; }
@@ -427,7 +438,7 @@ img {
       .section-title__heading--primary {
         color: #E3B873;
         font-size: 1.75rem;
-        margin-bottom: 1.8rem; }
+        margin-bottom: 1.7rem; }
     .section-title__word {
       display: flex;
       align-items: center; }
@@ -436,7 +447,7 @@ img {
         width: 90px;
         height: 2px;
         background-color: #E3B873;
-        margin-left: 2.2rem; }
+        margin-left: 2.4rem; }
     .section-title__text {
       font-size: 1.28rem;
       line-height: 2.07rem;
@@ -456,6 +467,23 @@ img {
       margin-top: 1.64rem;
       line-height: 135.84%;
       margin-bottom: 3.1rem; }
+
+@media screen and (max-width: 600px) {
+  .section {
+    padding: 90px 0; }
+    .section-title--left {
+      text-align: center; }
+    .section-title__heading--primary {
+      margin-bottom: 1.8rem; }
+    .section-title__word {
+      justify-content: center; }
+      .section-title__word::after {
+        display: none; }
+    .section-title__text {
+      max-width: 300px;
+      margin: auto;
+      font-size: 1.2rem;
+      line-height: 1.9rem; } }
 
 .header {
   position: fixed;
@@ -517,8 +545,7 @@ img {
   max-height: 100vh;
   height: 92vh;
   width: 100%;
-  color: #fff;
-  margin-bottom: 80px; }
+  color: #fff; }
   .hero__background {
     background: #131313 url("../img/hero_bg.jpg") no-repeat center/cover;
     width: 100%;
@@ -617,12 +644,16 @@ img {
   .swiper-slide {
     display: flex;
     flex-wrap: wrap; }
+    .swiper-slide-active {
+      margin-right: 5rem; }
+    .swiper-slider-image {
+      margin-top: -16rem; }
     .swiper-slide__text {
-      flex-basis: 38%;
-      margin-bottom: 2.6rem; }
+      flex-basis: 34%;
+      margin-bottom: 2.8rem; }
     .swiper-slide__heading {
       margin-top: 0;
-      margin-bottom: 0.74rem;
+      margin-bottom: 0.6rem;
       font-size: 1.285rem;
       font-family: 'Yeseva One', cursive;
       color: #E3B873;
@@ -649,12 +680,19 @@ img {
   .swiper-button-next {
     background: url(../img/arrow-next.svg) no-repeat center; }
   .swiper-navigation {
+    margin: auto;
     height: 30px;
     margin-top: 3.5rem;
     margin-bottom: -1rem; }
 
 .swiper-container-horizontal > .swiper-pagination-bullets {
   width: auto; }
+
+.image-desktop {
+  display: block; }
+
+.image-mobile {
+  display: none; }
 
 .types {
   margin-bottom: 2.21rem; }
@@ -829,7 +867,11 @@ img {
     .hero__button {
       display: block;
       min-width: 22.86rem;
-      margin-bottom: 1.85rem; } }
+      margin-bottom: 1.85rem; }
+  .swiper-slider-image {
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 2.8rem; } }
 
 @media screen and (max-width: 600px) {
   .header {
@@ -850,7 +892,22 @@ img {
   .hero__text {
     font-size: 1.54rem;
     line-height: 132%;
-    margin-bottom: 2.8rem; } }
+    margin-bottom: 2.8rem; }
+  .swiper {
+    width: 100%; }
+    .swiper-slide__text {
+      flex-basis: 46%; }
+    .swiper-slide__heading {
+      margin-bottom: 0.8rem; }
+    .swiper-navigation {
+      height: 2.1rem;
+      margin-top: 1rem; }
+  .mobile-top {
+    order: -1; }
+  .image-mobile {
+    display: block; }
+  .image-desktop {
+    display: none; } }
 
 @media screen and (max-width: 476px) {
   .header {

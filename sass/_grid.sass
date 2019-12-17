@@ -1,17 +1,27 @@
 .container
   width: 91%
-  max-width: 1256px
+  max-width: 1260px
   margin: auto
+  padding: 0 10px
 .row
   display: flex
   align-items: flex-start
   justify-content: space-between
   margin-bottom: 100px
-  padding: 0 0.7rem
+  padding: 0
 .col
   &-32
     flex-basis: 32%
   &-40
-    width: 40%
+    width: 45%
   &-60
-    width: 60%
+    width: 55%
+@media screen and ( max-width: 600px )
+  .container
+    padding: 0 auto
+  .col
+    text-align: center
+    &-40
+      width: 100%
+    &-60
+      width: 100%
