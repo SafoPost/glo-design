@@ -8,24 +8,33 @@ body
 img 
   max-width: 100%
 .section
-  padding: 210px 0
   &--dark
     background-color: $dark
     color: $light
   &-title
-    margin-bottom: 2.2rem
+    margin-bottom: 2.4rem
     text-align: center
+    &__description
+      max-width: 52.93rem
+      font-size: 1.41rem
+      line-height: 142.84%
+      margin: auto
+      padding-top: 1.1rem
+      padding-bottom: 0.3rem
+      text-align: center
     &--left
       text-align: left
       margin-bottom: 3.4rem
+    &--light
+      color: $light
     &__heading
       font-family: 'Yeseva One', cursive
       text-transform: uppercase
-      // line-height: 138.6%
       line-height: 2.64rem
-      color: $h2
+      // color: $h2
       font-size: 1.43rem
       margin: 0
+      margin-bottom: 0.7rem
       &--primary
         color: $primary
         font-size: 1.75rem
@@ -53,25 +62,28 @@ img
         height: 2px
         background-color: $primary
         margin: 0 10px
-    &__description
-      margin: auto
-      margin-top: 1.64rem
-      // font-size: 1.29rem
-      line-height: 135.84%
-      // max-width: 23.6rem
-      margin-bottom: 3.1rem
-// @media screen and ( max-width: 992px )
-//   .section
-//     &-title
-//       &__text
-//         max-width: 250px
+@media screen and ( max-width: 992px )
+  .section
+    &-title
+      &__text
+        max-width: 250px
 @media screen and ( max-width: 600px )
   .section
-    padding: 90px 0
     &-title
+      &__description
+        font-size: 1.30rem
+        margin: auto
+        margin-top: 0.3rem
+        font-size: 1.29rem
+        line-height: 1.8rem
+        max-width: 25rem
       &--left
         text-align: center
+      &--light
+        font-size: 1.8rem
       &__heading
+        font-size: 1.8rem
+        margin-bottom: 1.4rem
         &--primary
           margin-bottom: 1.8rem
       &__word
@@ -82,6 +94,8 @@ img
       &__text
         max-width: 300px
         margin: auto
+        padding-top: 0.2rem
         font-size: 1.2rem
         line-height: 1.9rem
+    
         

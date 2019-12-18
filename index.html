@@ -193,7 +193,7 @@
   </section>
   <section class="section control">
     <div class="container">
-      <div class="section-title">
+      <div class="section-title control__section-title section-title--light">
         <h2 class="section-title__heading">Онлайн контроль</h2>
         <!-- /.section-title__heading -->
         <div class="section-title__image">
@@ -202,6 +202,33 @@
         <!-- /.setion-title__image -->
       </div>
       <!-- /.section-title -->
+      <div class="control__video video">
+        <img src="img/play-icon.svg" alt="play" class="video__play">
+      </div>
+      <!-- /.control__video video -->
+      <p class="control__text">
+        На каждом объекте установлена ​​камера, которая транслирует ход работы на часах. В любой момент вы можете зайти на наш
+        сайт и следить за ходом работы в вашей квартире. Посмотрите прямую трансляцию с одного из наших объектов! Оставьте
+        заявку ниже чтобы получить ссылку на трансляцию.
+      </p>
+      <!-- /.control__text -->
+      <form action="#" class="form control__form">
+        <div class="control__input-group">
+          <label for="user-name" class="label form__lable control__label">Имя</label>
+          <input type="text" class="input form__input control__input" id="user-name" placeholder="Как вас зовут:">
+        </div>
+        <div class="control__input-group">
+          <label for="user-phone" class="label form__lable control__label">Телефон</label>
+          <input type="text" class="input form__input control__input" id="user-phone" placeholder="Ваш номер телефона:">
+        </div>
+        <button class="button button--primary control__button">Отправить</button>
+        <div class="policy control__policy">
+          <input type="checkbox" name="policy-checkbox" id="policy-checkbox" class="policy__checkbox" checked>
+          <label for="policy-checkbox" class="policy__label control__policy__label">Я соглашаюсь с обработкой данных</label>
+        </div>
+        <!-- /.policy -->
+      </form>
+      <!-- /.form control__form -->
     </div>
     <!-- /.container -->
   </section>
@@ -329,111 +356,117 @@
       </div>
       <!-- /.section-title -->
       <div class="row">
-        <div class="card design__card">
-          <img src="img/design/design_1.jpg" alt="Минимальный" class="image-desktop card__image">
-          <img src="img/design/design_1_min.jpg" alt="Минимальный" class="image-mobile card__image">
-          <div class="card__text">
-            <h3 class="card__title">Минимальный</h3>
-            <!-- /.card__title -->
-            <ul class="card__list">
-              <li class="card__item">Измерительные чертежи</li>
-              <!-- /.card__item -->
-              <li class="card__item">Перепланировка</li>
-              <!-- /.card__item -->
-              <li class="card__item">Планировка мебели</li>
-              <!-- /.card__item -->
-              <li class="card__item">Сантехнический план</li>
-              <!-- /.card__item -->
-            </ul>
-            <!-- /.card__list -->
-            <strong class="card__pricetag">150 руб / м<sup>2</sup></strong>
+        <div class="col-32">
+          <div class="card design__card">
+            <img src="img/design/design_1.jpg" alt="Минимальный" class="image-desktop card__image">
+            <img src="img/design/design_1_min.jpg" alt="Минимальный" class="image-mobile card__image">
+            <div class="card__text design__card__text">
+              <h3 class="card__title">Минимальный</h3>
+              <!-- /.card__title -->
+              <ul class="card__list">
+                <li class="card__item">Измерительные чертежи</li>
+                <!-- /.card__item -->
+                <li class="card__item">Перепланировка</li>
+                <!-- /.card__item -->
+                <li class="card__item">Планировка мебели</li>
+                <!-- /.card__item -->
+                <li class="card__item">Сантехнический план</li>
+                <!-- /.card__item -->
+              </ul>
+              <!-- /.card__list -->
+              <strong class="card__pricetag">150 руб / м<sup>2</sup></strong>
+            </div>
+            <!-- /.card__text -->
           </div>
-          <!-- /.card__text -->
+          <!-- /.card -->
         </div>
-        <!-- /.card -->
-        <div class="card design__card">
-          <img src="img/design/design_2.jpg" alt="Стандартный" class="image-desktop card__image">
-          <img src="img/design/design_2_min.jpg" alt="Стандартный" class="image-mobile card__image">
-          <div class="card__text">
-            <h3 class="card__title">Стандартный</h3>
-            <!-- /.card__title -->
-            <ul class="card__list">
-              <li class="card__item">Измерительные чертежи</li>
-              <!-- /.card__item -->
-              <li class="card__item">Перепланировка</li>
-              <!-- /.card__item -->
-              <li class="card__item">Планировка мебели</li>
-              <!-- /.card__item -->
-              <li class="card__item">План потолков</li>
-              <!-- /.card__item -->
-              <li class="card__item">План этажей</li>
-              <!-- /.card__item -->
-              <li class="card__item">План электрики</li>
-              <!-- /.card__item -->
-              <li class="card__item">План света</li>
-              <!-- /.card__item -->
-            </ul>
-            <!-- /.card__list -->
-            <strong class="card__pricetag">400 руб / м<sup>2</sup></strong>
+        <div class="col-32">
+          <div class="card design__card">
+            <img src="img/design/design_2.jpg" alt="Стандартный" class="image-desktop card__image">
+            <img src="img/design/design_2_min.jpg" alt="Стандартный" class="image-mobile card__image">
+            <div class="card__text design__card__text">
+              <h3 class="card__title">Стандартный</h3>
+              <!-- /.card__title -->
+              <ul class="card__list">
+                <li class="card__item">Измерительные чертежи</li>
+                <!-- /.card__item -->
+                <li class="card__item">Перепланировка</li>
+                <!-- /.card__item -->
+                <li class="card__item">Планировка мебели</li>
+                <!-- /.card__item -->
+                <li class="card__item">План потолков</li>
+                <!-- /.card__item -->
+                <li class="card__item">План этажей</li>
+                <!-- /.card__item -->
+                <li class="card__item">План электрики</li>
+                <!-- /.card__item -->
+                <li class="card__item">План света</li>
+                <!-- /.card__item -->
+              </ul>
+              <!-- /.card__list -->
+              <strong class="card__pricetag">400 руб / м<sup>2</sup></strong>
+            </div>
+            <!-- /.card__text -->
           </div>
-          <!-- /.card__text -->
+          <!-- /.card -->
         </div>
-        <!-- /.card -->
-        <div class="card design__card">
-          <img src="img/design/design_3.jpg" alt="Полный" class="image-desktop card__image">
-          <img src="img/design/design_3_min.jpg" alt="Полный" class="image-mobile card__image">
-          <div class="card__text">
-            <h3 class="card__title">Полный</h3>
-            <!-- /.card__title -->
-            <ul class="card__list list-mobile">
-              <li class="card__item">Измерительные чертежи</li>
-              <!-- /.card__item -->
-              <li class="card__item">Перепланировка</li>
-              <!-- /.card__item -->
-              <li class="card__item">Планировка мебели</li>
-              <!-- /.card__item -->
-              <li class="card__item">План потолков</li>
-              <!-- /.card__item -->
-              <li class="card__item">План этажей</li>
-              <!-- /.card__item -->
-              <li class="card__item">План электрики</li>
-              <!-- /.card__item -->
-              <li class="card__item">План света ...</li>
-              <!-- /.card__item -->
-            </ul>
-            <!-- /.card__list -->
-            <ul class="card__list list-desktop">
-              <li class="card__item">Измерительные чертежи</li>
-              <!-- /.card__item -->
-              <li class="card__item">Перепланировка</li>
-              <!-- /.card__item -->
-              <li class="card__item">Планировка мебели</li>
-              <!-- /.card__item -->
-              <li class="card__item">План потолков</li>
-              <!-- /.card__item -->
-              <li class="card__item">План этажей</li>
-              <!-- /.card__item -->
-              <li class="card__item">План электрики</li>
-              <!-- /.card__item -->
-              <li class="card__item">План света</li>
-              <!-- /.card__item -->
-              <li class="card__item">Стенные развертки</li>
-              <!-- /.card__item -->
-              <li class="card__item">3D визуализация</li>
-              <!-- /.card__item -->
-              <li class="card__item">Смета на материалы</li>
-              <!-- /.card__item -->
-              <li class="card__item">Выезд на подбор материалов</li>
-              <!-- /.card__item -->
-              <li class="card__item">Выбор мебели</li>
-              <!-- /.card__item -->
-            </ul>
-            <!-- /.card__list -->
-            <strong class="card__pricetag">900 руб / м<sup>2</sup></strong>
+        <div class="col-32">
+          <div class="card design__card">
+            <img src="img/design/design_3.jpg" alt="Полный" class="image-desktop card__image">
+            <img src="img/design/design_3_min.jpg" alt="Полный" class="image-mobile card__image">
+            <div class="card__text design__card__text">
+              <h3 class="card__title">Полный</h3>
+              <!-- /.card__title -->
+              <ul class="card__list list-mobile">
+                <li class="card__item">Измерительные чертежи</li>
+                <!-- /.card__item -->
+                <li class="card__item">Перепланировка</li>
+                <!-- /.card__item -->
+                <li class="card__item">Планировка мебели</li>
+                <!-- /.card__item -->
+                <li class="card__item">План потолков</li>
+                <!-- /.card__item -->
+                <li class="card__item">План этажей</li>
+                <!-- /.card__item -->
+                <li class="card__item">План электрики</li>
+                <!-- /.card__item -->
+                <li class="card__item">План света ...</li>
+                <!-- /.card__item -->
+              </ul>
+              <!-- /.card__list -->
+              <ul class="card__list list-desktop">
+                <li class="card__item">Измерительные чертежи</li>
+                <!-- /.card__item -->
+                <li class="card__item">Перепланировка</li>
+                <!-- /.card__item -->
+                <li class="card__item">Планировка мебели</li>
+                <!-- /.card__item -->
+                <li class="card__item">План потолков</li>
+                <!-- /.card__item -->
+                <li class="card__item">План этажей</li>
+                <!-- /.card__item -->
+                <li class="card__item">План электрики</li>
+                <!-- /.card__item -->
+                <li class="card__item">План света</li>
+                <!-- /.card__item -->
+                <li class="card__item">Стенные развертки</li>
+                <!-- /.card__item -->
+                <li class="card__item">3D визуализация</li>
+                <!-- /.card__item -->
+                <li class="card__item">Смета на материалы</li>
+                <!-- /.card__item -->
+                <li class="card__item">Выезд на подбор материалов</li>
+                <!-- /.card__item -->
+                <li class="card__item">Выбор мебели</li>
+                <!-- /.card__item -->
+              </ul>
+              <!-- /.card__list -->
+              <strong class="card__pricetag">900 руб / м<sup>2</sup></strong>
+            </div>
+            <!-- /.card__text -->
           </div>
-          <!-- /.card__text -->
+          <!-- /.card -->
         </div>
-        <!-- /.card -->
       </div>
       <!-- /.row -->
     </div>
@@ -449,12 +482,12 @@
         <label for="user-name" class="label form__lable label--light">Имя</label>
         <input type="text" class="input form__input modal__input" id="user-name" placeholder="Как вас зовут:">
         <label for="user-phone" class="label form__lable label--light">Телефон</label>
-        <input type="text" class="input form__input modal__input" id="user-phone" placeholder="Ваш номер телефона:">
+        <input type="text" class="input form__input modal__input modal__input--light" id="user-phone" placeholder="Ваш номер телефона:">
         <label for="user-email" class="label form__lable label--light">Email</label>
-        <input type="text" class="input form__input modal__input" id="user-email" placeholder="Ваш email">
+        <input type="text" class="input form__input modal__input modal__input--light" id="user-email" placeholder="Ваш email">
         <div class="policy modal__policy">
           <input type="checkbox" name="policy-checkbox" id="policy-checkbox" class="policy__checkbox" checked>
-          <label for="policy-checkbox" class="policy__label">я соглашаюсь с обработкой данных</label>
+          <label for="policy-checkbox" class="policy__label">Я соглашаюсь с обработкой данных</label>
         </div>
         <!-- /.policy -->
         <button class="button button--primary modal__button">Отправить заявку</button>

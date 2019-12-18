@@ -30,8 +30,9 @@
   font-size: 1.285rem
   color: $light
   padding: 0.5rem 0
-  &::placeholder
-    color: $light
+  &--light
+    &::placeholder
+      color: $light
 .policy
   &__checkbox
     opacity: 0
@@ -51,4 +52,11 @@
       border-radius: 1px
       cursor: pointer
       margin-right: 0.64rem 
-      
+
+@media screen and ( max-width: 600px )
+  .label
+    font-size: 1.3rem
+  .input
+    font-size: 1.54rem
+  .policy
+    font-size: 1.372rem

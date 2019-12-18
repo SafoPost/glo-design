@@ -5,13 +5,11 @@
       &__item
         margin-right: 3.4rem
         margin-left: 2.3rem
-
 @media screen and ( min-width: 1700px )
   .nav
     &__item
       margin-right: 2.9rem
       margin-left: 1.8rem
-   
 @media screen and ( min-width: 1500px )
   .nav
     &__item
@@ -20,7 +18,6 @@
   .hero
     &__content
       margin-left: 17.6rem
-
 @media screen and ( max-width: 1350px )
   html
     font-size: 13px
@@ -49,7 +46,6 @@
       border: none
     &__scroll-down
       display: none
- 
     &__content
       margin-top: 150px
       margin-left: 110px
@@ -63,10 +59,6 @@
         display: block
         min-width: 22.86rem
         margin-bottom: 1.85rem
-  .section
-    &-title
-      &__text
-        max-width: 250px
   .swiper
     &-slide
       &__text
@@ -82,6 +74,31 @@
     &-navigation
       height: 2.1rem
       margin-top: 1rem
+  .image
+    &-desktop
+      display: none
+  .list
+    &-desktop
+      display: none
+  h2 
+    font-size: 1.8rem
+  .row
+    flex-direction: column
+    align-items: center
+    margin-top: 3.4rem
+    padding: 0
+  .card
+    &__text
+      margin-left: 0
+      margin-top: -12.1rem
+      max-width: 22.5rem
+      margin-bottom: 6.5rem
+    &__list
+      line-height: 1.9rem
+      padding-bottom: 0.8rem
+    &__pricetag
+      padding: 1rem 1rem
+      min-width: 16rem
 @media screen and ( max-width: 600px )
   .header
     height: 57px
@@ -103,13 +120,29 @@
       font-size: 1.54rem
       line-height: 132%
       margin-bottom: 2.8rem
+  .projects
+    padding-top: 90px
+    margin-bottom: 60px
+    padding-bottom: 72.8rem
   .swiper
-    width: 100%
+    width: auto
     &-slide
+      &r
+        &-image
+          width: 100%
+          height: 100%
+          margin-top: 0
+          margin-bottom: 2.6rem
       &__text
-        flex-basis: 46%
+        flex-basis: 47%
+        margin-bottom: 2.7rem
       &__heading
-        margin-bottom: 0.8rem
+        margin-bottom: 0.95rem
+      &__value
+        font-size: 1.2rem
+        line-height: 1.5rem
+      &-navigation
+        margin-top: 2.8rem
   .mobile-top
     order: -1
   .image
@@ -117,6 +150,55 @@
       display: block
     &-desktop
       display: none
+  .control
+    &__section-title
+      margin-top: -74.15rem
+    &__video
+      max-width: 100%
+      min-height: 17.2rem
+      margin-top: 3.4rem
+      margin-bottom: 2.35rem
+    &__text
+      font-size: 1.2rem
+      line-height: 2rem
+      color: $light
+      max-width: 100%
+      margin-bottom: 2.5rem
+      &::before
+        margin-bottom: 1.2rem
+    &__form
+      flex-direction: column
+      color: $light
+    &__input-group
+      margin-bottom: 5.3rem
+    &__button
+      order: 1
+      padding: 1.62rem 0
+    &__policy
+      margin-top: -4.35rem
+      margin-bottom: 5.2rem
+  .video__play
+    width: 62px
+  .types
+    margin-top: 53px
+  .main-background
+    background-color: $dark
+  .design
+    &__section-title
+      color: $light
+    &__card
+      margin-top: -0.7rem
+      margin-bottom: 3.6rem
+      &__text
+        margin-top: -11.9rem
+        margin-bottom: 7.5rem
+        padding-top: 1.6rem
+        padding-bottom: 2.7rem
+  .list
+    &-desktop
+      display: none
+    &-mobile
+      display: block
 @media screen and ( max-width: 476px )
   .header
     width: 100%
@@ -148,3 +230,4 @@
       padding: 12px auto
       margin-bottom: 2rem
       font-size: 1.11rem
+  
