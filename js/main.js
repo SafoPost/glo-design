@@ -66,7 +66,7 @@ $(document).ready(function() {
   new WOW().init()
 
   // Валидация форм
-  $('.modal__form').validate({
+  $('.form').validate({
     errorClass: "invalid",
     errorElement: "div",
     rules: {
