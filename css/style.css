@@ -350,7 +350,8 @@ template {
   border-bottom: 1px solid rgba(54, 54, 54, 0.3);
   font-size: 1.285rem;
   color: #fff;
-  padding: 0.5rem 0; }
+  padding: 0.5rem 0;
+  outline: none; }
   .input--light::placeholder {
     color: #fff; }
 
@@ -783,17 +784,16 @@ img {
     flex-basis: 31%;
     padding-left: 0.2rem; }
     .control__input--dark {
-      color: #131313; }
-  .control__label {
-    margin-bottom: -0.6rem; }
+      color: #131313;
+      padding: 0.2rem 4.5rem 0.4rem 0; }
   .control__button {
     padding: 1.286rem 4.74rem; }
-  .control__policy {
-    flex-basis: 100%;
-    margin-top: 1.2rem;
-    padding-left: 16rem; }
-    .control__policy__label {
-      font-size: 1.17rem; }
+  .control__policy--center {
+    padding-top: 1.17rem;
+    padding-right: 5rem;
+    margin: auto; }
+  .control__policy__label {
+    font-size: 1.17rem; }
 
 .video__play {
   position: relative;

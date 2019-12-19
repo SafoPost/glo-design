@@ -66,7 +66,7 @@ $(document).ready(function() {
   new WOW().init()
 
   // Валидация форм
-  $('.form').validate({
+  $('.modal__form').validate({
     errorClass: "invalid",
     errorElement: "div",
     rules: {
@@ -76,7 +76,10 @@ $(document).ready(function() {
         minlength: 2,
         maxlength: 15
       },
-      userPhone: "required",
+      userPhone: {
+        required: true,
+        minlength: 10
+      },
       // Блочное правило
       userEmail: {
         required: true,
@@ -90,8 +93,85 @@ $(document).ready(function() {
         minlength: "Имя не должно быть короче двух символов",
         maxlength: "Имя не должно быть длинее 15 символов"
       },
-      userPhone: "Назовите свой телефон",
+      userPhone: {
+        required: "Назовите свой телефон",
+        minlength: "Номер должен быть из 10 цыфр"
+      },
       userEmail:{
+        required: "Укажите свой Email",
+        email: "Введите в формате: name@domain.com"
+      }
+    }
+  });
+  $('.footer__form').validate({
+    errorClass: "invalid",
+    errorElement: "div",
+    rules: {
+      // Строчное правило
+      userName: {
+        required: true,
+        minlength: 2,
+        maxlength: 15
+      },
+      userPhone: {
+        required: true,
+        minlength: 10
+      },
+      // Блочное правило
+      userEmail: {
+        required: true,
+        email: true
+      }
+    },
+    // Сообщения
+    messages: {
+      userName: {
+        required: "Назовите своё имя",
+        minlength: "Имя не должно быть короче двух символов",
+        maxlength: "Имя не должно быть длинее 15 символов"
+      },
+      userPhone: {
+        required: "Назовите свой телефон",
+        minlength: "Номер должен быть из 10 цыфр"
+      },
+      userEmail: {
+        required: "Укажите свой Email",
+        email: "Введите в формате: name@domain.com"
+      }
+    }
+  });
+  $('.control__form').validate({
+    errorClass: "invalid",
+    errorElement: "div",
+    rules: {
+      // Строчное правило
+      userName: {
+        required: true,
+        minlength: 2,
+        maxlength: 15
+      },
+      userPhone: {
+        required: true,
+        minlength: 10
+      },
+      // Блочное правило
+      userEmail: {
+        required: true,
+        email: true
+      }
+    },
+    // Сообщения
+    messages: {
+      userName: {
+        required: "Назовите своё имя",
+        minlength: "Имя не должно быть короче двух символов",
+        maxlength: "Имя не должно быть длинее 15 символов"
+      },
+      userPhone: {
+        required: "Назовите свой телефон",
+        minlength: "Номер должен быть из 10 цыфр"
+      },
+      userEmail: {
         required: "Укажите свой Email",
         email: "Введите в формате: name@domain.com"
       }
