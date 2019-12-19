@@ -11,6 +11,9 @@ img
   &--dark
     background-color: $dark
     color: $light
+  &--light
+    background-color: $light
+    color: $dark
   &-title
     margin-bottom: 2.4rem
     text-align: center
@@ -31,7 +34,6 @@ img
       font-family: 'Yeseva One', cursive
       text-transform: uppercase
       line-height: 2.64rem
-      // color: $h2
       font-size: 1.43rem
       margin: 0
       margin-bottom: 0.7rem
@@ -69,6 +71,9 @@ img
         max-width: 250px
 @media screen and ( max-width: 600px )
   .section
+    &--light
+      background-color: $dark
+      color: $light
     &-title
       &__description
         font-size: 1.30rem

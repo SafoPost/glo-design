@@ -65,5 +65,40 @@ $(document).ready(function() {
 
   new WOW().init()
 
-});
+  // Валидация форм
+  $('.modal__form').validate({
+    errorClass: "invalid",
+    errorElement: "div",
+    rules: {
+      // Строчное правило
+      userName: {
+        required: true,
+        minlength: 2,
+        maxlength: 15
+      },
+      userPhone: "required",
+      // Блочное правило
+      userEmail: {
+        required: true,
+        email: true
+      }
+    },
+    // Сообщения
+    messages: {
+      userName: {
+        required: "Назовите своё имя",
+        minlength: "Имя не должно быть короче двух символов",
+        maxlength: "Имя не должно быть длинее 15 символов"
+      },
+      userPhone: "Назовите свой телефон",
+      userEmail:{
+        required: "Укажите свой Email",
+        email: "Введите в формате: name@domain.com"
+      }
+    }
+  });
 
+  // Маска для телефона
+  $('[type=tel]').mask('+7(000)000-00-00');
+
+});
