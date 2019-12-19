@@ -63,7 +63,7 @@ $(document).ready(function() {
   next.css('left', prev.width() + 19 + bullets.width() + 19),
   bullets.css('left', prev.width() + 19),
 
-  new WOW().init();
+  new WOW().init()
 
 });
 
