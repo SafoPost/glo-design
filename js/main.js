@@ -181,4 +181,23 @@ $(document).ready(function() {
   // Маска для телефона
   $('[type=tel]').mask('+7(000)000-00-00');
 
+
+  // Кнопка наверх
+  $(window).scroll(function () {
+    // Если отступ сверху больше 50px то показываем кнопку "Наверх"
+    if ($(this).scrollTop() > 240) {
+      $('#button-up').fadeIn();
+    } else {
+      $('#button-up').fadeOut();
+    }
+  });
+
+  /** При нажатии на кнопку мы перемещаемся к началу страницы */
+  $('#button-up').click(function () {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 500);
+    return false;
+  });
+
 });

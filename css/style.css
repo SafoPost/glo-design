@@ -1012,6 +1012,35 @@ img {
     align-self: flex-end;
     padding: 1.35rem 3.6rem; }
 
+.scroll-up {
+  background: url("../img/arrow-up.svg") no-repeat center;
+  width: 42px;
+  height: 42px;
+  border: 5px double #E3B873;
+  border-radius: 29px;
+  left: 80px;
+  margin: 0;
+  position: fixed;
+  bottom: 140px;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0px 5px 15px rgba(128, 128, 128, 0.4);
+  transition: box-shadow 0.3s; }
+  .scroll-up:hover {
+    box-shadow: none; }
+
+@media screen and (min-width: 1660px) {
+  .scroll-up {
+    left: 140px; } }
+
+@media screen and (max-width: 1350px) {
+  .scroll-up {
+    left: 40px; } }
+
+@media screen and (max-width: 600px) {
+  .scroll-up {
+    display: none; } }
+
 @media screen and (min-width: 1900px) {
   html {
     font-size: 15px; }
