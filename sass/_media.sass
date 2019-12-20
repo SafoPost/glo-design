@@ -201,28 +201,60 @@
       display: block
   .footer
     background: $dark
-    &-wrap
-      background-color: $dark
-      width: 100%
+
+    &__wrap
+      background: none
       padding: 2rem 0
+      width: 100%
       margin: 0
     &__title
       font-size: 1.68rem
       margin-bottom: 4.3rem
     &__form
       display: block
+      margin-bottom: 1.9rem
     &__input
       &-group
-        margin-bottom: 4.5rem
+        margin-bottom: 5rem
     &__button
       width: 100%
       padding: 1.5rem 4.4rem
+    &-container
+      display: flex
+      flex-direction: column
+    &-text
+      order: 2
+      max-width: 26rem
+      margin: auto
+    &__address
+      font-size: 1.45rem
+      margin-bottom: 2rem
+      &__phone-nomber
+        font-size: 1.5rem
+    &__icons
+      max-width: 98px
+      margin-bottom: 3rem
+    &__map
+      width: 100%
+      max-height: 20rem
+      &--desktop
+        display: none
+      &--mobile
+        display: block
+    &__image
+      width: 3.2rem
+    &-menu
+      display: none
+      
+
+
   .policy__label--center
     display: flex
     justify-content: flex-start
-    margin-top: -3rem
+    margin-top: -3.58rem
     font-size: 1.3rem
-    margin-bottom: 5.7rem
+    margin-bottom: 5rem
+  
 
 @media screen and ( max-width: 476px )
   .header

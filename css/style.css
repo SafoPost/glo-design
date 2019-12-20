@@ -787,7 +787,8 @@ img {
       color: #131313;
       padding: 0.2rem 4.5rem 0.4rem 0; }
   .control__button {
-    padding: 1.286rem 4.74rem; }
+    padding: 1.286rem 4.74rem;
+    max-height: 3.64rem; }
   .control__policy--center {
     padding-top: 1.17rem;
     padding-right: 5rem;
@@ -920,7 +921,37 @@ img {
     width: 100%;
     background-color: #131313;
     height: 83px;
-    padding: 4.285rem 0; }
+    padding: 4.6rem 0 4.8rem; }
+  .footer-text {
+    max-width: 35rem;
+    margin: auto; }
+  .footer__address {
+    margin: auto;
+    font-family: 'Yeseva One', cursive;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: #E3B873; }
+    .footer__address__phone-nomber {
+      color: #E3B873;
+      text-decoration: none;
+      cursor: pointer; }
+      .footer__address__phone-nomber:hover {
+        color: #fff; }
+  .footer__icons {
+    max-width: 70px;
+    margin: auto;
+    margin-top: 1.6rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between; }
+  .footer__map {
+    max-width: 66rem;
+    margin: auto;
+    margin-bottom: 4.6rem; }
+    .footer__map--mobile {
+      display: none; }
 
 .modal {
   opacity: 0;
@@ -1170,27 +1201,54 @@ img {
     display: block; }
   .footer {
     background: #131313; }
-    .footer-wrap {
-      background-color: #131313;
-      width: 100%;
+    .footer__wrap {
+      background: none;
       padding: 2rem 0;
+      width: 100%;
       margin: 0; }
     .footer__title {
       font-size: 1.68rem;
       margin-bottom: 4.3rem; }
     .footer__form {
-      display: block; }
+      display: block;
+      margin-bottom: 1.9rem; }
     .footer__input-group {
-      margin-bottom: 4.5rem; }
+      margin-bottom: 5rem; }
     .footer__button {
       width: 100%;
       padding: 1.5rem 4.4rem; }
+    .footer-container {
+      display: flex;
+      flex-direction: column; }
+    .footer-text {
+      order: 2;
+      max-width: 26rem;
+      margin: auto; }
+    .footer__address {
+      font-size: 1.45rem;
+      margin-bottom: 2rem; }
+      .footer__address__phone-nomber {
+        font-size: 1.5rem; }
+    .footer__icons {
+      max-width: 98px;
+      margin-bottom: 3rem; }
+    .footer__map {
+      width: 100%;
+      max-height: 20rem; }
+      .footer__map--desktop {
+        display: none; }
+      .footer__map--mobile {
+        display: block; }
+    .footer__image {
+      width: 3.2rem; }
+    .footer-menu {
+      display: none; }
   .policy__label--center {
     display: flex;
     justify-content: flex-start;
-    margin-top: -3rem;
+    margin-top: -3.58rem;
     font-size: 1.3rem;
-    margin-bottom: 5.7rem; } }
+    margin-bottom: 5rem; } }
 
 @media screen and (max-width: 476px) {
   .header {
