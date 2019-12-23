@@ -947,6 +947,16 @@ img {
     margin-bottom: 3rem;
     display: flex;
     justify-content: space-between; }
+    .footer__icons--email {
+      background: url("../img/email-icon.svg") no-repeat center/cover;
+      width: 28px;
+      height: 28px;
+      border-radius: 14px; }
+    .footer__icons--instagram {
+      background: url("../img/instagram-icon.svg") no-repeat center/cover;
+      width: 28px;
+      height: 28px;
+      border-radius: 14px; }
   .footer__map {
     max-width: 66rem;
     margin: auto;
