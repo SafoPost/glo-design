@@ -227,7 +227,7 @@ $(document).ready(function() {
         iconImageSize: [32, 32],
         // Смещение левого верхнего угла иконки относительно
         // её "ножки" (точки привязки).
-        iconImageOffset: [-5, -38]
+        iconImageOffset: [-16, -32]
       });
 
     myMap.geoObjects
