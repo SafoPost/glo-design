@@ -3,6 +3,7 @@
 $userName = $_POST['userName'];
 $userPhone = $_POST['userPhone'];
 $userEmail = $_POST['userEmail'];
+$userQuestion = $_POST['userQuestion'];
 
 // Load Composer's autoloader
 require 'phpmailer/Exception.php';
@@ -14,7 +15,7 @@ $mail = new PHPMailer\PHPMailer\PHPMailer();
 
 try {
     //Server settings
-    $mail->SMTPDebug = 2;                           // Enable verbose debug output
+    $mail->SMTPDebug  = 0;                          // Enable verbose debug output
     $mail->isSMTP();                                // Send using SMTP
     $mail->Host       = 'smtp.gmail.com';           // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                       // Enable SMTP authentication
@@ -22,6 +23,7 @@ try {
     $mail->Password   = 'zd2-9JC-Exm-8MQ';          // SMTP password
     $mail->SMTPSecure = 'ssl';                      // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
     $mail->Port       = 465;                        // TCP port to connect to
+    $mail->CharSet    = 'utf-8';
 
     //Recipients
     $mail->setFrom('safopost.glo@gmail.com', 'Софья');
@@ -30,7 +32,7 @@ try {
     // Content
     $mail->isHTML(true);                            // Set email format to HTML
     $mail->Subject = 'Новая заявка с сайта';
-    $mail->Body    = "Пользователь оставил данные. Имя: ${userName}, телефон: ${userPhone}, почта: ${userEmail}";
+    $mail->Body    = "Пользователь оставил данные. Имя: ${userName}, телефон: ${userPhone}, почта: ${userEmail}, вопрос: ${userQuestion}";
 
     $mail->send();
     header('Location: thanks.html');
