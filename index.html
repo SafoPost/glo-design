@@ -39,8 +39,8 @@
       <div class="hero__content">
         <h1 class="title hero__title wow bounceInUp" data-wow-delay="0.2s">Турецкий ремонт в&nbsp<span class="title--primary">Ростове-на-дону</span></h1>
         <p class="hero__text wow bounceInUp" data-wow-delay="0.4s">Получите готовый ремонт под ключ в срок с&nbspэкономией рабочего времени до 45 дней и&nbsp20% от стоимости материалов за счет организации работы</p>
-        <button class="button hero__button button--primary wow bounceInUp" data-wow-delay="0.6s" data-toggle="modal">Рассчитать стоимость</button>
-        <button class="button hero__button button--outline wow bounceInUp" data-wow-delay="0.6s">Оставить заявку</button>
+        <button class="button hero__button button--primary wow bounceInUp" data-wow-delay="0.6s">Рассчитать стоимость</button>
+        <button class="button hero__button button--outline wow bounceInUp" data-wow-delay="0.6s" data-toggle="modal">Оставить заявку</button>
       </div>
       <!-- /.hero__content -->
       <a href="#" class="hero__scroll-down wow bounceIn" data-wow-delay="3s">листайте вниз</a>
@@ -498,7 +498,7 @@
           <!-- /.input-group footer__input-group -->
           <div class="input-group footer__input-group footer__input-group--full-width">
             <label for="user-question" class="label form__label label--light">Вопрос</label>
-            <input type="text" class="input form__input footer__input footer__input--light" id="user-question"
+            <input type="text" name="userQuestion" class="input form__input footer__input footer__input--light" id="user-question"
               placeholder="Я хочу спросить:">
           </div>
           <!-- /.input-group footer__input-group -->
@@ -567,7 +567,7 @@
       <button class="modal__close"></button>
       <h3 class="modal__title">Оставьте заявку и наш менеджер свяжется с вами</h3>
       <!-- /.modal__title -->
-      <form action="#" class="form modal__form">
+      <form action="send.php" method="POST" class="form modal__form">
         <div class="input-group modal__input-group">
           <label for="user-name" class="label form__label label--light">Имя</label>
           <input type="text" name="userName" class="input form__input modal__input modal__input--light" id="user-name"
