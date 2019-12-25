@@ -216,18 +216,18 @@
           заявку ниже чтобы получить ссылку на трансляцию.
         </p>
         <!-- /.control__text -->
-        <form action="send.php" method="POST" class="form control__form">
+        <form action="send.php" method="POST"  id="control-form"class="form control__form">
           <div class="control__input-group">
             <label for="user-name" class="label form__label control__label">Имя</label>
-            <input type="text" name="userName" class="input form__input control__input control__input--dark" id="user-name" placeholder="Как вас зовут:">
+            <input type="text" name="userName" class="input form__input control__input control__input--dark" id="control-user-name" placeholder="Как вас зовут:">
           </div>
           <div class="control__input-group">
             <label for="user-phone" class="label form__label control__label">Телефон</label>
-            <input type="tel" name="userPhone" class="input form__input control__input control__input--dark" id="user-phone" placeholder="Ваш номер телефона:">
+            <input type="tel" name="userPhone" class="input form__input control__input control__input--dark" id="control-user-phone" placeholder="Ваш номер телефона:">
           </div>
-          <button class="button button--primary control__button">Отправить</button>
+          <button class="button button--primary control__button" data-toggle="modal-send">Отправить</button>
           <div class="policy control__policy control__policy--center">
-            <input type="checkbox" name="control__policy-checkbox" id="control__policy-checkbox" class="policy__checkbox" checked>
+            <input type="checkbox" name="control__policy-checkbox" id="control-policy-checkbox" class="policy__checkbox" checked>
             <label for="control__policy-checkbox" class="policy__label control__policy__label">Я соглашаюсь с обработкой
               данных</label>
           </div>
@@ -484,30 +484,30 @@
     <div class="container footer-container">
       <div class="footer__wrap">
         <h3 class="footer__title">Остались вопросы?</h3>
-        <form action="send.php" method="POST" class="form footer__form">
+        <form action="send.php" method="POST" id="footer-form" class="form footer__form">
           <div class="input-group footer__input-group">
             <label for="user-name" class="label form__label label--light">Имя</label>
-            <input type="text" name="userName" class="input form__input footer__input footer__input--light" id="user-name" placeholder="Как вас зовут:">
+            <input type="text" name="userName" class="input form__input footer__input footer__input--light" id="footer-user-name" placeholder="Как вас зовут:">
           </div>
           <!-- /.input-group footer__input-group -->
           <div class="input-group footer__input-group">
             <label for="user-phone" class="label form__label label--light">Телефон</label>
-            <input type="tel" name="userPhone" class="input form__input footer__input footer__input--light" id="user-phone"
+            <input type="tel" name="userPhone" class="input form__input footer__input footer__input--light" id="footer-user-phone"
               placeholder="Ваш номер телефона:">
           </div>
           <!-- /.input-group footer__input-group -->
           <div class="input-group footer__input-group footer__input-group--full-width">
             <label for="user-question" class="label form__label label--light">Вопрос</label>
-            <input type="text" name="userQuestion" class="input form__input footer__input footer__input--light" id="user-question"
+            <input type="text" name="userQuestion" class="input form__input footer__input footer__input--light" id="footer-user-question"
               placeholder="Я хочу спросить:">
           </div>
           <!-- /.input-group footer__input-group -->
           <div class="policy footer__policy">
-            <input type="checkbox" name="footer__policy-checkbox" id="footer__policy-checkbox" class="policy__checkbox" checked>
+            <input type="checkbox" name="footer__policy-checkbox" id="footer-policy-checkbox" class="policy__checkbox" checked>
             <label for="footer__policy-checkbox" class="policy__label policy__label--center">Я соглашаюсь с обработкой данных</label>
           </div>
           <!-- /.policy -->
-          <button class="button button--primary footer__button">Отправить
+          <button class="button button--primary footer__button" data-toggle="modal-send">Отправить
           </button>
         </form>
         <!-- /.form footer__form -->
@@ -567,34 +567,43 @@
       <button class="modal__close"></button>
       <h3 class="modal__title">Оставьте заявку и наш менеджер свяжется с вами</h3>
       <!-- /.modal__title -->
-      <form action="send.php" method="POST" class="form modal__form">
+      <form action="send.php" method="POST" id="modal-form" class="form modal__form">
         <div class="input-group modal__input-group">
           <label for="user-name" class="label form__label label--light">Имя</label>
-          <input type="text" name="userName" class="input form__input modal__input modal__input--light" id="user-name"
+          <input type="text" name="userName" class="input form__input modal__input modal__input--light" id="modal-user-name"
             placeholder="Как вас зовут:">
         </div>
         <div class="input-group modal__input-group">
           <label for="user-phone" class="label form__label label--light">Телефон</label>
-          <input type="tel" name="userPhone" class="input form__input modal__input modal__input--light" id="user-phone"
+          <input type="tel" name="userPhone" class="input form__input modal__input modal__input--light" id="modal-user-phone"
             placeholder="Ваш номер телефона:">
         </div>
         <div class="input-group modal__input-group">
           <label for="user-email" class="label form__label label--light">Email</label>
-          <input type="email" name="userEmail" class="input form__input modal__input modal__input--light" id="user-email"
+          <input type="email" name="userEmail" class="input form__input modal__input modal__input--light" id="modal-user-email"
             placeholder="Ваш email">
         </div>        
         <div class="policy modal__policy">
-          <input type="checkbox" name="modal__policy-checkbox" id="modal__policy-checkbox" class="policy__checkbox" checked>
+          <input type="checkbox" name="modal__policy-checkbox" id="modal-policy-checkbox" class="policy__checkbox" checked>
           <label for="modal__policy-checkbox" class="policy__label">Я соглашаюсь с обработкой данных</label>
         </div>
         <!-- /.policy -->
-        <button class="button button--primary modal__button">Отправить заявку</button>
+        <button class="button button--primary modal__button" data-toggle="modal-send">Отправить заявку</button>
       </form>
       <!-- /.form modal__form -->
     </div>
     <!-- /.modal__dialog -->
   </div>
   <!-- /.modal -->
+  <div class="send">
+    <div class="send__dialog">
+      <button class="send__close"></button>
+      <h4 class="send__title"></h4>
+      <!-- /.send__title -->
+    </div>
+    <!-- /.send__dialog -->
+  </div>
+  <!-- /.send -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
   <script src="js/wow.min.js"></script>

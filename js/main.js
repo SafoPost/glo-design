@@ -35,14 +35,24 @@ document.addEventListener("DOMContentLoaded", function (event) {
 $(document).ready(function() {
   var modal = $('.modal'),
       modalBtn = $('[data-toggle=modal]'),
-      closeBtn = $('.modal__close');
+      closeBtn = $('.modal__close'),
+      send = $('.send'),
+      sendBtn = $('[data-toggle=send]'),
+      closeSendBtn = $('.send__close');
+   
+      modalBtn.on('click', function () {
+        modal.toggleClass('modal--visible');
+      });
+      closeBtn.on('click', function () {
+        modal.toggleClass('modal--visible');
+      });
 
-  modalBtn.on('click', function () {
-    modal.toggleClass('modal--visible');
-  });
-  closeBtn.on('click', function () {
-    modal.toggleClass('modal--visible');
-  });
+      // sendBtn.on('click', function () {
+      //   send.toggleClass('send--visible');
+      // });
+      closeSendBtn.on('click', function () {
+        send.toggleClass('send--visible');
+      });
 
   var mySwiper = new Swiper('.swiper-container', {
     loop: true,
@@ -182,6 +192,69 @@ $(document).ready(function() {
   $('[type=tel]').mask('+7(000)000-00-00');
 
 
+  $('#control-form').on('submit', function name(event) {
+    event.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "send.php",
+      data: $(this).serialize(),
+      success: function (response) {
+        console.log('Прибыли данные: ' + response);
+        $('#control-form')[0].reset();
+        send.toggleClass('send--visible');
+       
+        $(".send__title").text(response);
+
+      },
+      error: function(jqXHR, textStatus, errorTrown) {
+        console.error(jqXHR + ' ' + textStatus);
+      }
+    });
+  })
+
+  $('#footer-form').on('submit', function name(event) {
+    event.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "send.php",
+      data: $(this).serialize(),
+      success: function (response) {
+        console.log('Прибыли данные: ' + response);
+        $('#footer-form')[0].reset();
+        send.toggleClass('send--visible');
+
+        $(".send__title").text(response);
+
+      },
+      error: function (jqXHR, textStatus, errorTrown) {
+        console.error(jqXHR + ' ' + textStatus);
+      }
+    });
+  })
+
+  $('#modal-form').on('submit', function name(event) {
+    event.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "send.php",
+      data: $(this).serialize(),
+      success: function (response) {
+        console.log('Прибыли данные: ' + response);
+        $('#modal-form')[0].reset();
+        send.toggleClass('send--visible');
+
+        $(".send__title").text(response);
+
+      },
+      error: function (jqXHR, textStatus, errorTrown) {
+        console.error(jqXHR + ' ' + textStatus);
+      }
+    });
+  })
+
+
+
+
   // Кнопка наверх
   $(window).scroll(function () {
     // Если отступ сверху больше 50px то показываем кнопку "Наверх"
@@ -233,5 +306,8 @@ $(document).ready(function() {
   //   myMap.geoObjects
   //     .add(myPlacemark);
   // });
+
+
+
 
 });

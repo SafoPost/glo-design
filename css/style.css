@@ -1024,6 +1024,52 @@ img {
     align-self: flex-end;
     padding: 1.35rem 3.6rem; }
 
+.send {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  z-index: 299;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(19, 19, 19, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .send--visible {
+    opacity: 1;
+    visibility: visible; }
+  .send__dialog {
+    width: 30rem;
+    height: 20rem;
+    position: relative;
+    background: #131313 url("../img/bg-lines.svg") no-repeat center/cover;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #E3B873;
+    box-shadow: 0 10px 20px rgba(227, 184, 115, 0.2); }
+  .send__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 28px;
+    height: 28px;
+    background: transparent url("../img/close.svg") no-repeat center;
+    border: none;
+    margin: 11px 12px;
+    cursor: pointer;
+    outline: none; }
+  .send__title {
+    font-family: 'Yeseva One', cursive;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    text-align: center; }
+
 .scroll-up {
   background: url("../img/arrow-up.svg") no-repeat center;
   width: 42px;
