@@ -46,13 +46,21 @@ $(document).ready(function() {
       closeBtn.on('click', function () {
         modal.toggleClass('modal--visible');
       });
-
-      // sendBtn.on('click', function () {
-      //   send.toggleClass('send--visible');
-      // });
       closeSendBtn.on('click', function () {
         send.toggleClass('send--visible');
       });
+
+  // document.on('click', function (event) {
+  //   if (event.target == modal) {
+  //     modal.classList.toggle('modal--visible');
+  //   }
+  // },
+
+  // document.addEventListener('keydown', function (event) {
+  //   if (event.keyCode === 27) {
+  //     modal.classList.remove('modal--visible');
+  //   }
+  // })
 
   var mySwiper = new Swiper('.swiper-container', {
     loop: true,
@@ -70,8 +78,8 @@ $(document).ready(function() {
   var prev = $('.swiper-button-prev');
   var bullets = $('.swiper-pagination');
 
-  next.css('left', prev.width() + 19 + bullets.width() + 19),
-  bullets.css('left', prev.width() + 19),
+  next.css('left', prev.width() + 19.5 + bullets.width() + 19.5),
+  bullets.css('left', prev.width() + 19.5),
 
   new WOW().init()
 
@@ -258,7 +266,7 @@ $(document).ready(function() {
   // Кнопка наверх
   $(window).scroll(function () {
     // Если отступ сверху больше 50px то показываем кнопку "Наверх"
-    if ($(this).scrollTop() > 240) {
+    if ($(this).scrollTop() > 500) {
       $('#button-up').fadeIn();
     } else {
       $('#button-up').fadeOut();
@@ -269,7 +277,7 @@ $(document).ready(function() {
   $('#button-up').click(function () {
     $('body,html').animate({
       scrollTop: 0
-    }, 500);
+    }, 800);
     return false;
   });
 
