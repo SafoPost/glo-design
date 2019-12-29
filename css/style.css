@@ -660,7 +660,8 @@ img {
       height: 29px;
       border: 2px solid #E3B873;
       border-radius: 14.5px;
-      margin-left: 17px; }
+      margin-left: 17px;
+      cursor: pointer; }
 
 .instagram {
   display: flex;
@@ -795,13 +796,15 @@ img {
     margin: auto;
     max-width: 54.9rem; }
   .control__input {
-    flex-basis: 32%;
+    flex-basis: 37%;
     flex-basis: 33%;
     display: flex;
     flex-direction: column; }
     .control__input--dark {
+      display: block;
       color: #131313;
-      padding: 0 4.4rem 0.5rem 0; }
+      padding-bottom: 0.5rem;
+      min-width: 16rem; }
   .control__button {
     padding: 1.286rem 4.45rem;
     max-height: 3.64rem;
@@ -993,6 +996,7 @@ img {
   .footer__map {
     width: 925px;
     height: 465px;
+    max-width: 100%;
     margin: auto;
     margin-bottom: 4.6rem; }
     .footer__map--mobile {
@@ -1112,6 +1116,7 @@ img {
   right: 60px;
   margin: 0;
   position: fixed;
+  z-index: 100;
   bottom: 140px;
   outline: none;
   cursor: pointer;
@@ -1193,9 +1198,7 @@ img {
     html .swiper-slide__text {
       flex-basis: 50%; }
     html .swiper-slide__heading {
-      font-size: 1.2rem; }
-    html .footer__map {
-      max-width: 100%; } }
+      font-size: 1.2rem; } }
 
 @media screen and (max-width: 760px) {
   html .swiper-slider-image {
@@ -1208,16 +1211,76 @@ img {
     display: none; }
   html .list-desktop {
     display: none; }
-  html h2 {
-    font-size: 1.8rem; }
   html .row {
     flex-direction: column;
     align-items: center;
     margin-top: 3.2rem;
     padding: 0; }
-  html .control__video {
-    max-width: 100%;
-    min-height: 17.2rem; }
+  html .projects {
+    padding-top: 34px;
+    margin-bottom: 60px;
+    padding-bottom: 73rem; }
+  html .swiper {
+    width: auto; }
+    html .swiper-slider-image {
+      width: 100%;
+      height: 100%;
+      margin-top: 0;
+      margin-bottom: 2.6rem; }
+      html .swiper-slider-image-desktop {
+        display: none; }
+      html .swiper-slider-image-mobile {
+        display: block; }
+    html .swiper-slide__text {
+      flex-basis: 47%;
+      margin-bottom: 2.3rem; }
+    html .swiper-slide__heading {
+      margin-top: 0.2rem;
+      margin-bottom: 0.95rem; }
+    html .swiper-slide__value {
+      font-size: 1.2rem;
+      line-height: 1.6rem; }
+    html .swiper-navigation {
+      margin-top: 1.1rem; }
+  html .mobile-top {
+    order: -1; }
+  html .control {
+    margin-top: -74rem; }
+    html .control__video {
+      min-height: 17.2rem;
+      max-width: 100%; }
+    html .control__video {
+      max-width: 100%;
+      min-height: 17.2rem;
+      margin-top: 3.4rem;
+      margin-bottom: 2.4rem;
+      background: #131313 url("../img/video-mask-mobile.jpg") center no-repeat; }
+    html .control__text {
+      font-size: 1.17rem;
+      line-height: 2rem;
+      color: #fff;
+      max-width: 100%;
+      margin-bottom: 2.3rem; }
+      html .control__text::before {
+        margin-bottom: 1.3rem; }
+    html .control__form {
+      flex-direction: column;
+      color: #fff; }
+    html .control__input-group {
+      margin-bottom: 5.3rem; }
+    html .control__button {
+      order: 1;
+      max-height: 4.3rem;
+      padding: 1.5rem 0;
+      font-size: 1.3rem; }
+    html .control__policy {
+      margin-top: -5.7rem;
+      margin-left: 0.1rem;
+      margin-bottom: 5.3rem; }
+      html .control__policy__label {
+        font-size: 1.33rem; }
+  html .video__play {
+    width: 62px; }
   html .types {
     margin-top: 55px; }
   html .card__title {
@@ -1329,68 +1392,6 @@ img {
   html .hero__text {
     line-height: 2rem;
     margin-bottom: 2.8rem; }
-  html .projects {
-    padding-top: 34px;
-    margin-bottom: 60px;
-    padding-bottom: 73rem; }
-  html .swiper {
-    width: auto; }
-    html .swiper-slider-image {
-      width: 100%;
-      height: 100%;
-      margin-top: 0;
-      margin-bottom: 2.6rem; }
-      html .swiper-slider-image-desktop {
-        display: none; }
-      html .swiper-slider-image-mobile {
-        display: block; }
-    html .swiper-slide__text {
-      flex-basis: 47%;
-      margin-bottom: 2.3rem; }
-    html .swiper-slide__heading {
-      margin-top: 0.2rem;
-      margin-bottom: 0.95rem; }
-    html .swiper-slide__value {
-      font-size: 1.2rem;
-      line-height: 1.6rem; }
-    html .swiper-navigation {
-      margin-top: 1.1rem; }
-  html .mobile-top {
-    order: -1; }
-  html .control {
-    margin-top: -74rem; }
-    html .control__video {
-      max-width: 100%;
-      min-height: 17.2rem;
-      margin-top: 3.4rem;
-      margin-bottom: 2.4rem;
-      background: #131313 url("../img/video-mask-mobile.jpg") center no-repeat; }
-    html .control__text {
-      font-size: 1.17rem;
-      line-height: 2rem;
-      color: #fff;
-      max-width: 100%;
-      margin-bottom: 2.3rem; }
-      html .control__text::before {
-        margin-bottom: 1.3rem; }
-    html .control__form {
-      flex-direction: column;
-      color: #fff; }
-    html .control__input-group {
-      margin-bottom: 5.3rem; }
-    html .control__button {
-      order: 1;
-      max-height: 4.3rem;
-      padding: 1.5rem 0;
-      font-size: 1.3rem; }
-    html .control__policy {
-      margin-top: -5.7rem;
-      margin-left: 0.1rem;
-      margin-bottom: 5.3rem; }
-      html .control__policy__label {
-        font-size: 1.33rem; }
-  html .video__play {
-    width: 62px; }
   html .footer__map {
     width: 100%;
     max-height: 20rem; }

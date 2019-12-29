@@ -32,6 +32,9 @@
         margin: 0
         &::after
           content: none
+  // .footer
+  //   &__map
+  //     width: 90%
 @media screen and ( max-width: 992px )
   html
     font-size: 12px
@@ -68,9 +71,6 @@
           flex-basis: 50%
         &__heading
           font-size: 1.2rem
-    .footer
-      &__map
-        max-width: 100%
 @media screen and ( max-width: 760px )
   html
     .swiper-slider
@@ -87,17 +87,82 @@
     .list
       &-desktop
         display: none
-    h2 
-      font-size: 1.8rem
+    // h2 
+    //   font-size: 1.8rem
     .row
       flex-direction: column
       align-items: center
       margin-top: 3.2rem
       padding: 0
+    .projects
+      padding-top: 34px
+      margin-bottom: 60px
+      padding-bottom: 73rem
+    .swiper
+      width: auto
+      &-container
+        // position: absolute
+      &-slide
+        &r
+          &-image
+            width: 100%
+            height: 100%
+            margin-top: 0
+            margin-bottom: 2.6rem
+            &-desktop
+              display: none
+            &-mobile
+              display: block
+        &__text
+          flex-basis: 47%
+          margin-bottom: 2.3rem
+        &__heading
+          margin-top: 0.2rem
+          margin-bottom: 0.95rem
+        &__value
+          font-size: 1.2rem
+          line-height: 1.6rem
+      &-navigation
+        margin-top: 1.1rem
+    .mobile-top
+      order: -1
     .control
+      margin-top: -74rem
+      &__video
+        min-height: 17.2rem
+        max-width: 100%
       &__video
         max-width: 100%
         min-height: 17.2rem
+        margin-top: 3.4rem
+        margin-bottom: 2.4rem
+        background: $dark url('../img/video-mask-mobile.jpg') center no-repeat
+      &__text
+        font-size: 1.17rem
+        line-height: 2rem
+        color: $light
+        max-width: 100%
+        margin-bottom: 2.3rem
+        &::before
+          margin-bottom: 1.3rem
+      &__form
+        flex-direction: column
+        color: $light
+      &__input-group
+        margin-bottom: 5.3rem
+      &__button
+        order: 1
+        max-height: 4.3rem
+        padding: 1.5rem 0
+        font-size: 1.3rem
+      &__policy
+        margin-top: -5.7rem
+        margin-left: 0.1rem
+        margin-bottom: 5.3rem
+        &__label
+          font-size: 1.33rem
+    .video__play
+      width: 62px
     .types
       margin-top: 55px
     .card
@@ -214,73 +279,38 @@
       &__text  
         line-height: 2rem
         margin-bottom: 2.8rem
-    .projects
-      padding-top: 34px
-      margin-bottom: 60px
-      padding-bottom: 73rem
-    .swiper
-      width: auto
-      &-container
-        // position: absolute
-      &-slide
-        &r
-          &-image
-            width: 100%
-            height: 100%
-            margin-top: 0
-            margin-bottom: 2.6rem
-            &-desktop
-              display: none
-            &-mobile
-              display: block
-        &__text
-          flex-basis: 47%
-          margin-bottom: 2.3rem
-        &__heading
-          margin-top: 0.2rem
-          margin-bottom: 0.95rem
-        &__value
-          font-size: 1.2rem
-          line-height: 1.6rem
-      &-navigation
-        margin-top: 1.1rem
-    .mobile-top
-      order: -1
-    .control
-      margin-top: -74rem
-      &__section-title
-      &__video
-        max-width: 100%
-        min-height: 17.2rem
-        margin-top: 3.4rem
-        margin-bottom: 2.4rem
-        background: $dark url('../img/video-mask-mobile.jpg') center no-repeat
-      &__text
-        font-size: 1.17rem
-        line-height: 2rem
-        color: $light
-        max-width: 100%
-        margin-bottom: 2.3rem
-        &::before
-          margin-bottom: 1.3rem
-      &__form
-        flex-direction: column
-        color: $light
-      &__input-group
-        margin-bottom: 5.3rem
-      &__button
-        order: 1
-        max-height: 4.3rem
-        padding: 1.5rem 0
-        font-size: 1.3rem
-      &__policy
-        margin-top: -5.7rem
-        margin-left: 0.1rem
-        margin-bottom: 5.3rem
-        &__label
-          font-size: 1.33rem
-    .video__play
-      width: 62px
+    // .projects
+    //   padding-top: 34px
+    //   margin-bottom: 60px
+    //   padding-bottom: 73rem
+    // .swiper
+    //   width: auto
+    //   &-container
+    //     // position: absolute
+    //   &-slide
+    //     &r
+    //       &-image
+    //         width: 100%
+    //         height: 100%
+    //         margin-top: 0
+    //         margin-bottom: 2.6rem
+    //         &-desktop
+    //           display: none
+    //         &-mobile
+    //           display: block
+    //     &__text
+    //       flex-basis: 47%
+    //       margin-bottom: 2.3rem
+    //     &__heading
+    //       margin-top: 0.2rem
+    //       margin-bottom: 0.95rem
+    //     &__value
+    //       font-size: 1.2rem
+    //       line-height: 1.6rem
+    //   &-navigation
+    //     margin-top: 1.1rem
+    // .mobile-top
+    //   order: -1
     .footer
       &__map
         width: 100%
