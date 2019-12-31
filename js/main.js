@@ -62,6 +62,30 @@ $(document).ready(function() {
   //   }
   // })
 
+  // $('#control-policy-checkbox').on('click', function () {
+  //   if ($(this).is(':checked')) {
+  //     // checkbox checked 
+  //   } else {
+  //     // checkbox unchecked 
+  //   }
+  // });
+
+  $('#footer-policy-checkbox').on('click', function () {
+    if ($(this).is(':checked')) {
+      // checkbox checked 
+    } else {
+      // checkbox unchecked 
+    }
+  });
+
+  $('#modal-policy-checkbox').on('click', function () {
+    if ($(this).is(':checked')) {
+      // checkbox checked 
+    } else {
+      // checkbox unchecked 
+    }
+  });
+
   var mySwiper = new Swiper('.swiper-container', {
     loop: true,
     pagination: {
@@ -72,7 +96,7 @@ $(document).ready(function() {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
     }
-  })
+  });
 
   var next = $('.swiper-button-next');
   var prev = $('.swiper-button-prev');
@@ -80,6 +104,11 @@ $(document).ready(function() {
 
   next.css('left', prev.width() + 19.5 + bullets.width() + 19.5),
   bullets.css('left', prev.width() + 19.5),
+
+  @media all and(max - width: 760px) {
+    next.css('left', prev.width() + 19.5 + bullets.width() + 19.5),
+    bullets.css('left', prev.width() + 19.5),
+    }
 
   new WOW().init()
 
@@ -199,6 +228,10 @@ $(document).ready(function() {
   // Маска для телефона
   $('[type=tel]').mask('+7(000)000-00-00');
 
+  $('#control-form').submit(function (event) {
+    event.preventDefault();
+  });
+
 
   $('#control-form').on('submit', function name(event) {
     event.preventDefault();
@@ -262,7 +295,6 @@ $(document).ready(function() {
 
 
 
-
   // Кнопка наверх
   $(window).scroll(function () {
     // Если отступ сверху больше 50px то показываем кнопку "Наверх"
@@ -280,6 +312,7 @@ $(document).ready(function() {
     }, 800);
     return false;
   });
+
 
   // // Создаём карту с собственной меткой
   // ymaps.ready(function () {

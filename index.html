@@ -7,6 +7,8 @@
   <link href="https://fonts.googleapis.com/css?family=Yeseva+One&display=swap&subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
   <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="js/swiper.min.js">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://api-maps.yandex.ru/2.1/?apikey=e3c06568-30ea-4c23-91c9-95423efae0a4&lang=ru_RU"></script>
   <title>Repair Design Project</title>
@@ -223,7 +225,7 @@
           <button class="button button--primary control__button" data-toggle="modal-send">Отправить</button>
           <div class="policy control__policy control__policy--center">
             <input type="checkbox" name="control__policy-checkbox" id="control-policy-checkbox" class="policy__checkbox" checked>
-            <label for="control__policy-checkbox" class="policy__label control__policy__label">Я соглашаюсь с обработкой
+            <label for="control-policy-checkbox" class="policy__label control__policy__label">Я соглашаюсь с обработкой
               данных</label>
           </div>
           <!-- /.policy -->
@@ -502,7 +504,7 @@
           <!-- /.input-group footer__input-group -->
           <div class="policy footer__policy">
             <input type="checkbox" name="footer__policy-checkbox" id="footer-policy-checkbox" class="policy__checkbox" checked>
-            <label for="footer__policy-checkbox" class="policy__label policy__label--center footer__policy__label">Я соглашаюсь с обработкой данных</label>
+            <label for="footer-policy-checkbox" class="policy__label policy__label--center footer__policy__label">Я соглашаюсь с обработкой данных</label>
           </div>
           <!-- /.policy -->
           <button class="button button--primary footer__button" data-toggle="modal-send">Отправить
@@ -578,7 +580,7 @@
         </div>        
         <div class="policy modal__policy">
           <input type="checkbox" name="modal__policy-checkbox" id="modal-policy-checkbox" class="policy__checkbox" checked>
-          <label for="modal__policy-checkbox" class="policy__label">Я соглашаюсь с обработкой данных</label>
+          <label for="modal-policy-checkbox" class="policy__label">Я соглашаюсь с обработкой данных</label>
         </div>
         <!-- /.policy -->
         <button class="button button--primary modal__button" data-toggle="modal-send">Отправить заявку</button>
@@ -590,8 +592,8 @@
   <!-- /.modal -->
   <div class="send">
     <div class="send__dialog">
-      <button class="send__close"></button>
       <h4 class="send__title">Форма была успешно отправлена</h4>
+      <button class="send__close"></button>
       <!-- /.send__title -->
     </div>
     <!-- /.send__dialog -->
