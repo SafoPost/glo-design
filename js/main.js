@@ -105,10 +105,10 @@ $(document).ready(function() {
   next.css('left', prev.width() + 19.5 + bullets.width() + 19.5),
   bullets.css('left', prev.width() + 19.5),
 
-  @media all and(max - width: 760px) {
-    next.css('left', prev.width() + 19.5 + bullets.width() + 19.5),
-    bullets.css('left', prev.width() + 19.5),
-    }
+  // @media all and(max - width: 760px) {
+  //   next.css('left', prev.width() + 19.5 + bullets.width() + 19.5),
+  //   bullets.css('left', prev.width() + 19.5),
+  //   }
 
   new WOW().init()
 
@@ -150,6 +150,7 @@ $(document).ready(function() {
       }
     }
   });
+
   $('.footer__form').validate({
     errorClass: "invalid",
     errorElement: "div",
@@ -165,9 +166,10 @@ $(document).ready(function() {
         minlength: 10
       },
       // Блочное правило
-      userEmail: {
+      userQuestion: {
         required: true,
-        email: true
+        minlength: 2,
+        maxlength: 50
       }
     },
     // Сообщения
@@ -181,12 +183,12 @@ $(document).ready(function() {
         required: "Назовите свой телефон",
         minlength: "Номер должен быть из 10 цыфр"
       },
-      userEmail: {
-        required: "Укажите свой Email",
-        email: "Введите в формате: name@domain.com"
+      uuserQuestion: {
+        required: "Напишите свой вопрос",
       }
     }
   });
+
   $('.control__form').validate({
     errorClass: "invalid",
     errorElement: "div",
@@ -201,11 +203,6 @@ $(document).ready(function() {
         required: true,
         minlength: 10
       },
-      // Блочное правило
-      userEmail: {
-        required: true,
-        email: true
-      }
     },
     // Сообщения
     messages: {
@@ -217,10 +214,6 @@ $(document).ready(function() {
       userPhone: {
         required: "Назовите свой телефон",
         minlength: "Номер должен быть из 10 цыфр"
-      },
-      userEmail: {
-        required: "Укажите свой Email",
-        email: "Введите в формате: name@domain.com"
       }
     }
   });
@@ -228,9 +221,9 @@ $(document).ready(function() {
   // Маска для телефона
   $('[type=tel]').mask('+7(000)000-00-00');
 
-  $('#control-form').submit(function (event) {
-    event.preventDefault();
-  });
+  // $('#control-form').submit(function (event) {
+  //   event.preventDefault();
+  // });
 
 
   $('#control-form').on('submit', function name(event) {
