@@ -1,7 +1,11 @@
-const {src, dest, watch} = require('gulp');
+const {src, dest, watch, series} = require('gulp');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
+const cleanCSS = require('gulp-clean-css');
+const minify = require('gulp-minify');
+const htmlmin = require('gulp-htmlmin');
+// const fonts = require('gulp-fonts');
 
 // Static server
 function bs() {
@@ -27,4 +31,45 @@ function serveSass() {
     .pipe(browserSync.stream());
 };
 
+function buildCss(done) {
+  src('css/**/**.css')
+    .pipe(cleanCSS({ compatibility: 'ie8' }))
+    .pipe(dest('dist/css/'));
+  done();
+}
+
+function buildJs(done) {
+  src(['js/**.js', '!js/**.min.js'])
+    .pipe(minify({
+      ext:{min:'.js'}
+      }
+    ))
+    .pipe(dest('dist/js/'));
+  src('js/**.min.js')
+    .pipe(dest('dist/js/'));
+  done();
+}
+
+function html(done) {
+  src('**.html')
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(dest('dist/'));
+  done();
+}
+
+function php(done) {
+  src('**.php')
+    .pipe(dest('dist/'));
+  src('phpmailer/**/**.php')
+    .pipe(dest('dist/phpmailer/'));
+  done();
+}
+
+function fonts(done) {
+  src('fonts/**/**')
+    .pipe(dest('dist/fonts/'));
+  done();
+}
+
 exports.serve = bs;
+exports.build = series(buildCss, buildJs, html, php, fonts);
