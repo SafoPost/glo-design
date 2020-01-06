@@ -36,7 +36,7 @@ try {
 
     $mail->send();
     echo "Форма успешно отправлена";
-    //header('Location: thanks.html');
+    header('Location: thanks.html');
 } catch (Exception $e) {
     echo "Заявка не отправлена, есть ошибка. Код ошибки: {$mail->ErrorInfo}";
 }

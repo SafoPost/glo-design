@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="css/swiper.min.css">
   <link rel="stylesheet" href="js/swiper.min.js">
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=e3c06568-30ea-4c23-91c9-95423efae0a4&lang=ru_RU"></script>
+  <!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=e3c06568-30ea-4c23-91c9-95423efae0a4&lang=ru_RU"></script> -->
   <title>Repair Design Project</title>
 </head>
 <body>
@@ -18,12 +18,12 @@
     <div class="menu">
       <div class="logo">Repair Design Project</div>
       <nav class="nav menu__nav">
-        <a href="#" class="nav__item">Главная</a>
-        <a href="#" class="nav__item">Проекты</a>
+        <a href="#section-hero" class="nav__item">Главная</a>
+        <a href="#section-project" class="nav__item">Проекты</a>
         <a href="#" class="nav__item">Замер</a>
         <a href="#" class="nav__item">Команда</a>
         <a href="#" class="nav__item">Отзывы</a>
-        <a href="#" class="nav__item">Контакты</a>
+        <a href="#section-footer" class="nav__item">Контакты</a>
       </nav>
       <div class="contacts menu__contacts">
         <a href="tel:+79997683299" class="phone contacts__phone">+7 (999) 768-32-99</a>
@@ -33,7 +33,7 @@
     <!-- /.menu -->
   </header>
   <main>
-    <section class="hero">
+    <section class="hero" id="section-hero">
       <div class="background hero__background"></div>
       <div class="instagram hero__instagram">
         <a href="#" class="instagram__link">Instagram</a>
@@ -213,20 +213,19 @@
           наш сайт и следить за ходом работы в вашей квартире. Посмотрите прямую трансляцию с одного из наших объектов! Оставьте заявку ниже чтобы получить ссылку на трансляцию.
         </p>
         <!-- /.control__text -->
-        <form action="send.php" method="POST"  id="control-form" class="form control__form">
+        <form action="send.php" method="POST" id="control-form" class="form control__form">
           <div class="control__input-group">
-            <label for="user-name" class="label form__label control__label">Имя</label>
+            <label for="control-user-name" class="label form__label control__label">Имя</label>
             <input type="text" name="userName" class="input form__input control__input control__input--dark" id="control-user-name" placeholder="Как вас зовут:">
           </div>
           <div class="control__input-group">
-            <label for="user-phone" class="label form__label control__label">Телефон</label>
+            <label for="control-user-phone" class="label form__label control__label">Телефон</label>
             <input type="tel" name="userPhone" class="input form__input control__input control__input--dark" id="control-user-phone" placeholder="Ваш номер телефона:">
           </div>
-          <button class="button button--primary control__button" data-toggle="modal-send">Отправить</button>
+          <button type="submit" class="button button--primary control__button" data-toggle="modal-send">Отправить</button>
           <div class="policy control__policy control__policy--center">
-            <input type="checkbox" name="control__policy-checkbox" id="control-policy-checkbox" class="policy__checkbox" checked>
-            <label for="control-policy-checkbox" class="policy__label control__policy__label">Я соглашаюсь с обработкой
-              данных</label>
+            <input type="checkbox" name="policy" id="control-policy-checkbox" class="policy__checkbox" checked>
+            <label for="control-policy-checkbox" class="policy__label control__policy__label">Я соглашаюсь с обработкой данных</label>
           </div>
           <!-- /.policy -->
         </form>
@@ -480,34 +479,34 @@
     </section>
     <!-- /.section design -->
   </main>
-  <footer class="footer section section--dark">
+  <footer class="footer section section--dark" id="section-footer">
     <div class="container footer-container">
       <div class="footer__wrap">
         <h3 class="footer__title">Остались вопросы?</h3>
         <form action="send.php" method="POST" id="footer-form" class="form footer__form">
           <div class="input-group footer__input-group">
-            <label for="user-name" class="label form__label label--light">Имя</label>
+            <label for="footer-user-name" class="label form__label label--light">Имя</label>
             <input type="text" name="userName" class="input form__input footer__input footer__input--light" id="footer-user-name" placeholder="Как вас зовут:">
           </div>
           <!-- /.input-group footer__input-group -->
           <div class="input-group footer__input-group">
-            <label for="user-phone" class="label form__label label--light">Телефон</label>
+            <label for="footer-user-phone" class="label form__label label--light">Телефон</label>
             <input type="tel" name="userPhone" class="input form__input footer__input footer__input--light" id="footer-user-phone"
               placeholder="Ваш номер телефона:">
           </div>
           <!-- /.input-group footer__input-group -->
           <div class="input-group footer__input-group footer__input-group--full-width">
-            <label for="user-question" class="label form__label label--light">Вопрос</label>
+            <label for="footer-user-question" class="label form__label label--light">Вопрос</label>
             <input type="text" name="userQuestion" class="input form__input footer__input footer__input--light" id="footer-user-question"
               placeholder="Я хочу спросить:">
           </div>
           <!-- /.input-group footer__input-group -->
           <div class="policy footer__policy">
-            <input type="checkbox" name="footer__policy-checkbox" id="footer-policy-checkbox" class="policy__checkbox" checked>
+            <input type="checkbox" name="policy" id="footer-policy-checkbox" class="policy__checkbox" checked>
             <label for="footer-policy-checkbox" class="policy__label policy__label--center footer__policy__label">Я соглашаюсь с обработкой данных</label>
           </div>
           <!-- /.policy -->
-          <button class="button button--primary footer__button" data-toggle="modal-send">Отправить
+          <button type="submit" class="button button--primary footer__button" data-toggle="modal-send">Отправить
           </button>
         </form>
         <!-- /.form footer__form -->
@@ -517,11 +516,11 @@
         <div class="address footer__address">Ростов-на-дону, Торговый центр Plaza Прямой телефон
         <a href="tel:+79997683299" class="phone-nomber footer__address__phone-nomber"> +7 (999) 768 32 99</a></div>
         <div class="icons footer__icons">
-          <a href="#" class="footer__icons--email">
-            <!-- <img src="../img/email-icon.svg" alt="email" class="footer__image--email"> -->
+          <a href="#" class="footer__icons--email wow bounceInLeft">
+            <!-- <img src="../img/email-icon.svg" alt="email" class="footer__image"> -->
           </a>
-          <a href="#" class="footer__icons--instagram">
-            <!-- <img src="../img/instagram-icon.svg" alt="instagram" class="footer__image--instagram"> -->
+          <a href="#" class="footer__icons--instagram wow bounceInRight">
+            <!-- <img src="../img/instagram-icon.svg" alt="instagram" class="footer__image"> -->
           </a>
         </div>
       </div>
@@ -533,7 +532,6 @@
         <script async
           src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9a60de6cf27682651fbcaac0fd23aa6bf89d1b64045e88a7b770168feac6baa2&amp;width=100%25&amp;height=255&amp;lang=ru_RU&amp;scroll=false"></script>
       </div>
-      <!-- <div class="map footer__map footer__map--desktop" id="map"> -->
       <!-- /.map footer__map -->
     </div>
     <!-- /.container -->
@@ -558,7 +556,7 @@
     </div>
     <!-- /.footer-menu -->
   </footer>
-  <!-- /.footer section section--dark -->
+  <!-- /.footer section -->
   <div id="button-up" class="scroll-up"></div>
   <div class="modal">
     <div class="modal__dialog">
@@ -567,23 +565,23 @@
       <!-- /.modal__title -->
       <form action="send.php" method="POST" id="modal-form" class="form modal__form">
         <div class="input-group modal__input-group">
-          <label for="user-name" class="label form__label label--light">Имя</label>
+          <label for="modal-user-name" class="label form__label label--light">Имя</label>
           <input type="text" name="userName" class="input form__input modal__input modal__input--light" id="modal-user-name" placeholder="Как вас зовут:">
         </div>
         <div class="input-group modal__input-group">
-          <label for="user-phone" class="label form__label label--light">Телефон</label>
+          <label for="modal-user-phone" class="label form__label label--light">Телефон</label>
           <input type="tel" name="userPhone" class="input form__input modal__input modal__input--light" id="modal-user-phone" placeholder="Ваш номер телефона:">
         </div>
         <div class="input-group modal__input-group">
-          <label for="user-email" class="label form__label label--light">Email</label>
+          <label for="modal-user-email" class="label form__label label--light">Email</label>
           <input type="email" name="userEmail" class="input form__input modal__input modal__input--light" id="modal-user-email" placeholder="Ваш email">
         </div>        
         <div class="policy modal__policy">
-          <input type="checkbox" name="modal__policy-checkbox" id="modal-policy-checkbox" class="policy__checkbox" checked>
+          <input type="checkbox" name="policy" id="modal-policy-checkbox" class="policy__checkbox" checked>
           <label for="modal-policy-checkbox" class="policy__label">Я соглашаюсь с обработкой данных</label>
         </div>
         <!-- /.policy -->
-        <button class="button button--primary modal__button" data-toggle="modal-send">Отправить заявку</button>
+        <button type="submit" class="button button--primary modal__button" data-toggle="modal-send">Отправить заявку</button>
       </form>
       <!-- /.form modal__form -->
     </div>

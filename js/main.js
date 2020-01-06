@@ -35,56 +35,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
 $(document).ready(function() {
   var modal = $('.modal'),
       modalBtn = $('[data-toggle=modal]'),
-      closeBtn = $('.modal__close'),
-      send = $('.send'),
-      sendBtn = $('[data-toggle=send]'),
-      closeSendBtn = $('.send__close');
+      closeBtn = $('.modal__close');
+      // send = $('.send'),
+      // sendBtn = $('[data-toggle=modal-send]'),
+      // closeSendBtn = $('.send__close');
    
-      modalBtn.on('click', function () {
-        modal.toggleClass('modal--visible');
-      });
-      closeBtn.on('click', function () {
-        modal.toggleClass('modal--visible');
-      });
-      closeSendBtn.on('click', function () {
-        send.toggleClass('send--visible');
-      });
-
-  // document.on('click', function (event) {
-  //   if (event.target == modal) {
-  //     modal.classList.toggle('modal--visible');
-  //   }
-  // },
-
-  // document.addEventListener('keydown', function (event) {
-  //   if (event.keyCode === 27) {
-  //     modal.classList.remove('modal--visible');
-  //   }
-  // })
+    modalBtn.on('click', function () {
+      modal.toggleClass('modal--visible');
+    });
+    closeBtn.on('click', function () {
+      modal.toggleClass('modal--visible');
+    });
+    closeSendBtn.on('click', function () {
+      send.toggleClass('send--visible');
+    });
 
   // $('#control-policy-checkbox').on('click', function () {
-  //   if ($(this).is(':checked')) {
-  //     // checkbox checked 
+  //   if ($(this).prop('checked')) {
+  //     $('.control__button').attr('disabled', false);
   //   } else {
-  //     // checkbox unchecked 
+  //     $('.control__button').attr('disabled', true);
   //   }
   // });
-
-  $('#footer-policy-checkbox').on('click', function () {
-    if ($(this).is(':checked')) {
-      // checkbox checked 
-    } else {
-      // checkbox unchecked 
-    }
-  });
-
-  $('#modal-policy-checkbox').on('click', function () {
-    if ($(this).is(':checked')) {
-      // checkbox checked 
-    } else {
-      // checkbox unchecked 
-    }
-  });
 
   var mySwiper = new Swiper('.swiper-container', {
     loop: true,
@@ -104,11 +76,6 @@ $(document).ready(function() {
 
   next.css('left', prev.width() + 19.5 + bullets.width() + 19.5),
   bullets.css('left', prev.width() + 19.5),
-
-  // @media all and(max - width: 760px) {
-  //   next.css('left', prev.width() + 19.5 + bullets.width() + 19.5),
-  //   bullets.css('left', prev.width() + 19.5),
-  //   }
 
   new WOW().init()
 
@@ -142,7 +109,7 @@ $(document).ready(function() {
       },
       userPhone: {
         required: "Назовите свой телефон",
-        minlength: "Номер должен быть из 10 цыфр"
+        minlength: "Номер должен быть из 10 цифр"
       },
       userEmail:{
         required: "Укажите свой Email",
@@ -181,9 +148,9 @@ $(document).ready(function() {
       },
       userPhone: {
         required: "Назовите свой телефон",
-        minlength: "Номер должен быть из 10 цыфр"
+        minlength: "Номер должен быть из 10 цифр"
       },
-      uuserQuestion: {
+      userQuestion: {
         required: "Напишите свой вопрос",
       }
     }
@@ -203,6 +170,10 @@ $(document).ready(function() {
         required: true,
         minlength: 10
       },
+      policy: {
+        required: true,
+        checked: true
+      }
     },
     // Сообщения
     messages: {
@@ -213,17 +184,17 @@ $(document).ready(function() {
       },
       userPhone: {
         required: "Назовите свой телефон",
-        minlength: "Номер должен быть из 10 цыфр"
+        minlength: "Номер должен быть из 10 цифр"
+      },
+      policy: {
+        required: "Для отправки формы нужно согласиться с условиями",
+        checked: true
       }
     }
   });
 
   // Маска для телефона
   $('[type=tel]').mask('+7(000)000-00-00');
-
-  // $('#control-form').submit(function (event) {
-  //   event.preventDefault();
-  // });
 
 
   $('#control-form').on('submit', function name(event) {
@@ -236,9 +207,7 @@ $(document).ready(function() {
         console.log('Прибыли данные: ' + response);
         $('#control-form')[0].reset();
         send.toggleClass('send--visible');
-       
         $(".send__title").text(response);
-
       },
       error: function(jqXHR, textStatus, errorTrown) {
         console.error(jqXHR + ' ' + textStatus);
@@ -256,9 +225,7 @@ $(document).ready(function() {
         console.log('Прибыли данные: ' + response);
         $('#footer-form')[0].reset();
         send.toggleClass('send--visible');
-
         $(".send__title").text(response);
-
       },
       error: function (jqXHR, textStatus, errorTrown) {
         console.error(jqXHR + ' ' + textStatus);
@@ -266,27 +233,24 @@ $(document).ready(function() {
     });
   })
 
-  $('#modal-form').on('submit', function name(event) {
-    event.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "send.php",
-      data: $(this).serialize(),
-      success: function (response) {
-        console.log('Прибыли данные: ' + response);
-        $('#modal-form')[0].reset();
-        send.toggleClass('send--visible');
-
-        $(".send__title").text(response);
-
-      },
-      error: function (jqXHR, textStatus, errorTrown) {
-        console.error(jqXHR + ' ' + textStatus);
-      }
-    });
-  })
-
-
+  // $('#modal-form').on('submit', function name(event) {
+  //   event.preventDefault();
+  //   $.ajax({
+  //     type: "POST",
+  //     url: "send.php",
+  //     data: $(this).serialize(),
+  //     success: function (response) {
+  //       console.log('Прибыли данные: ' + response);
+  //       $('#modal-form')[0].reset();
+  //       send.toggleClass('send--visible');
+  //       $(".send__title").text(response);
+  //       $('Location: thanks.html')
+  //     },
+  //     error: function (jqXHR, textStatus, errorTrown) {
+  //       console.error(jqXHR + ' ' + textStatus);
+  //     }
+  //   });
+  // });
 
   // Кнопка наверх
   $(window).scroll(function () {
@@ -297,51 +261,12 @@ $(document).ready(function() {
       $('#button-up').fadeOut();
     }
   });
-
   /** При нажатии на кнопку мы перемещаемся к началу страницы */
   $('#button-up').click(function () {
     $('body,html').animate({
       scrollTop: 0
     }, 800);
     return false;
-  });
-
-
-  // // Создаём карту с собственной меткой
-  // ymaps.ready(function () {
-  //   var myMap = new ymaps.Map('map', {
-  //     center: [47.244729, 39.723187],
-  //     zoom: 17
-  //   }, {
-  //     searchControlProvider: 'yandex#search'
-  //   }),
-
-  //     // Создаём макет содержимого.
-  //     MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-  //       '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-  //     ),
-
-  //     myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-  //       hintContent: 'Наш офис',
-  //       balloonContent: 'Вход со двора'
-  //     }, {
-  //       // Опции.
-  //       // Необходимо указать данный тип макета.
-  //       iconLayout: 'default#image',
-  //       // Своё изображение иконки метки.
-  //       iconImageHref: '../img/map-marker.png',
-  //       // Размеры метки.
-  //       iconImageSize: [32, 32],
-  //       // Смещение левого верхнего угла иконки относительно
-  //       // её "ножки" (точки привязки).
-  //       iconImageOffset: [-16, -32]
-  //     });
-
-  //   myMap.geoObjects
-  //     .add(myPlacemark);
-  // });
-
-
-
+  })
 
 });
