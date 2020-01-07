@@ -35,21 +35,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
 $(document).ready(function() {
   var modal = $('.modal'),
       modalBtn = $('[data-toggle=modal]'),
-      closeBtn = $('.modal__close'),
-      send = $('.send'),
-      sendBtn = $('[data-toggle=modal-send]'),
-      closeSendBtn = $('.send__close');
+      closeBtn = $('.modal__close');
+      // send = $('.send'),
+      // sendBtn = $('[data-toggle=modal-send]'),
+      // closeSendBtn = $('.send__close');
    
-      modalBtn.on('click', function () {
-        modal.toggleClass('modal--visible');
-      });
-      closeBtn.on('click', function () {
-        modal.toggleClass('modal--visible');
-      });
-      closeSendBtn.on('click', function () {
-        send.toggleClass('send--visible');
-      });
-  
+    modalBtn.on('click', function () {
+      modal.toggleClass('modal--visible');
+    });
+    closeBtn.on('click', function () {
+      modal.toggleClass('modal--visible');
+    });
+    closeSendBtn.on('click', function () {
+      send.toggleClass('send--visible');
+    });
+
   // $('#control-policy-checkbox').on('click', function () {
   //   if ($(this).prop('checked')) {
   //     $('.control__button').attr('disabled', false);
@@ -170,9 +170,10 @@ $(document).ready(function() {
         required: true,
         minlength: 10
       },
-      controlPolicyCheckbox: {
-        required: true
-      },
+      policy: {
+        required: true,
+        checked: true
+      }
     },
     // Сообщения
     messages: {
@@ -185,8 +186,9 @@ $(document).ready(function() {
         required: "Назовите свой телефон",
         minlength: "Номер должен быть из 10 цифр"
       },
-      controlPolicyCheckbox: {
-        required: "Для отправки формы нужно согласится с условиями",
+      policy: {
+        required: "Для отправки формы нужно согласиться с условиями",
+        checked: true
       }
     }
   });
@@ -231,24 +233,24 @@ $(document).ready(function() {
     });
   })
 
-  $('#modal-form').on('submit', function name(event) {
-    event.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "send.php",
-      data: $(this).serialize(),
-      success: function (response) {
-        console.log('Прибыли данные: ' + response);
-        $('#modal-form')[0].reset();
-        send.toggleClass('send--visible');
-        $(".send__title").text(response);
-        $('Location: thanks.html')
-      },
-      error: function (jqXHR, textStatus, errorTrown) {
-        console.error(jqXHR + ' ' + textStatus);
-      }
-    });
-  });
+  // $('#modal-form').on('submit', function name(event) {
+  //   event.preventDefault();
+  //   $.ajax({
+  //     type: "POST",
+  //     url: "send.php",
+  //     data: $(this).serialize(),
+  //     success: function (response) {
+  //       console.log('Прибыли данные: ' + response);
+  //       $('#modal-form')[0].reset();
+  //       send.toggleClass('send--visible');
+  //       $(".send__title").text(response);
+  //       $('Location: thanks.html')
+  //     },
+  //     error: function (jqXHR, textStatus, errorTrown) {
+  //       console.error(jqXHR + ' ' + textStatus);
+  //     }
+  //   });
+  // });
 
   // Кнопка наверх
   $(window).scroll(function () {
@@ -265,41 +267,6 @@ $(document).ready(function() {
       scrollTop: 0
     }, 800);
     return false;
-  });
-
-
-  // // Создаём карту с собственной меткой
-  // ymaps.ready(function () {
-  //   var myMap = new ymaps.Map('map', {
-  //     center: [47.244729, 39.723187],
-  //     zoom: 17
-  //   }, {
-  //     searchControlProvider: 'yandex#search'
-  //   }),
-
-  //     // Создаём макет содержимого.
-  //     MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-  //       '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-  //     ),
-
-  //     myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-  //       hintContent: 'Наш офис',
-  //       balloonContent: 'Вход со двора'
-  //     }, {
-  //       // Опции.
-  //       // Необходимо указать данный тип макета.
-  //       iconLayout: 'default#image',
-  //       // Своё изображение иконки метки.
-  //       iconImageHref: '../img/map-marker.png',
-  //       // Размеры метки.
-  //       iconImageSize: [32, 32],
-  //       // Смещение левого верхнего угла иконки относительно
-  //       // её "ножки" (точки привязки).
-  //       iconImageOffset: [-16, -32]
-  //     });
-
-  //   myMap.geoObjects
-  //     .add(myPlacemark);
-  // });
+  })
 
 });

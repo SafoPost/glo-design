@@ -28,35 +28,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 });
 */
-
-
-
-
 $(document).ready(function() {
   var modal = $('.modal'),
       modalBtn = $('[data-toggle=modal]'),
       closeBtn = $('.modal__close');
-      // send = $('.send'),
-      // sendBtn = $('[data-toggle=modal-send]'),
-      // closeSendBtn = $('.send__close');
+      send = $('.send'),
+      sendBtn = $('[data-toggle=modal-send]'),
+      closeSendBtn = $('.send__close');
    
-    modalBtn.on('click', function () {
-      modal.toggleClass('modal--visible');
-    });
-    closeBtn.on('click', function () {
-      modal.toggleClass('modal--visible');
-    });
-    closeSendBtn.on('click', function () {
-      send.toggleClass('send--visible');
-    });
-
-  // $('#control-policy-checkbox').on('click', function () {
-  //   if ($(this).prop('checked')) {
-  //     $('.control__button').attr('disabled', false);
-  //   } else {
-  //     $('.control__button').attr('disabled', true);
-  //   }
-  // });
+      modalBtn.on('click', function () {
+        modal.toggleClass('modal--visible');
+      });
+      closeBtn.on('click', function () {
+        modal.toggleClass('modal--visible');
+      });
+      closeSendBtn.on('click', function () {
+        send.toggleClass('send--visible');
+      });
 
   var mySwiper = new Swiper('.swiper-container', {
     loop: true,
@@ -77,14 +65,13 @@ $(document).ready(function() {
   next.css('left', prev.width() + 19.5 + bullets.width() + 19.5),
   bullets.css('left', prev.width() + 19.5),
 
-  new WOW().init()
+  new WOW().init();
 
   // Валидация форм
   $('.modal__form').validate({
     errorClass: "invalid",
     errorElement: "div",
     rules: {
-      // Строчное правило
       userName: {
         required: true,
         minlength: 2,
@@ -94,10 +81,13 @@ $(document).ready(function() {
         required: true,
         minlength: 10
       },
-      // Блочное правило
       userEmail: {
         required: true,
         email: true
+      },
+      policy: {
+        required: true,
+        checked: true
       }
     },
     // Сообщения
@@ -114,6 +104,10 @@ $(document).ready(function() {
       userEmail:{
         required: "Укажите свой Email",
         email: "Введите в формате: name@domain.com"
+      },
+      policy: {
+        required: "Для отправки формы нужно согласиться с условиями",
+        checked: true
       }
     }
   });
@@ -122,7 +116,6 @@ $(document).ready(function() {
     errorClass: "invalid",
     errorElement: "div",
     rules: {
-      // Строчное правило
       userName: {
         required: true,
         minlength: 2,
@@ -132,11 +125,14 @@ $(document).ready(function() {
         required: true,
         minlength: 10
       },
-      // Блочное правило
       userQuestion: {
         required: true,
         minlength: 2,
         maxlength: 50
+      },
+      policy: {
+        required: true,
+        checked: true
       }
     },
     // Сообщения
@@ -152,6 +148,10 @@ $(document).ready(function() {
       },
       userQuestion: {
         required: "Напишите свой вопрос",
+      },
+      policy: {
+        required: "Для отправки формы нужно согласиться с условиями",
+        checked: true
       }
     }
   });
@@ -160,7 +160,6 @@ $(document).ready(function() {
     errorClass: "invalid",
     errorElement: "div",
     rules: {
-      // Строчное правило
       userName: {
         required: true,
         minlength: 2,
@@ -171,8 +170,7 @@ $(document).ready(function() {
         minlength: 10
       },
       policy: {
-        required: true,
-        checked: true
+        required: true
       }
     },
     // Сообщения
@@ -233,6 +231,27 @@ $(document).ready(function() {
     });
   })
 
+  // Кнопка наверх
+  $(window).scroll(function () {
+    // Если отступ сверху больше 50px то показываем кнопку "Наверх"
+    if ($(this).scrollTop() > 500) {
+      $('#button-up').fadeIn();
+    } else {
+      $('#button-up').fadeOut();
+    }
+  });
+  
+  /** При нажатии на кнопку мы перемещаемся к началу страницы */
+  $('#button-up').click(function () {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 800);
+    return false;
+  });
+
+});
+
+
   // $('#modal-form').on('submit', function name(event) {
   //   event.preventDefault();
   //   $.ajax({
@@ -251,22 +270,3 @@ $(document).ready(function() {
   //     }
   //   });
   // });
-
-  // Кнопка наверх
-  $(window).scroll(function () {
-    // Если отступ сверху больше 50px то показываем кнопку "Наверх"
-    if ($(this).scrollTop() > 500) {
-      $('#button-up').fadeIn();
-    } else {
-      $('#button-up').fadeOut();
-    }
-  });
-  /** При нажатии на кнопку мы перемещаемся к началу страницы */
-  $('#button-up').click(function () {
-    $('body,html').animate({
-      scrollTop: 0
-    }, 800);
-    return false;
-  })
-
-});
