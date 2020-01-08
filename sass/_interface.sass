@@ -37,6 +37,7 @@
     &::placeholder
       color: $light
 .policy
+  position: relative
   &__checkbox
     opacity: 0
     visibility: hidden
@@ -56,13 +57,14 @@
       border-radius: 1px
       cursor: pointer
       margin-right: 0.64rem
-    &--center
-      justify-content: center
-
-// button[disabled]
-//   // opacity: 0.6
-//   cursor: not-allowed
-
+  &--center
+    display: flex
+    justify-content: center
+      // position: relative
+#policy-error
+  position: absolute
+  margin-top: 1.8rem
+  margin-left: 1.2rem
 div
   &.invalid
     color: tomato

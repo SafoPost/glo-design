@@ -34,9 +34,12 @@ try {
     $mail->Subject = 'Новая заявка с сайта';
     $mail->Body    = "Пользователь оставил данные. Имя: ${userName}, телефон: ${userPhone}, почта: ${userEmail}, вопрос: ${userQuestion}";
 
-    $mail->send();
-    // echo "Форма успешно отправлена";
-    header('Location: thanks.html');
+    if ($mail->send()) {
+        echo "Форма успешно отправлена";
+    } else {
+        echo "Заявка не отправлена, есть ошибка. Код ошибки: {$mail->ErrorInfo}";
+    }
+    // header('Location: thanks.html');
 } catch (Exception $e) {
     echo "Заявка не отправлена, есть ошибка. Код ошибки: {$mail->ErrorInfo}";
 }
