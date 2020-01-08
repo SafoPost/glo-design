@@ -881,7 +881,8 @@ img {
 .video__play {
   position: relative;
   margin: auto;
-  padding-top: 0.5rem; }
+  padding-top: 0.5rem;
+  cursor: pointer; }
 
 .types {
   margin-top: 10.1rem;
