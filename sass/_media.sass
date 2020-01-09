@@ -10,6 +10,8 @@
     &__item
       margin-right: 2.9rem
       margin-left: 1.8rem
+  .scroll-up
+    right: 100px
 @media screen and ( min-width: 1500px )
   .nav
     &__item
@@ -21,6 +23,8 @@
 @media screen and ( max-width: 1350px )
   html
     font-size: 13px
+    .scroll-up
+      right: 40px
 @media screen and ( max-width: 1200px )
   .menu 
     &__item
@@ -71,6 +75,8 @@
           flex-basis: 50%
         &__heading
           font-size: 1.2rem
+    #button-up
+      display: none
 @media screen and ( max-width: 760px )
   html
     .swiper-slider
@@ -81,14 +87,16 @@
       &-navigation
         height: 2.1rem
         margin-top: 1rem
+        &-desktop
+          display: none
+        &-mobile
+          display: block
     .image
       &-desktop
         display: none
     .list
       &-desktop
         display: none
-    // h2 
-    //   font-size: 1.8rem
     .row
       flex-direction: column
       align-items: center
@@ -148,19 +156,34 @@
       &__form
         flex-direction: column
         color: $light
-      &__input-group
-        margin-bottom: 5.3rem
+      &__input
+        &--dark
+          color: $light
+          width: 100%
+          border-bottom: 1px solid $light
+          &::placeholder
+            color: $light
+        &-group
+          margin-bottom: 5.2rem
+          width: 100%
+      &__label
+        &--dark
+          padding-bottom: 0.1rem
+          color: rgba($light, 0.5)
       &__button
         order: 1
         max-height: 4.3rem
         padding: 1.5rem 0
         font-size: 1.3rem
       &__policy
-        margin-top: -5.7rem
-        margin-left: 0.1rem
+        text-align: left
+        margin-top: -5.1rem
         margin-bottom: 5.3rem
+        margin-left: -1rem
         &__label
           font-size: 1.33rem
+        &--center
+          padding-right: 0
     .video__play
       width: 62px
     .types
@@ -226,10 +249,21 @@
         margin-bottom: 4.3rem
       &__form
         display: block
-        margin-bottom: 3.7rem
+        margin-bottom: 3.9rem
       &__input
+        padding-top: 0.18rem
         &-group
           margin-bottom: 5rem
+        &--light
+          border-bottom: 1px solid $light
+      &__policy 
+        &__label
+          font-size: 1.34rem
+        &--center
+          display: block
+          margin-top: -4.8rem
+          margin-bottom: 5.5rem
+          padding: 0
       &__button
         width: 100%
         padding: 1.5rem 4.4rem
@@ -279,38 +313,6 @@
       &__text  
         line-height: 2rem
         margin-bottom: 2.8rem
-    // .projects
-    //   padding-top: 34px
-    //   margin-bottom: 60px
-    //   padding-bottom: 73rem
-    // .swiper
-    //   width: auto
-    //   &-container
-    //     // position: absolute
-    //   &-slide
-    //     &r
-    //       &-image
-    //         width: 100%
-    //         height: 100%
-    //         margin-top: 0
-    //         margin-bottom: 2.6rem
-    //         &-desktop
-    //           display: none
-    //         &-mobile
-    //           display: block
-    //     &__text
-    //       flex-basis: 47%
-    //       margin-bottom: 2.3rem
-    //     &__heading
-    //       margin-top: 0.2rem
-    //       margin-bottom: 0.95rem
-    //     &__value
-    //       font-size: 1.2rem
-    //       line-height: 1.6rem
-    //   &-navigation
-    //     margin-top: 1.1rem
-    // .mobile-top
-    //   order: -1
     .footer
       &__map
         width: 100%
@@ -323,14 +325,12 @@
         width: 3.2rem
       &-menu
         display: none
-    .policy__label--center
-      display: flex
-      justify-content: flex-start
-      margin-top: -3.58rem
-      font-size: 1.34rem
-      margin-bottom: 5rem 
-    .scroll-up
-      display: none
+    // .policy__label--center
+    //   display: flex
+    //   justify-content: flex-start
+    //   margin-top: -3.58rem
+    //   font-size: 1.34rem
+    //   margin-bottom: 5rem 
 @media screen and ( max-width: 476px )
   html
     .header
@@ -353,13 +353,25 @@
         margin-right: 1.5rem
       &__button
         display: block
-        max-width: 100%
+        min-width: 100%
         padding: 12px auto
         margin-bottom: 2rem
         font-size: 1.11rem
-@media screen and ( max-width: 310px )
+@media screen and ( max-width: 320px )
   html
     .contacts__phone
       display: none
     .hero__content
       max-width: 250px
+    .swiper
+      &-navigation
+        &-mobile
+          display: none
+        &-desktop
+          display: block
+    .control
+      &__policy
+        margin-bottom: 3.3rem
+    .footer
+      &__policy
+        margin-bottom: 3.3rem
