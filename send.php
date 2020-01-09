@@ -39,7 +39,7 @@ try {
     } else {
         echo "Заявка не отправлена, есть ошибка. Код ошибки: {$mail->ErrorInfo}";
     }
-    // header('Location: thanks.html');
+
 } catch (Exception $e) {
     echo "Заявка не отправлена, есть ошибка. Код ошибки: {$mail->ErrorInfo}";
 }

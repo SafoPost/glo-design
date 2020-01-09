@@ -331,7 +331,7 @@ template {
   .button--primary {
     background-color: #E3B873;
     color: #fff;
-    box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
+    box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.4);
     -webkit-transition: box-shadow 0.3s;
     transition: box-shadow 0.3s; }
     .button--primary:hover {
@@ -340,7 +340,12 @@ template {
     border: 1px solid #fff;
     width: 207px;
     background: transparent;
-    color: #fff; }
+    color: #fff;
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+    -webkit-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s; }
+    .button--outline:hover {
+      box-shadow: none; }
 
 .label {
   font-size: 1.07rem; }
@@ -396,7 +401,8 @@ template {
 #policy-error {
   position: absolute;
   margin-top: 1.8rem;
-  margin-left: 1.2rem; }
+  margin-left: 1.2rem;
+  font-size: 1rem; }
 
 div.invalid {
   color: tomato; }
@@ -667,7 +673,7 @@ img {
     line-height: 141%;
     font-style: normal;
     font-weight: normal;
-    max-width: 500px;
+    max-width: 40rem;
     margin: 0;
     margin-bottom: 3.2rem; }
   .hero__button {

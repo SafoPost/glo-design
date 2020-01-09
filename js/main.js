@@ -68,7 +68,7 @@ $(document).ready(function() {
   new WOW().init();
 
   // Валидация форм --------------------------------------------
-  $('.control__form').validate({
+  $('#control-form').validate({
     errorClass: "invalid",
     errorElement: "div",
     rules: {
@@ -100,24 +100,34 @@ $(document).ready(function() {
         required: "Для отправки формы нужно согласиться с условиями"
       }
     },
+    // Проверка на чекнутость
+    errorPlacement: function (error, policy) {
+      if (policy.attr("type") == "checkbox") {
+        return policy.next('label').append(error);
+      }
+
+      error.insertAfter($(policy));
+    },
     // ajax .control__form
-    // submitHandler: function (form) {
-    //   $.ajax({
-    //     type: "POST",
-    //     url: "send.php",
-    //     data: $(form).serialize(),
-    //     success: function (response) {
-    //       console.log('Прибыли данные: ' + response);
-    //       $(form)[0].reset();
-    //       $('.modal').removeClass('modal--visible');
-    //       $('.send').toggleClass('send--visible');
-    //       $(".send__title").text(response);
-    //     },
-    //   });
-    // }
+    submitHandler: function(form) {
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        data: $(form).serialize(),
+        success: function(response) {
+          console.log('Ajax сработал: ' + response);
+          $(form)[0].reset();
+          $(send).toggleClass('send--visible');
+          $(".send__title").text(response);
+        },
+        error: function(response) {
+          console.log('Ajax не сработал: ' + response);
+        }
+      });
+    }
   });
   
-  $('.footer__form').validate({
+  $('#footer-form').validate({
     errorClass: "invalid",
     errorElement: "div",
     rules: {
@@ -158,24 +168,34 @@ $(document).ready(function() {
         required: "Обязательное поле для отправки формы",
       }
     },
+    // Проверка на чекнутость
+    errorPlacement: function (error, policy) {
+      if (policy.attr("type") == "checkbox") {
+        return policy.next('label').append(error);
+      }
+
+      error.insertAfter($(policy));
+    },
     // ajax .footer__form
-    // submitHandler: function (form) {
-    //   $.ajax({
-    //     type: "POST",
-    //     url: "send.php",
-    //     data: $(form).serialize(),
-    //     success: function (response) {
-    //       console.log('Прибыли данные: ' + response);
-    //       $(form)[0].reset();
-    //       $('.modal').removeClass('modal--visible');
-    //       $('.send').toggleClass('send--visible');
-    //       $(".send__title").text(response);
-    //     },
-    //   });
-    // }
+    submitHandler: function (form) {
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('Ajax сработал: ' + response);
+          $(form)[0].reset();
+          $(send).toggleClass('send--visible');
+          $(".send__title").text(response);
+        },
+        error: function (response) {
+          console.log('Ajax не сработал: ' + response);
+        }
+      });
+    }
   });
     
-  $('.modal__form').validate({
+  $('#modal-form').validate({
     errorClass: "invalid",
     errorElement: "div",
     rules: {
@@ -193,8 +213,7 @@ $(document).ready(function() {
         email: true
       },
       policy: {
-        required: true,
-        checked: true
+        required: true
       }
     },
     // Сообщения .modal__form
@@ -213,87 +232,40 @@ $(document).ready(function() {
         email: "Введите в формате: name@domain.com"
       },
       policy: {
-        required: "Для отправки формы нужно согласиться с условиями",
-        checked: true
+        required: "Для отправки формы нужно согласиться с условиями"
       }
     },
+    // Проверка на чекнутость
+    errorPlacement: function (error, policy) {
+      if (policy.attr("type") == "checkbox") {
+        return policy.next('label').append(error);
+      }
+
+      error.insertAfter($(policy));
+    },
     // ajax .modal__form
-    // submitHandler: function(form) {
-    //   $.ajax({
-    //     type: "POST",
-    //     url: "send.php",
-    //     data: $(form).serialize(),
-    //     success: function(response) {
-    //       console.log('Прибыли данные: ' + response);
-    //       $(form)[0].reset();
-    //       $('.modal').removeClass('modal--visible');
-    //       $('.send').toggleClass('send--visible');
-    //       $(".send__title").text(response);
-    //     },
-    //   });
-    // }
+    submitHandler: function (form) {
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('Ajax сработал: ' + response);
+          $(form)[0].reset();
+          $(modal).removeClass('modal--visible');
+          $(send).toggleClass('send--visible');
+          $(".send__title").text(response);
+        },
+        error: function (response) {
+          console.log('Ajax не сработал: ' + response);
+        }
+      });
+    }
   });
 
   // Маска для телефона ------------------------------------------
   $('[type=tel]').mask('+7(000)000-00-00');
   // $('[type=tel]').mask('+7(000)000-00-00', {placeholder: "+7 (___) ___-__-__"});
-
-  // ajax ---------------------------------------------------------
-  $('#control-form').on('submit', function name(event) {
-    event.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "send.php",
-      data: $('#control-form').serialize(),
-      success: function (response) {
-        console.log('Прибыли данные: ' + response);
-        $('#control-form')[0].reset();
-        $('.send').toggleClass('send--visible');
-        $('.send__title').text(response);
-        ym('56941837', 'reachGoal', 'sendForm'); return true;
-      },
-      error: function (response) {
-        console.error('Ошибка отправки формы: ' + response);
-      },
-    });
-  })
-
-  $('#footer-form').on('submit', function name(event) {
-    event.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "send.php",
-      data: $('#footer-form').serialize(),
-      success: function (response) {
-        console.log('Прибыли данные: ' + response);
-        $('#footer-form')[0].reset();
-        $('.send').toggleClass('send--visible');
-        $('.send__title').text(response);
-      },
-      error: function (response) {
-        console.error('Ошибка отправки формы: ' + response);
-      },
-    });
-  })
-
-  $('#modal-form').on('submit', function name(event) {
-    event.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "send.php",
-      data: $('#modal-form').serialize(),
-      success: function (response) {
-        console.log('Прибыли данные: ' + response);
-        $('#modal-form')[0].reset();
-        $('.modal').removeClass('modal--visible');
-        $('.send').toggleClass('send--visible');
-        $('.send__title').text(response);
-      },
-      error: function (response) {
-        console.error('Ошибка отправки формы: ' + response);
-      },
-    });
-  })
 
   // Кнопка наверх -------------------------------------------------------
   $(window).scroll(function () {
@@ -304,7 +276,6 @@ $(document).ready(function() {
       $('#button-up').fadeOut();
     }
   });
-  
   /** При нажатии на кнопку мы перемещаемся к началу страницы */
   $('#button-up').click(function () {
     $('body,html').animate({
