@@ -31,6 +31,7 @@
     "browser-sync": "^2.26.7",
     "gulp-htmlmin": "^5.0.1",
     "gulp-minify-css": "^1.2.4",
-    "gulp-tinypng-compress": "^1.2.5"
+    "gulp-tinypng-compress": "^1.2.5",
+    "imagemin-jpegtran": "^6.0.0"
   }
 }

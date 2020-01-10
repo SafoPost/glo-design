@@ -111,4 +111,9 @@ img
       &__image
         margin-top: -0.13rem
     
-        
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+  .section
+    &-title
+      &__image
+        &::before, &::after
+          display: inline

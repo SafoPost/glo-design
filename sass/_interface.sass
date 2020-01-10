@@ -40,9 +40,9 @@
   &--light
     &::placeholder
       color: $light
-  // &--dark
-  //   &::placeholder
-  //     color: $dark
+  &--dark
+    &::placeholder
+      color: $dark
 .policy
   position: relative
   &__checkbox
@@ -52,6 +52,7 @@
       .policy__label
         &::before
           background: $primary url('../img/check.svg') no-repeat center / 0.8rem
+          display: block
   &__label
     display: flex
     align-items: center
@@ -76,9 +77,22 @@
 div
   &.invalid
     color: tomato
+    position: absolute
+    margin-top: 3.8rem
 input
   &.invalid
     border-bottom: 1px solid tomato
+
+@media screen and ( max-width: 992px )
+  .button
+    &:hover
+    cursor: none
+    &--primary
+      &:hover 
+        box-shadow: none
+    &--outline
+      &:hover 
+        box-shadow: none
 
 @media screen and ( max-width: 600px )
   .label
@@ -87,3 +101,11 @@ input
     font-size: 1.54rem
   .policy
     font-size: 1.372rem
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+  .policy
+    &__checkbox
+      &:checked +
+        .policy__label
+          &::before
+            display: block

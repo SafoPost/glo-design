@@ -32,14 +32,17 @@ try {
     // Content
     $mail->isHTML(true);                            // Set email format to HTML
     $mail->Subject = 'Новая заявка с сайта';
-    $mail->Body    = "Пользователь оставил данные. Имя: ${userName}, телефон: ${userPhone}, почта: ${userEmail}, вопрос: ${userQuestion}";
+    $mail->Body    = "Пользователь оставил данные: <br>
+    Имя: ${userName}, <br>
+    Телефон: ${userPhone}, <br>
+    Почта: ${userEmail}, <br>
+    Вопрос: ${userQuestion}";
 
     if ($mail->send()) {
         echo "Форма успешно отправлена";
     } else {
         echo "Заявка не отправлена, есть ошибка. Код ошибки: {$mail->ErrorInfo}";
     }
-
 } catch (Exception $e) {
     echo "Заявка не отправлена, есть ошибка. Код ошибки: {$mail->ErrorInfo}";
 }

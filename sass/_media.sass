@@ -27,6 +27,7 @@
       right: 40px
 @media screen and ( max-width: 1200px )
   .menu 
+    margin-top: -0.6rem
     &__item
       margin-right: 1rem
     .contacts
@@ -49,9 +50,11 @@
     .phone
       color: $light
     .hero
-      // top: 57px
       &__background
         border-bottom: none
+        border-left: none
+      &__instagram
+        display: none
       &__scroll-down
         display: none
       &__content
@@ -75,8 +78,8 @@
           flex-basis: 50%
         &__heading
           font-size: 1.2rem
-    #button-up
-      display: none
+    .scroll-up
+      display: none !important
 @media screen and ( max-width: 760px )
   html
     .swiper-slider
@@ -104,8 +107,8 @@
       padding: 0
     .projects
       padding-top: 34px
-      margin-bottom: 60px
-      padding-bottom: 73rem
+      margin-bottom: 0
+      padding-bottom: 3rem
     .swiper
       width: auto
       &-container
@@ -135,7 +138,9 @@
     .mobile-top
       order: -1
     .control
-      margin-top: -74rem
+      margin-top: 0
+      padding-top: 1rem
+      background-color: $dark
       &__video
         min-height: 17.2rem
         max-width: 100%
@@ -174,6 +179,7 @@
         order: 1
         max-height: 4.3rem
         padding: 1.5rem 0
+        margin-bottom: -2.2rem
         font-size: 1.3rem
       &__policy
         text-align: left
@@ -186,12 +192,14 @@
           padding-right: 0
     .video__play
       width: 62px
+      height: 100%
     .types
-      margin-top: 55px
+      margin-top: 0
+      padding-top: 6.6rem
     .card
       &__title
         font-size: 1.265rem
-        margin-bottom: 0.6rem
+        margin-bottom: 0.7rem
       &__text
         margin-left: 0
         margin-top: -11.9rem
@@ -211,12 +219,12 @@
       &__section-title
         color: $light
       &__card
-        margin-top: -0.8rem
+        margin-top: -0.9rem
         margin-bottom: 3.5rem
         &__text
           margin-top: -11.9rem
           margin-bottom: 7.5rem
-          padding-top: 1.5rem
+          padding-top: 1.4rem
           padding-bottom: 2.7rem
           line-height: 1.75rem
         &__pricetag
@@ -256,6 +264,8 @@
           margin-bottom: 5rem
         &--light
           border-bottom: 1px solid $light
+        &--full-width
+          padding-top: 0.5rem 
       &__policy 
         &__label
           font-size: 1.34rem
@@ -325,12 +335,13 @@
         width: 3.2rem
       &-menu
         display: none
-    // .policy__label--center
-    //   display: flex
-    //   justify-content: flex-start
-    //   margin-top: -3.58rem
-    //   font-size: 1.34rem
-    //   margin-bottom: 5rem 
+    .modal
+      &__dialog
+        max-width: 90%
+        width: 400px
+        padding: 2rem 1rem
+      &__title
+        font-size: 1.24rem
 @media screen and ( max-width: 476px )
   html
     .header
@@ -343,7 +354,7 @@
       height: 532px
       max-height: 100%
       &__background
-        // background: url('../img/hero_bg_mobile.jpg')
+        background: $dark url('../img/hero_bg_mobile.jpg') no-repeat center / cover
       &__content
         width: 100%
         max-width: 350px
@@ -359,10 +370,9 @@
         font-size: 1.11rem
 @media screen and ( max-width: 320px )
   html
-    .contacts__phone
-      display: none
-    .hero__content
-      max-width: 250px
+    .hero
+      &__content
+        width: 90%
     .swiper
       &-navigation
         &-mobile

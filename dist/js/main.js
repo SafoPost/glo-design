@@ -58,12 +58,39 @@ $(document).ready(function() {
     }
   });
 
-  var next = $('.swiper-button-next');
-  var prev = $('.swiper-button-prev');
-  var bullets = $('.swiper-pagination');
+  var nextDesktop = $('.swiper-button-next-desktop');
+  var prevDesktop = $('.swiper-button-prev-desktop');
+  var bulletsDesktop = $('.swiper-pagination-desktop');
+  var nextMobile = $('.swiper-button-next-mobile');
+  var prevMobile = $('.swiper-button-prev-mobile');
+  var bulletsMobile = $('.swiper-pagination-mobile');
+  // var cotainerMobile = $('.swiper-container');
+  // var navMobile = $('.swiper-navigation-mobile');
 
-  next.css('left', prev.width() + 19.5 + bullets.width() + 19.5),
-  bullets.css('left', prev.width() + 19.5),
+  nextDesktop.css('left', prevDesktop.width() + 19.5 + bulletsDesktop.width() + 19.5),
+  bulletsDesktop.css('left', prevDesktop.width() + 19.5),
+
+  prevMobile.css('left', 68),
+  bulletsMobile.css('left', 130),
+  nextMobile.css('left', 232),
+
+  nextDesktop.css('left', prevDesktop.width() + 19.5 + bulletsDesktop.width() + 19.5),
+  bulletsDesktop.css('left', prevDesktop.width() + 19.5),
+
+  // cotainerMobile.css("position", "relative"),
+  // navMobile.css("position", "absolute"),
+
+  // nextMobile.css('left', prevMobile.width() + 19.5 + bulletsMobile.width() + 19.5),
+  // bulletsMobile.css('left', prevMobile.width() + 19.5),
+
+  // jQuery.fn.center = function () {
+  //   navMobile.css("position", "absolute");
+  //   navMobile.css("left", Math.max(0, (($(cotainerMobile).width() - $(navMobile).outerWidth()) / 2) +
+  //     $(cotainerMobile).scrollLeft()) + "px");
+  //   return this;
+  // };
+
+  // $(navMobile).center();
 
   new WOW().init();
 
@@ -299,24 +326,40 @@ $(document).ready(function() {
   function videoPlay(event) {
     event.target.playVideo();
   }
+
+  YaMapsShown = false;
+  YaMapsMinShown = false;
+
+  $(window).scroll(function () {
+    if (!YaMapsShown) {
+      if ($(window).scrollTop() + $(window).height() > $(document).height() - 700) {
+        showYaMaps();
+        YaMapsShown = true;
+      }
+    }
+  });
+
+  function showYaMaps() {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac5bb57cf85273372e734f7def62f256953ad064eedb76e5e5b9827bc18ec6a06&amp;width=100%25&amp;height=465&amp;lang=ru_RU&amp;scroll=false";
+    document.getElementById("YaMaps").appendChild(script);
+  };
+  
+  $(window).scroll(function () {
+    if (!YaMapsMinShown) {
+      if ($(window).scrollTop() + $(window).height() > $(document).height() - 500) {
+        showYaMapsMin();
+        YaMapsMinShown = true;
+      }
+    }
+  });
+
+  function showYaMapsMin() {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9a60de6cf27682651fbcaac0fd23aa6bf89d1b64045e88a7b770168feac6baa2&amp;width=100%25&amp;height=255&amp;lang=ru_RU&amp;scroll=false";
+    document.getElementById("YaMapsMin").appendChild(script);
+  }
+
 });
-
-
-  // $('#modal-form').on('submit', function name(event) {
-  //   event.preventDefault();
-  //   $.ajax({
-  //     type: "POST",
-  //     url: "send.php",
-  //     data: $(this).serialize(),
-  //     success: function (response) {
-  //       console.log('Прибыли данные: ' + response);
-  //       $('#modal-form')[0].reset();
-  //       send.toggleClass('send--visible');
-  //       $(".send__title").text(response);
-  //       $('Location: thanks.html')
-  //     },
-  //     error: function (jqXHR, textStatus, errorTrown) {
-  //       console.error(jqXHR + ' ' + textStatus);
-  //     }
-  //   });
-  // });

@@ -4,7 +4,6 @@
     position: relative
     display: flex
     margin: auto
-    // margin-top: -0.2rem
     margin-bottom: 4.4rem
     max-width: 58.357rem
     min-height: 30.9rem
@@ -39,6 +38,9 @@
     flex-wrap: wrap
     margin: auto
     max-width: 54.9rem
+  &__label
+    &--dark
+      color: rgba(54, 54, 54, 0.3)
   &__input
     &--dark
       display: block
@@ -47,12 +49,11 @@
       min-width: auto
       width: 100%
       border-bottom: 1px solid rgba(54, 54, 54, 0.3)
+      &::placeholder
+        color: $dark
     &-group
-      // flex-basis: 30%
       min-width: 30%
-      // width: 30%
       width: 16.5rem
-      // padding-right: 0.5rem
       display: flex
       flex-direction: column
   &__button
@@ -61,7 +62,6 @@
     font-size: 1rem
   &__policy
     &--center
-      // flex-basis: 100%
       padding-top: 2.18rem
       padding-right: 5.5rem
       margin: auto
@@ -73,3 +73,8 @@
     margin: auto
     padding-top: 0.5rem
     cursor: pointer
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+  .video
+    &__play
+      margin-top: 17%

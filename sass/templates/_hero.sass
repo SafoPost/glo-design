@@ -105,3 +105,18 @@
   &--primary
     color: $primary
     font-weight: 300
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+  .hero
+    &__background
+      top: 0
+  .instagram
+    &__link
+      position: relative
+      &::after
+        position: absolute
+        top: 50%
+  .hero
+    &__scroll-down
+      &::after
+        display: block
