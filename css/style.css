@@ -426,10 +426,14 @@ input.invalid {
 @media screen and (max-width: 992px) {
   .button {
     cursor: none; }
-    .button--primary:hover {
+    .button--primary {
       box-shadow: none; }
-    .button--outline:hover {
-      box-shadow: none; } }
+      .button--primary:hover {
+        box-shadow: none; }
+    .button--outline {
+      box-shadow: none; }
+      .button--outline:hover {
+        box-shadow: none; } }
 
 @media screen and (max-width: 600px) {
   .label {
@@ -485,6 +489,11 @@ body {
 
 img {
   max-width: 100%; }
+
+.background-primary {
+  position: fixed;
+  width: 100%;
+  z-index: 0; }
 
 .section--dark {
   background-color: #131313;
@@ -1631,9 +1640,13 @@ img {
   html .modal__dialog {
     max-width: 90%;
     width: 400px;
-    padding: 2rem 1rem; }
+    padding: 2rem 2rem; }
   html .modal__title {
-    font-size: 1.24rem; } }
+    font-size: 1.24rem;
+    max-width: 25rem;
+    margin: auto; }
+  html .modal__input {
+    padding-bottom: 0; } }
 
 @media screen and (max-width: 476px) {
   html .header {
@@ -1664,6 +1677,8 @@ img {
 @media screen and (max-width: 320px) {
   html .hero__content {
     width: 90%; }
+  html .hero__text {
+    font-size: 1.35rem; }
   html .swiper-navigation-mobile {
     display: none; }
   html .swiper-navigation-desktop {
