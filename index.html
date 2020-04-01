@@ -359,6 +359,60 @@
       <!-- /.container -->
     </section>
     <!-- /.section control -->
+    <section class="section sample">
+      <div class="container">
+        <img src="img/sample_bg.jpg" alt="Фоновое изображение" class="background sample__background">
+        <div class="row sample__row">
+          <!-- <div class="background sample__background">
+          </div> -->
+          <div class="col-60">
+            <img src="img/sample-ellipse.svg" alt="Схема" class="sample__ellipse">
+            <div class="sample__list">
+              <p class="sample__list__item sample__list__item--one">Наш специалист приедет для замеров в день контакта или назначит удобную для вас дату</p>
+              <p class="sample__list__item sample__list__item--two">Бесплатный замер</p>
+              <p class="sample__list__item sample__list__item--three">Бесплатная консультация</p>
+              <p class="sample__list__item sample__list__item--four">Получите смету расходов и сроки вашего будущего ремонта</p>
+            </div>
+          </div>
+          <div class="col-40">
+            <div class="sample__wrap">
+              <h3 class="sample__title">Оставьте заявку на бесплатный выезд замерщика</h3>
+              <!-- /.modal__title -->
+              <form action="send.php" method="POST" id="sample-form" class="form sample__form">
+                <div class="input-group sample__input-group">
+                  <label for="sample-user-name" class="label form__label label--light">Имя</label>
+                  <input type="text" name="userName" class="input form__input sample__input input--light" id="sample-user-name" placeholder="Как вас зовут:">
+                </div>
+                <div class="input-group sample__input-group">
+                  <label for="sample-user-phone" class="label form__label label--light">Телефон</label>
+                  <input type="tel" name="userPhone" class="input form__input sample__input input--light" id="sample-user-phone" placeholder="Ваш телефон:">
+                </div>
+                <div class="input-group sample__input-group">
+                  <label for="sample-user-email" class="label form__label label--light">Email</label>
+                  <input type="email" name="userEmail" class="input form__input sample__input input--light" id="sample-user-email" placeholder="Ваш email">
+                </div>        
+                <div class="policy sample__policy">
+                  <input type="checkbox" name="policy" id="sample-policy-checkbox" class="policy__checkbox" checked>
+                  <label for="sample-policy-checkbox" class="policy__label">Я соглашаюсь с обработкой данных</label>
+                </div>
+                <!-- /.policy -->
+                <button type="submit" class="button button--primary sample__button">Вызвать замерщика</button>
+              </form>
+              <!-- /.form sample__form -->
+            </div>
+            <!-- /.sample__content -->
+            <p class="sample__piggy">Это поможет сэкономить 10 - 20% <br>от стоимости материалов</p>
+          </div>
+        </div>
+      </div>
+      <!-- /.container -->
+      
+    </section>
+    <!-- /.section sample -->
+    <section class="section fantasies">
+      <div class="background fantasies__background"></div>
+    </section>
+    <!-- /.section fantasies -->
     <section class="section design section--light">
       <div class="main-background design__main-background"></div>
       <div class="container">
@@ -567,7 +621,7 @@
     <!-- /.footer-menu -->
   </footer>
   <!-- /.footer section -->
-  <div id="button-up" class="scroll-up"></div>
+  <!-- <div id="button-up" class="scroll-up"></div> -->
   <div class="modal">
     <div class="modal__dialog">
       <button class="modal__close"></button>

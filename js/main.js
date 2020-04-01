@@ -28,14 +28,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 });
 */
-$(document).ready(function() {
+$(document).ready(function () {
   var modal = $('.modal'),
-      modalBtn = $('[data-toggle=modal]'),
-      closeBtn = $('.modal__close');
-      send = $('.send'),
-      sendBtn = $('[data-toggle=modal-send]'),
-      closeSendBtn = $('.send__close');
-   
+    modalBtn = $('[data-toggle=modal]'),
+    closeBtn = $('.modal__close'),
+    send = $('.send'),
+    sendBtn = $('[data-toggle=modal-send]'),
+    closeSendBtn = $('.send__close');
+
   modalBtn.on('click', function () {
     modal.toggleClass('modal--visible');
   });
@@ -43,7 +43,7 @@ $(document).ready(function() {
     modal.toggleClass('modal--visible');
   });
   closeSendBtn.on('click', function () {
-    send.toggleClass('send--visible');
+    send.removeClass('send--visible');
   });
 
   var mySwiper = new Swiper('.swiper-container', {
@@ -68,31 +68,31 @@ $(document).ready(function() {
   // var navMobile = $('.swiper-navigation-mobile');
 
   nextDesktop.css('left', prevDesktop.width() + 19.5 + bulletsDesktop.width() + 19.5),
-  bulletsDesktop.css('left', prevDesktop.width() + 19.5),
+    bulletsDesktop.css('left', prevDesktop.width() + 19.5),
 
-  prevMobile.css('left', 68),
-  bulletsMobile.css('left', 130),
-  nextMobile.css('left', 232),
+    prevMobile.css('left', 68),
+    bulletsMobile.css('left', 130),
+    nextMobile.css('left', 232),
 
-  nextDesktop.css('left', prevDesktop.width() + 19.5 + bulletsDesktop.width() + 19.5),
-  bulletsDesktop.css('left', prevDesktop.width() + 19.5),
+    nextDesktop.css('left', prevDesktop.width() + 19.5 + bulletsDesktop.width() + 19.5),
+    bulletsDesktop.css('left', prevDesktop.width() + 19.5),
 
-  // cotainerMobile.css("position", "relative"),
-  // navMobile.css("position", "absolute"),
+    // cotainerMobile.css("position", "relative"),
+    // navMobile.css("position", "absolute"),
 
-  // nextMobile.css('left', prevMobile.width() + 19.5 + bulletsMobile.width() + 19.5),
-  // bulletsMobile.css('left', prevMobile.width() + 19.5),
+    // nextMobile.css('left', prevMobile.width() + 19.5 + bulletsMobile.width() + 19.5),
+    // bulletsMobile.css('left', prevMobile.width() + 19.5),
 
-  // jQuery.fn.center = function () {
-  //   navMobile.css("position", "absolute");
-  //   navMobile.css("left", Math.max(0, (($(cotainerMobile).width() - $(navMobile).outerWidth()) / 2) +
-  //     $(cotainerMobile).scrollLeft()) + "px");
-  //   return this;
-  // };
+    // jQuery.fn.center = function () {
+    //   navMobile.css("position", "absolute");
+    //   navMobile.css("left", Math.max(0, (($(cotainerMobile).width() - $(navMobile).outerWidth()) / 2) +
+    //     $(cotainerMobile).scrollLeft()) + "px");
+    //   return this;
+    // };
 
-  // $(navMobile).center();
+    // $(navMobile).center();
 
-  new WOW().init();
+    new WOW().init();
 
   // Валидация форм --------------------------------------------
   $('#control-form').validate({
@@ -136,24 +136,24 @@ $(document).ready(function() {
       error.insertAfter($(policy));
     },
     // ajax .control__form
-    submitHandler: function(form) {
+    submitHandler: function (form) {
       $.ajax({
         type: "POST",
         url: "send.php",
         data: $(form).serialize(),
-        success: function(response) {
+        success: function (response) {
           console.log('Ajax сработал: ' + response);
           $(form)[0].reset();
           $(send).toggleClass('send--visible');
           $(".send__title").text(response);
         },
-        error: function(response) {
+        error: function (response) {
           console.log('Ajax не сработал: ' + response);
         }
       });
     }
   });
-  
+
   $('#footer-form').validate({
     errorClass: "invalid",
     errorElement: "div",
@@ -221,7 +221,7 @@ $(document).ready(function() {
       });
     }
   });
-    
+
   $('#modal-form').validate({
     errorClass: "invalid",
     errorElement: "div",
@@ -254,7 +254,7 @@ $(document).ready(function() {
         required: "Назовите свой телефон",
         minlength: "Номер должен быть из 10 цифр"
       },
-      userEmail:{
+      userEmail: {
         required: "Укажите свой Email",
         email: "Введите в формате: name@domain.com"
       },
@@ -327,6 +327,7 @@ $(document).ready(function() {
     event.target.playVideo();
   }
 
+  // Отложенная загрузка карт
   YaMapsShown = false;
   YaMapsMinShown = false;
 
@@ -345,7 +346,7 @@ $(document).ready(function() {
     script.src = "https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac5bb57cf85273372e734f7def62f256953ad064eedb76e5e5b9827bc18ec6a06&amp;width=100%25&amp;height=465&amp;lang=ru_RU&amp;scroll=false";
     document.getElementById("YaMaps").appendChild(script);
   };
-  
+
   $(window).scroll(function () {
     if (!YaMapsMinShown) {
       if ($(window).scrollTop() + $(window).height() > $(document).height() - 500) {

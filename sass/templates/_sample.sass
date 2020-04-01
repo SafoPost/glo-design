@@ -1,0 +1,143 @@
+.sample
+  padding-top: 12.55rem
+  &__background
+    position: absolute
+    margin-top: -3.7rem
+    margin-left: -7.3rem
+  &__ellipse
+    margin-left: -102px
+    position: absolute
+  &__list
+    position: relative
+    padding-top: 43px
+    margin-left: 352px
+    font-size: 18px
+    font-weight: 500       
+    &__item
+      // display: inline-block
+      &--one::before, &--two::before, &--three::before, &--four::before
+        background-color: $primary
+        color: $light
+        font-family: Yeseva One
+        text-align: center
+        padding-top: 10px
+        position: absolute
+        width: 42px
+        height: 42px
+        border-radius: 50%
+      &--one
+        max-width: 500px
+        margin-left: -39px
+        &::before
+          content: '01'
+          margin-left: -59px
+      &--two
+        margin-top: 80px
+        margin-left: 36px
+        &::before
+          content: '02'
+          margin-top: -8px
+          margin-left: -59px
+      &--three
+        margin-top: 144px
+        margin-left: 61px
+        &::before
+          content: '03'
+          margin-top: -12px
+          margin-left: -59px
+      &--four
+        max-width: 280px
+        margin-top: 130px
+        margin-left: -4px
+        &::before
+          content: '04'
+          margin-top: -2px
+          margin-left: -59px
+  &__wrap
+    background: $dark url(../img/bg-lines.svg) center / cover
+    max-width: 36rem
+    margin-left: 3.8rem
+    margin-top: 3.75rem
+    padding: 1.6rem 3.3rem
+    position: relative
+  &__title
+    color: $light
+    max-width: 21rem
+    text-align: center
+    margin: auto
+    font-size: 1.53rem
+    font-weight: 500
+    line-height: 25px
+  &__form
+    color: $light
+    text-align: right
+    // margin-top: 2rem
+  &__input
+    padding-top: 0.3rem
+    &--light
+    &-group
+      display: flex
+      flex-direction: column
+      padding-top: 2.8rem
+      padding-bottom: 0.6rem
+      text-align: left
+  &__policy
+    margin-top: -0.45rem
+  &__button
+    margin-top: 2.8rem
+    // margin-left: 14rem
+    padding: 1.3rem 2.8rem
+    margin-bottom: 0.4rem
+    min-width: 15rem
+  &__piggy
+    font-size: 1.5rem
+    font-weight: 500
+    line-height: 25px
+    max-width: 22rem
+    margin-top: 3.3rem
+    margin-left: 13rem
+    &::before
+      content: url(../img/piggy.svg)
+      background-color: $primary
+      text-align: center
+      padding-top: 18px
+      position: absolute
+      width: 72px
+      height: 72px
+      border-radius: 50%
+      margin-left: -7rem
+      margin-top: -0.6rem
+@media screen and ( max-width: 1320px )
+  .sample
+    &__list
+      &__item
+        &--one
+          max-width: 280px
+        &--two
+          margin-top: 61px
+@media screen and ( max-width: 1230px )
+  .sample
+    &__list
+      &__item
+        &--three
+          max-width: 180px
+          margin-top: 132px
+          &::before
+            margin-top: 0
+        &--four
+          margin-top: 125px
+@media screen and ( max-width: 1111px )
+  .sample
+    &__ellipse
+      margin-left: -172px
+    &__list
+      margin-left: 282px
+    &__piggy
+      max-width: 25rem
+      font-size: 1.3rem
+      margin-left: 10rem
+@media screen and ( max-width: 991px )
+  .sample
+    display: none
+
+
