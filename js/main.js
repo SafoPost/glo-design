@@ -64,35 +64,48 @@ $(document).ready(function () {
   var nextMobile = $('.swiper-button-next-mobile');
   var prevMobile = $('.swiper-button-prev-mobile');
   var bulletsMobile = $('.swiper-pagination-mobile');
-  // var cotainerMobile = $('.swiper-container');
-  // var navMobile = $('.swiper-navigation-mobile');
 
-  nextDesktop.css('left', prevDesktop.width() + 19.5 + bulletsDesktop.width() + 19.5),
-    bulletsDesktop.css('left', prevDesktop.width() + 19.5),
+  nextDesktop.css('left', prevDesktop.width() + 19 + bulletsDesktop.width() + 19);
+  bulletsDesktop.css('left', prevDesktop.width() + 19);
 
-    prevMobile.css('left', 68),
-    bulletsMobile.css('left', 130),
-    nextMobile.css('left', 232),
+  prevMobile.css('left', 68);
+  bulletsMobile.css('left', 130);
+  nextMobile.css('left', 232);
 
-    nextDesktop.css('left', prevDesktop.width() + 19.5 + bulletsDesktop.width() + 19.5),
-    bulletsDesktop.css('left', prevDesktop.width() + 19.5),
+  var nextSteps = $('.steps__swiper-button-next');
+  var prevSteps = $('.steps__swiper-button-prev');
+  var bulletsSteps = $('.steps__swiper-pagination');
 
-    // cotainerMobile.css("position", "relative"),
-    // navMobile.css("position", "absolute"),
+  var myStepsSwiper = new Swiper('.steps__swiper-container', {
+    loop: true,
+    pagination: {
+      el: '.steps__swiper-pagination',
+      type: 'steps__bullets',
+    },
+    navigation: {
+      nextEl: '.steps__swiper-button-next',
+      prevEl: '.steps__swiper-button-prev'
+    }
+  });
 
-    // nextMobile.css('left', prevMobile.width() + 19.5 + bulletsMobile.width() + 19.5),
-    // bulletsMobile.css('left', prevMobile.width() + 19.5),
+  nextSteps.css('left', prevSteps.width() + 18 + bulletsSteps.width() + 18);
+  bulletsSteps.css('left', prevSteps.width() + 18);
 
-    // jQuery.fn.center = function () {
-    //   navMobile.css("position", "absolute");
-    //   navMobile.css("left", Math.max(0, (($(cotainerMobile).width() - $(navMobile).outerWidth()) / 2) +
-    //     $(cotainerMobile).scrollLeft()) + "px");
-    //   return this;
-    // };
+  $('.steps__text--right').on('click', function () {
+    $('.steps__text--right').removeClass('steps__text--right-active');
+    $(this).addClass('steps__text--right-active');
+    const e = $(this).data('index');
+    myStepsSwiper.slideTo(e);
+  });
 
-    // $(navMobile).center();
+  myStepsSwiper.on('slideChange', (function () {
+    let e = myStepsSwiper.activeIndex - 1;
+    if (e === 6) { e = 0 };
+    $('.steps__text--right').removeClass('steps__text--right-active');
+    $('.steps__text--right').eq(e).addClass('steps__text--right-active');
+  }));
 
-    new WOW().init();
+  new WOW().init();
 
   // Валидация форм --------------------------------------------
   $('#control-form').validate({

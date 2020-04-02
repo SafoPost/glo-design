@@ -1,0 +1,95 @@
+.steps
+  width: 100%
+  height: 115.35rem
+  padding-top: 28.8rem
+  &__subtitle
+    text-transform: uppercase
+    font-size: 1.1rem
+  &__text
+    margin-top: 4.6rem
+    margin-bottom: 2.7rem
+    &--right
+      cursor: pointer
+      // width: 18rem
+      // min-width: 30%
+      margin-top: 0
+      margin-bottom: 1.7rem
+      margin-left: 7.2rem
+      opacity: 0.3
+      &-active
+        opacity: 1
+
+
+    &__index
+      font-family: 'Yeseva One', serif
+      font-size: 1.2rem
+      font-weight: 300
+      &--right
+        cursor: pointer
+
+        display: flex
+        flex-direction: column
+        color: $light
+        
+        &::after
+          content: ''
+          width: 18px
+          height: 1px
+          background-color: $primary
+        &-active
+          color: $light
+
+
+
+    &__title
+      margin-top: 1.6rem
+      font-size: 1.07rem
+      font-family: 'Yeseva One', serif
+      font-weight: 300
+      line-height: 1.64rem
+      max-width: 15rem
+      color: $primary
+      text-transform: uppercase
+    &__value
+      margin-top: -0.3rem
+      font-size: 1.08rem
+      line-height: 1.78rem
+      max-width: 24rem
+      &--right
+        width: 9rem
+        line-height: 1.3rem
+        color: $light
+  &__items
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    margin-right: -1.8rem
+    margin-top: 8rem
+    // flex-direction: row
+    
+    // display: inline
+    // margin: 0
+    // width: max-content
+
+  &__swiper
+    &-container
+      width: 27rem
+      &--right
+        width: 54.6rem
+        height: 26.9rem
+        margin-left: 7.3rem
+        margin-top: 0.7rem
+    &-slide
+      &--right
+        // width: 54.6rem
+        // height: 26.9rem
+    &-button
+      &-prev, &-next
+        // background-size: 42px
+        width: 40px
+        height: 14px
+    &-navigation
+      // margin: auto
+      // height: 30px
+      margin-top: 1.8rem
+      // margin-bottom: -1rem
