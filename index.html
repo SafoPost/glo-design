@@ -25,9 +25,9 @@
       <nav class="nav menu__nav">
         <a href="#section-hero" class="nav__item">Главная</a>
         <a href="#section-project" class="nav__item">Проекты</a>
-        <a href="#" class="nav__item">Замер</a>
-        <a href="#" class="nav__item">Команда</a>
-        <a href="#" class="nav__item">Отзывы</a>
+        <a href="#section-sample" class="nav__item">Замер</a>
+        <a href="#section-team" class="nav__item">Команда</a>
+        <a href="#section-clients" class="nav__item">Отзывы</a>
         <a href="#section-footer" class="nav__item">Контакты</a>
       </nav>
       <div class="contacts menu__contacts">
@@ -55,7 +55,7 @@
     <!-- /.hero -->
     <section class="section section--dark projects" id="section-project">
       <div class="container">
-        <div class="section-title section-title--left wow bounceInLeft">
+        <div class="section-title section-title--left wow bounceInLeft" data-wow-delay="0.1s">
           <h2 class="section-title__heading section-title__heading--primary">Завершенные <span
               class="section-title__word">проекты</span></h2>
           <!-- /.section-title__heading -->
@@ -64,8 +64,8 @@
         </div>
         <!-- /.section-title -->
         <div class="row section__row">
-          <div class="col-40 wow bounceInLeft">
-            <div class="swiper-container">
+          <div class="col-40">
+            <div class="swiper-container projects__swiper-container wow bounceInLeft" data-wow-delay="0.3s">
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper swiper-no-swiping">
                 <!-- Slides -->
@@ -160,28 +160,28 @@
                   <!-- /.swiper-slide__text -->
                 </div>
               </div>
-              <div class="swiper-navigation swiper-navigation-desktop ">
+              <div class="swiper-navigation swiper-navigation-desktop">
                 <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev swiper-button-prev-desktop"></div>
+                <div class="swiper-button-prev projects__swiper-button-prev swiper-button-prev-desktop"></div>
                 <!-- If we need pagination -->
-                <div class="swiper-pagination swiper-pagination-desktop"></div>
+                <div class="swiper-pagination projects__swiper-pagination swiper-pagination-desktop"></div>
                 <!-- If we need navigation buttons -->
-                <div class="swiper-button-next swiper-button-next-desktop"></div>
+                <div class="swiper-button-next projects__swiper-button-next swiper-button-next-desktop"></div>
               </div>
               <div class="swiper-navigation swiper-navigation-mobile">
                 <!-- If we need pagination -->
-                <div class="swiper-pagination swiper-pagination-mobile"></div>
+                <div class="swiper-pagination projects__swiper-pagination swiper-pagination-mobile"></div>
                 <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev swiper-button-prev-mobile"></div>
+                <div class="swiper-button-prev projects__swiper-button-prev swiper-button-prev-mobile"></div>
                 <!-- If we need navigation buttons -->
-                <div class="swiper-button-next swiper-button-next-mobile"></div>
+                <div class="swiper-button-next projects__swiper-button-next swiper-button-next-mobile"></div>
               </div>
             </div>
           </div>
           <!-- /.col-50 -->
           <div class="col-60 mobile-top wow bounceInRight">
             <!-- Slider main container -->
-            <div class="swiper-container swiper-slider-image">
+            <div class="swiper-container projects__swiper-container swiper-slider-image">
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper swiper-no-swiping">
                 <!-- Slides -->
@@ -359,7 +359,7 @@
       <!-- /.container -->
     </section>
     <!-- /.section control -->
-    <section class="section sample">
+    <section class="section sample" id="section-sample">
       <div class="container">
         <img src="img/sample_bg.jpg" alt="Фоновое изображение" class="background sample__background">
         <div class="row sample__row">
@@ -406,7 +406,6 @@
         </div>
       </div>
       <!-- /.container -->
-      
     </section>
     <!-- /.section sample -->
     <section class="section fantasies">
@@ -414,7 +413,7 @@
       <div class="container">
         <div class="row">
           <div class="col-40">
-            <h2 class="section-title__heading section-title__heading--primary fantasies__title wow bounceInLeft"  data-wow-delay="0s">Мы реализуем ваши<br>самые смелые фантазии</h2>
+            <h2 class="section-title__heading section-title__heading--primary fantasies__title wow bounceInLeft"  data-wow-delay="0s">Мы&nbsp;реализуем ваши самые смелые&nbsp;фантазии</h2>
             <div class="fantasies__slyles">
               <div class="fantasies__slyles__items fantasies__slyles--active wow bounceInLeft" data-wow-delay="0.05s">Американская классика</div>
               <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="0.1s">Имперский стиль</div>
@@ -587,11 +586,10 @@
       <div class="container">
         <div class="row">
           <div class="col-30">
-            <h4 class="steps__subtitle">Как мы работаем</h4>
-            <h2 class="section-title__heading section-title__heading--primary">6 шагов<span
+            <h4 class="steps__subtitle wow bounceInLeft" data-wow-delay="0s">Как мы работаем</h4>
+            <h2 class="section-title__heading section-title__heading--primary wow bounceInLeft" data-wow-delay="0.2s">6 шагов<span
               class="section-title__word section-title__word--step">до цели</span></h2>
-
-            <div class="swiper-container steps__swiper-container">
+            <div class="swiper-container steps__swiper-container wow bounceInLeft" data-wow-delay="0.6s" id="steps-swiper">
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper steps__swiper-wrapper swiper-no-swiping">
                 <!-- Slides -->
@@ -656,51 +654,50 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-navigation steps__swiper-navigation">
+              <div class="steps__swiper-navigation swiper-navigation wow bounceInLeft" data-wow-delay="0.8s">
                 <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev steps__swiper-button-prev"></div>
+                <div class="steps__swiper-button-prev swiper-button-prev"></div>
                 <!-- If we need pagination -->
-                <div class="swiper-pagination steps__swiper-pagination"></div>
+                <div class="steps__swiper-pagination swiper-pagination"></div>
                 <!-- If we need navigation buttons -->
-                <div class="swiper-button-next steps__swiper-button-next"></div>
+                <div class="steps__swiper-button-next swiper-button-next"></div>
               </div> 
             </div>
             <!-- /.steps__swiper-container -->
           </div>
           <div class="col-70">
-
             <div class="steps__items">
-              <div class="steps__text steps__text--right steps__text--right-active">
+              <div class="steps__text steps__text--right steps__text--right-active wow bounceInRight" data-wow-delay="0.1s" data-index="1">
                 <div class="steps__text__index steps__text__index--right">01</div>
                 <div class="steps__text__value steps__text__value--right">
                   <p>Выезд&nbsp;на&nbsp;замер помещения</p>
                 </div>
               </div>
-              <div class="steps__text steps__text--right">
+              <div class="steps__text steps__text--right wow bounceInRight" data-wow-delay="0.2s" data-index="2">
                 <div class="steps__text__index steps__text__index--right">02</div>
                 <div class="steps__text__value steps__text__value--right">
                   <p>Составление<br>сметы</p>
                 </div>
               </div>
-              <div class="steps__text steps__text--right">
+              <div class="steps__text steps__text--right wow bounceInRight" data-wow-delay="0.3s" data-index="3">
                 <div class="steps__text__index steps__text__index--right">03</div>
                 <div class="steps__text__value steps__text__value--right">
                   <p>Разработка дизайн&nbsp;проекта</p>
                 </div>
               </div>
-              <div class="steps__text steps__text--right">
+              <div class="steps__text steps__text--right wow bounceInRight" data-wow-delay="0.4s" data-index="4">
                 <div class="steps__text__index steps__text__index--right">04</div>
                 <div class="steps__text__value steps__text__value--right">
                   <p>Закупка&nbsp;расходных материалов</p>
                 </div>
               </div>
-              <div class="steps__text steps__text--right">
+              <div class="steps__text steps__text--right wow bounceInRight" data-wow-delay="0.5s" data-index="5">
                 <div class="steps__text__index steps__text__index--right">05</div>
                 <div class="steps__text__value steps__text__value--right">
                   <p>Ремонтно-&nbsp;отделочные работы</p>
                 </div>
               </div>
-              <div class="steps__text steps__text--right">
+              <div class="steps__text steps__text--right wow bounceInRight" data-wow-delay="0.6s" data-index="6">
                 <div class="steps__text__index steps__text__index--right">06</div>
                 <div class="steps__text__value steps__text__value--right">
                   <p>Приемка-сдача работ</p>
@@ -708,11 +705,7 @@
               </div>
             </div>
             <!-- /.steps__items -->
-
-            
-
-
-            <div class="swiper-container steps__swiper-container steps__swiper-container--right">
+            <div class="swiper-container steps__swiper-container steps__swiper-container--right wow bounceInRight" data-wow-delay="1s">
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper steps__swiper-wrapper swiper-no-swiping">
                 <!-- Slides -->
@@ -737,12 +730,149 @@
               </div> 
             </div>
             <!-- /.steps__swiper-container -->
-
           </div>
         </div>
       </div>
     </section>
     <!-- /.section steps section--dark -->
+    <section class="section team" id="section-team">
+      <div class="container team__container">
+        <div class="section-title section-title--light">
+          <h2 class="section-title__heading">Наша команда</h2>
+          <!-- /.section-title__heading -->
+          <div class="section-title__image">
+            <img src="img/team.svg" alt="design">
+          </div>
+          <!-- /.setion-title__image -->
+          <p class="section-title__description team__description">Наша команда помогла стать счастливее более чем 500 семьям, и мы не собираемся останавливаться</p>
+          <!-- /.section-title__description -->
+        </div>
+        <!-- /.section-title -->
+        <div class="row">
+          <div class="col-32">
+            <div class="card team__card">
+              <img src="img/team/team-idea.jpg" alt="idea" class="image-desktop card__image team__card__image">
+              <div class="team__card__icon"><img src="img/team/idea.svg" alt="idea-icon" class="team__card__icon__img"></div>
+              <div class="card__text team__card__text wow bounceInUp" data-wow-delay="0.2s">
+                <h3 class="card__title">Алексей Колмаков</h3>
+                <p class="team__card__value">Проектный менеджер</p>
+                <strong class="team__card__experience">Опыт работы 8 лет</strong>
+              </div>
+              <!-- /.card__text -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <div class="col-32">
+            <div class="card team__card">
+              <img src="img/team/team-designer.jpg" alt="Стандартный" class="image-desktop card__image">
+              <div class="team__card__icon"><img src="img/team/designer.svg" alt="idea-icon" class="team__card__icon__img"></div>
+              <div class="card__text team__card__text wow bounceInUp" data-wow-delay="0.3s">
+                <h3 class="card__title">Алиса Сухорукова</h3>
+                <p class="team__card__value">Дизайнер</p>
+                <strong class="team__card__experience">Опыт работы 6 лет</strong>
+              </div>
+              <!-- /.card__text -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <div class="col-32">
+            <div class="card team__card">
+              <img src="img/team/team-portfolio.jpg" alt="Полный" class="image-desktop card__image">
+              <div class="team__card__icon"><img src="img/team/portfolio.svg" alt="idea-icon" class="team__card__icon__img"></div>
+              <div class="card__text team__card__text wow bounceInUp" data-wow-delay="0.4s">
+                <h3 class="card__title">Давид Волынев</h3>
+                <p class="team__card__value">Бригадир</p>
+                <strong class="team__card__experience">Опыт работы 7 лет</strong>
+              </div>
+              <!-- /.card__text -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+        <!-- /.row -->
+        <p class="team__text">
+          Каждый сотрудник нашей компании является квалифицированным штатным специалистом с опытом работы от 6 лет. У нас нет гастарбайтеров, каждый сотрудник выполняет работу, соответствующую его специальности.
+        </p>
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.section team -->
+    <section class="section clients" id="section-clients">
+      <div class="container clients__container">
+        <div class="section-title design__section-title">
+          <h2 class="section-title__heading">Наши клиенты</h2>
+          <!-- /.section-title__heading -->
+          <div class="section-title__image">
+            <img src="img/clients.svg" alt="clients">
+          </div>
+          <!-- /.setion-title__image -->
+          <p class="section-title__description clients__description">80% наших клиентов рекомендуют нас своим знакомым и друзьям</p>
+          <!-- /.section-title__description -->
+        </div>
+        <!-- /.section-title -->
+        <div class="row">
+          <div class="col-32">
+            <div class="card clients__card wow heartBeat" data-wow-delay="0.2s">
+              <div class="clients__card__heading">
+                <img src="img/clients/client-1.jpg" alt="Client" class="clients__card__heading__image">
+                <h3 class="clients__card__heading__title">Савельева Екатерина&nbsp;Львовна</h3>
+              </div>
+              <p class="clients__card__value">Я хочу поблагодарить ребят за их работу. Они вложили душу в ремонт. Я очень благодарна, что сделали как для самих себя. Большое спасибо, я выражаю проектному менеджеру за его профессионализм и подход. Процесс ремонта был завершен быстрее, чем ожидалось. Команда мобильная и профессиональная. Работы выполнены качественно без нареканий. Цены демократические. Я&nbsp;рекомендую этих мастеров.</p>
+              <div class="clients__card__info">
+                <strong class="clients__card__info__item">
+                  <img src="img/clients/square.svg" alt="square" class="team__card__icon__img clients__card__info__icon">40 М<sup>2</sup>
+                </strong>
+                <strong class="clients__card__info__item">
+                  <img src="img/clients/date.svg" alt="square" class="team__card__icon__img clients__card__info__icon">48 дней
+                </strong>
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+          <div class="col-32">
+            <div class="card clients__card wow heartBeat" data-wow-delay="0.4s">
+              <div class="clients__card__heading">
+                <img src="img/clients/client-2.jpg" alt="Client" class="clients__card__heading__image">
+                <h3 class="clients__card__heading__title">Большов Михаил&nbsp;Анатольевич</h3>
+              </div>
+              <p class="clients__card__value">Я хочу поблагодарить ребят за их работу. Они вложили душу в ремонт. Я очень благодарен, что сделали как для самих себя. Большое спасибо, я выражаю проектному менеджеру за его профессионализм и подход. Процесс ремонта был завершен быстрее, чем ожидалось. Команда мобильная и профессиональная. Работы выполнены качественно без нареканий. Качество высокое. Я&nbsp;рекомендую этих мастеров.</p>
+              <div class="clients__card__info">
+                <strong class="clients__card__info__item">
+                  <img src="img/clients/square.svg" alt="square" class="team__card__icon__img clients__card__info__icon">90 М<sup>2</sup>
+                </strong>
+                <strong class="clients__card__info__item">
+                  <img src="img/clients/date.svg" alt="square" class="team__card__icon__img clients__card__info__icon">128 дней
+                </strong>
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+          <div class="col-32">
+            <div class="card clients__card wow heartBeat" data-wow-delay="0.6s">
+              <div class="clients__card__heading">
+                <img src="img/clients/client-3.jpg" alt="Client" class="clients__card__heading__image">
+                <h3 class="clients__card__heading__title">Хасанов Даниил&nbsp;Муратович</h3>
+              </div>
+              <p class="clients__card__value">Я хочу поблагодарить ребят за их работу. Они вложили душу в ремонт. Я очень благодарен, что сделали как для самих себя. Большое спасибо, я выражаю проектному менеджеру за его профессионализм и подход. Процесс ремонта был завершен быстрее, чем ожидалось. Команда мобильная и профессиональная. Работы выполнены качественно без нареканий. Качество высокое. Цены демократические.</p>
+              <div class="clients__card__info">
+                <strong class="clients__card__info__item">
+                  <img src="img/clients/square.svg" alt="square" class="team__card__icon__img clients__card__info__icon">56 М<sup>2</sup>
+                </strong>
+                <strong class="clients__card__info__item">
+                  <img src="img/clients/date.svg" alt="square" class="team__card__icon__img clients__card__info__icon">56 дней
+                </strong>
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+        <!-- /.row -->
+        
+        <!-- /.control__text -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.section clients -->
   </main>
   <footer class="footer section section--dark" id="section-footer">
     <div class="container footer-container">
@@ -802,9 +932,9 @@
         <nav class="nav menu__nav">
           <a href="#section-hero" class="nav__item">Главная</a>
           <a href="#section-project" class="nav__item">Проекты</a>
-          <a href="#" class="nav__item">Замер</a>
-          <a href="#" class="nav__item">Команда</a>
-          <a href="#" class="nav__item">Отзывы</a>
+          <a href="#section-sample" class="nav__item">Замер</a>
+          <a href="#section-team" class="nav__item">Команда</a>
+          <a href="#section-clients" class="nav__item">Отзывы</a>
           <a href="#section-footer" class="nav__item">Контакты</a>
         </nav>
         <div class="contacts menu__contacts">

@@ -1,33 +1,3 @@
-/*
-document.addEventListener("DOMContentLoaded", function (event) {
-  const modal = document.querySelector('.modal');
-  const modalBtn = document.querySelectorAll('[data-toggle=modal]');
-  const closeBtn = document.querySelector('.modal__close');
-  const switchModal = () => {
-    modal.classList.toggle('modal--visible');
-  } 
-  
-
-  modalBtn.forEach(element => {
-    element.addEventListener('click', switchModal); 
-  });
-
-  closeBtn.addEventListener('click', switchModal);
-
-  document.onclick = function (event) {
-    if (event.target == modal) {
-      modal.classList.toggle('modal--visible');
-    }
-  };
-  
-  document.addEventListener('keydown', function (event) {
-    if (event.keyCode === 27) {
-      modal.classList.remove('modal--visible');
-    }
-  });
-
-});
-*/
 $(document).ready(function () {
   var modal = $('.modal'),
     modalBtn = $('[data-toggle=modal]'),
@@ -46,15 +16,16 @@ $(document).ready(function () {
     send.removeClass('send--visible');
   });
 
-  var mySwiper = new Swiper('.swiper-container', {
+  var mySwiper = new Swiper('.projects__swiper-container', {
     loop: true,
     pagination: {
-      el: '.swiper-pagination',
+      el: '.projects__swiper-pagination',
       type: 'bullets',
+      clickable: true
     },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
+      nextEl: '.projects__swiper-button-next',
+      prevEl: '.projects__swiper-button-prev'
     }
   });
 
@@ -72,15 +43,22 @@ $(document).ready(function () {
   bulletsMobile.css('left', 130);
   nextMobile.css('left', 232);
 
-  var nextSteps = $('.steps__swiper-button-next');
-  var prevSteps = $('.steps__swiper-button-prev');
-  var bulletsSteps = $('.steps__swiper-pagination');
-
-  var myStepsSwiper = new Swiper('.steps__swiper-container', {
+  var mySwiperSteps = new Swiper('.steps__swiper-container', {
     loop: true,
+    speed: 1200,
+    effect: 'flip',
+    on: {
+      slideChange: function () {
+        let e = mySwiperSteps[0].activeIndex - 1;
+        if (e === 6) { e = 0 }
+        $('.steps__text--right').removeClass('steps__text--right-active');
+        $('.steps__text--right').eq(e).addClass('steps__text--right-active');
+      }
+    },
     pagination: {
       el: '.steps__swiper-pagination',
-      type: 'steps__bullets',
+      type: 'bullets',
+      clickable: true
     },
     navigation: {
       nextEl: '.steps__swiper-button-next',
@@ -88,22 +66,20 @@ $(document).ready(function () {
     }
   });
 
-  nextSteps.css('left', prevSteps.width() + 18 + bulletsSteps.width() + 18);
-  bulletsSteps.css('left', prevSteps.width() + 18);
-
   $('.steps__text--right').on('click', function () {
     $('.steps__text--right').removeClass('steps__text--right-active');
     $(this).addClass('steps__text--right-active');
     const e = $(this).data('index');
-    myStepsSwiper.slideTo(e);
+    mySwiperSteps[0].slideTo(e);
+    mySwiperSteps[1].slideTo(e);
   });
 
-  myStepsSwiper.on('slideChange', (function () {
-    let e = myStepsSwiper.activeIndex - 1;
-    if (e === 6) { e = 0 };
-    $('.steps__text--right').removeClass('steps__text--right-active');
-    $('.steps__text--right').eq(e).addClass('steps__text--right-active');
-  }));
+  var nextSteps = $('.steps__swiper-button-next');
+  var prevSteps = $('.steps__swiper-button-prev');
+  var bulletsSteps = $('.steps__swiper-pagination');
+
+  nextSteps.css('left', prevSteps.width() + 18 + bulletsSteps.width() + 18);
+  bulletsSteps.css('left', prevSteps.width() + 18);
 
   new WOW().init();
 
@@ -149,6 +125,65 @@ $(document).ready(function () {
       error.insertAfter($(policy));
     },
     // ajax .control__form
+    submitHandler: function (form) {
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('Ajax сработал: ' + response);
+          $(form)[0].reset();
+          $(send).toggleClass('send--visible');
+          $(".send__title").text(response);
+        },
+        error: function (response) {
+          console.log('Ajax не сработал: ' + response);
+        }
+      });
+    }
+  });
+
+  $('#sample-form').validate({
+    errorClass: "invalid",
+    errorElement: "div",
+    rules: {
+      userName: {
+        required: true,
+        minlength: 2,
+        maxlength: 15
+      },
+      userPhone: {
+        required: true,
+        minlength: 10
+      },
+      policy: {
+        required: true
+      }
+    },
+    // Сообщения .sample__form
+    messages: {
+      userName: {
+        required: "Назовите своё имя",
+        minlength: "Имя не должно быть короче двух символов",
+        maxlength: "Имя не должно быть длинее 15 символов"
+      },
+      userPhone: {
+        required: "Назовите свой телефон",
+        minlength: "Номер должен быть из 10 цифр"
+      },
+      policy: {
+        required: "Для отправки формы нужно согласиться с условиями"
+      }
+    },
+    // Проверка на чекнутость
+    errorPlacement: function (error, policy) {
+      if (policy.attr("type") == "checkbox") {
+        return policy.next('label').append(error);
+      }
+
+      error.insertAfter($(policy));
+    },
+    // ajax .sample__form
     submitHandler: function (form) {
       $.ajax({
         type: "POST",
