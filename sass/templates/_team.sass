@@ -10,9 +10,10 @@
     flex-direction: column
     justify-content: space-between
     align-items: center
-
     &__image
      margin-right: 0
+     &-mobile
+      display: none
     &__icon
       width: 5rem
       height: 5rem
@@ -24,15 +25,14 @@
       display: flex
       justify-content: center
       align-items: center
+      box-shadow: 0px 5px 20px rgba($primary, 0.5)
     &__text
-      width: 16.64em
+      width: 16.64rem
       // height: 9.78rem
       margin-top: -5.8rem
       padding: 0
       padding-top: 1.5rem
       text-align: center
-    &__title
-      // margin-bottom: 0.6rem
     &__value
       font-size: 1.24rem
       color: $list

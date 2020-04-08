@@ -3,16 +3,23 @@
   height: 61.7rem
   margin-top: 16.8rem
   &__background
-    background: $dark url('../img/fantasies_bg.jpg') no-repeat center / cover
+    background: $dark no-repeat center
     position: absolute
     width: 100%
     height: 61.7rem
-    &::before
-      content: ''
-      position: absolute
+    &__image
       width: 100%
       height: 61.7rem
-      background: linear-gradient(120.96deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.9) 100%)
+      background: $dark url('../img/fantasies/fantasies-1.jpg') no-repeat center / cover
+      display: flex
+      justify-content: space-between
+      align-items: center
+      &::before
+        content: ''
+        position: absolute
+        width: 100%
+        height: 61.7rem
+        background: linear-gradient(120.96deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.9) 100%)
   &__title
     font-size: 1.9rem
     margin-top: 9.6rem
@@ -22,17 +29,16 @@
     display: flex
     flex-direction: column
     &__items
-      width: max-content
+      // width: max-content
       font-style: normal
       font-weight: 300
       font-size: 1.7rem
       margin-top: 1.6rem
-      background-color: transparent
       border: none
       color: $light
       &:hover
         cursor: pointer
-        font-size: 1.68rem
+        font-size: 1.65rem
         display: flex
         flex-direction: column
         justify-content: center
@@ -40,11 +46,11 @@
         &::after
           content: ''
           width: 5.2rem
-          height: 0.04rem
+          height: 0.1rem
           background-color: $light
     &--active
       color: $primary
-      font-size: 1.68rem
+      font-size: 1.65rem
       display: flex
       flex-direction: column
       justify-content: center
@@ -52,8 +58,18 @@
       &::after
         content: ''
         width: 10.4rem
-        height: 0.04rem
+        height: 0.1rem
         background-color: $primary
+      &:hover
+        // display: flex
+        // flex-direction: column
+        // justify-content: center
+        // align-items: flex-start
+        &::after
+          content: ''
+          // width: 10.4rem
+          // height: 0.05rem
+          background-color: transparent
   &__gallery
     height: 75.4rem
     width: 56.2rem
@@ -61,18 +77,42 @@
     margin-bottom: -2.94rem
     margin-left: -6.5rem
     display: flex
-    justify-content: space-between
+    justify-content: center
     &__end
-      height: 100%
       display: flex
       flex-direction: column
       justify-content: flex-end
-
     &__start
       display: flex
       flex-direction: column
       justify-content: flex-start
     &__items
-      margin: 1.2rem
+      &__one, &__two, &__three, &__four
+        width: 25.28rem
+        margin: 1.2rem
+      &__one
+        height: 39.78rem
+        background: $dark url('../img/fantasies/fantasies-1-a.jpg') no-repeat center / cover
+      &__two
+        height: 24.93rem
+        background: $dark url('../img/fantasies/fantasies-1-b.jpg') no-repeat center / cover
+      &__three
+        height: 19.64rem
+        background: $dark url('../img/fantasies/fantasies-1-c.jpg') no-repeat center / cover
+      &__four
+        height: 44.57rem
+        background: $dark url('../img/fantasies/fantasies-1-d.jpg') no-repeat center / cover
+  &__nav
+    &__prev, &__next
+      display: inline-block
+      margin: 1rem
+      width: 3rem
+      height: 3rem
+      border-radius: 50%
+      color: $light
+    &__prev
+      background: $primary url('../img/fantasies/prev.svg') no-repeat center
+    &__next
+      background: $primary url('../img/fantasies/next.svg') no-repeat center
 
 

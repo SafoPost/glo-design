@@ -409,42 +409,49 @@
     </section>
     <!-- /.section sample -->
     <section class="section fantasies">
-      <div class="background fantasies__background"></div>
+      <div class="background fantasies__background">
+        <div class="fantasies__background__image">
+          <div class="fantasies__nav__prev"></div>
+          <div class="fantasies__nav__next"></div>
+        </div>
+      </div>
       <div class="container">
         <div class="row">
           <div class="col-40">
             <h2 class="section-title__heading section-title__heading--primary fantasies__title wow bounceInLeft"  data-wow-delay="0s">Мы&nbsp;реализуем ваши самые смелые&nbsp;фантазии</h2>
             <div class="fantasies__slyles">
-              <div class="fantasies__slyles__items fantasies__slyles--active wow bounceInLeft" data-wow-delay="0.05s">Американская классика</div>
-              <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="0.1s">Имперский стиль</div>
-              <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="0.2s">Классика</div>
-              <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="0.3s">Лофт</div>
-              <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="0.4s">Минимализм</div>
-              <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="0.5s">Прованс</div>
-              <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="0.6s">Романтизм</div>
-              <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="0.7s">Скандинавский стиль</div>
-              <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="0.8s">Средиземноморский стиль</div>
-              <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="0.9s">Хайтек</div>
-              <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="1s">Эклектизм</div>
+              <div class="fantasies__slyles__items fantasies__slyles--active wow bounceInLeft" data-wow-delay="0.05s" data-index="1">Американская классика</div>
+              <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="0.1s" data-index="2">Имперский стиль</div>
+              <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="0.2s" data-index="3">Классика</div>
+              <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="0.3s" data-index="4">Лофт</div>
+              <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="0.4s" data-index="5">Минимализм</div>
+              <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="0.5s" data-index="6">Прованс</div>
+              <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="0.6s" data-index="7">Романтизм</div>
+              <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="0.7s" data-index="8">Скандинавский стиль</div>
+              <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="0.8s" data-index="9">Средиземноморский стиль</div>
+              <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="0.9s" data-index="10">Хайтек</div>
+              <div class="fantasies__slyles__items wow bounceInLeft" data-wow-delay="1s" data-index="11">Эклектизм</div>
             </div>
             <!-- /.fantasies__slyles -->
           </div>
           <div class="col-60">
             <div class="fantasies__gallery">
               <div class="fantasies__gallery__end">
-                <div class="fantasies__gallery__items wow bounceInRight" data-wow-delay="0s"><img src="img/fantasies/fantasies-01-a.jpg" alt="Изображение"></div>
-                <div class="fantasies__gallery__items wow bounceInRight" data-wow-delay="0.2s"><img src="img/fantasies/fantasies-01-b.jpg" alt="Изображение"></div>
+                <div class="fantasies__gallery__items__one wow bounceInRight" data-wow-delay="0s"></div>
+                <div class="fantasies__gallery__items__two wow bounceInRight" data-wow-delay="0.2s"></div>
               </div>
               <!-- /.fantasies__gallery__end -->
+
               <div class="fantasies__gallery__start">
-                <div class="fantasies__gallery__items wow bounceInRight" data-wow-delay="0.4s"><img src="img/fantasies/fantasies-01-c.jpg" alt="Изображение"></div>
-                <div class="fantasies__gallery__items wow bounceInRight" data-wow-delay="0.6s"><img src="img/fantasies/fantasies-01-d.jpg" alt="Изображение"></div>
+                <div class="fantasies__gallery__items__three wow bounceInRight" data-wow-delay="0.4s"></div>
+                <div class="fantasies__gallery__items__four wow bounceInRight" data-wow-delay="0.6s"></div>
               </div>
               <!-- /.fantasies__gallery__start -->
             </div>
             <!-- /.fantasies__gallery -->
           </div>
         </div>
+        
       </div>
       <!-- /.container -->
     </section>
@@ -460,7 +467,7 @@
           </div>
           <!-- /.setion-title__image -->
           <p class="section-title__description">Дизайн-проект не только помогает сделать ремонт вашей квартиры более
-            современным, но и значительно удешевляет материалы и сокращает время ремонтных работ</p>
+            современным, но и значительно удешевляет материалы и сокращает время ремонтных&nbsp;работ</p>
           <!-- /.section-title__description -->
         </div>
         <!-- /.section-title -->
@@ -751,10 +758,11 @@
         <div class="row">
           <div class="col-32">
             <div class="card team__card">
-              <img src="img/team/team-idea.jpg" alt="idea" class="image-desktop card__image team__card__image">
+              <img src="img/team/team-idea.jpg" alt="idea" class="image card__image team__card__image image-desktop">
+              <img src="img/team/team-idea-min.jpg" alt="idea" class="image card__image team__card__image image-mobile">
               <div class="team__card__icon"><img src="img/team/idea.svg" alt="idea-icon" class="team__card__icon__img"></div>
               <div class="card__text team__card__text wow bounceInUp" data-wow-delay="0.2s">
-                <h3 class="card__title">Алексей Колмаков</h3>
+                <h3 class="card__title team__card__title">Алексей Колмаков</h3>
                 <p class="team__card__value">Проектный менеджер</p>
                 <strong class="team__card__experience">Опыт работы 8 лет</strong>
               </div>
@@ -764,10 +772,11 @@
           </div>
           <div class="col-32">
             <div class="card team__card">
-              <img src="img/team/team-designer.jpg" alt="Стандартный" class="image-desktop card__image">
+              <img src="img/team/team-designer.jpg" alt="Стандартный" class="image card__image team__card__image image-desktop">
+              <img src="img/team/team-designer-min.jpg" alt="Стандартный" class="image card__image team__card__image image-mobile">
               <div class="team__card__icon"><img src="img/team/designer.svg" alt="idea-icon" class="team__card__icon__img"></div>
               <div class="card__text team__card__text wow bounceInUp" data-wow-delay="0.3s">
-                <h3 class="card__title">Алиса Сухорукова</h3>
+                <h3 class="card__title team__card__title">Алиса Сухорукова</h3>
                 <p class="team__card__value">Дизайнер</p>
                 <strong class="team__card__experience">Опыт работы 6 лет</strong>
               </div>
@@ -777,10 +786,11 @@
           </div>
           <div class="col-32">
             <div class="card team__card">
-              <img src="img/team/team-portfolio.jpg" alt="Полный" class="image-desktop card__image">
+              <img src="img/team/team-portfolio.jpg" alt="Полный" class="image card__image team__card__image image-desktop">
+              <img src="img/team/team-portfolio-min.jpg" alt="Полный" class="image card__image team__card__image image-mobile">
               <div class="team__card__icon"><img src="img/team/portfolio.svg" alt="idea-icon" class="team__card__icon__img"></div>
               <div class="card__text team__card__text wow bounceInUp" data-wow-delay="0.4s">
-                <h3 class="card__title">Давид Волынев</h3>
+                <h3 class="card__title team__card__title">Давид Волынев</h3>
                 <p class="team__card__value">Бригадир</p>
                 <strong class="team__card__experience">Опыт работы 7 лет</strong>
               </div>

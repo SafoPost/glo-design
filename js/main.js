@@ -16,6 +16,7 @@ $(document).ready(function () {
     send.removeClass('send--visible');
   });
 
+  // Слайдер-проекты
   var mySwiper = new Swiper('.projects__swiper-container', {
     loop: true,
     pagination: {
@@ -43,6 +44,7 @@ $(document).ready(function () {
   bulletsMobile.css('left', 130);
   nextMobile.css('left', 232);
 
+  // Слайдер-шаги
   var mySwiperSteps = new Swiper('.steps__swiper-container', {
     loop: true,
     speed: 1200,
@@ -80,6 +82,39 @@ $(document).ready(function () {
 
   nextSteps.css('left', prevSteps.width() + 18 + bulletsSteps.width() + 18);
   bulletsSteps.css('left', prevSteps.width() + 18);
+
+  // Секция-фантазии
+  $('.fantasies__slyles__items').on('click', function () {
+    $('.fantasies__slyles__items').removeClass('fantasies__slyles--active');
+    $(this).addClass('fantasies__slyles--active');
+    const e = $(this).data('index');
+
+    $('.fantasies__background__image').css('backgroundImage', `url('../img/fantasies/fantasies-${e}.jpg')`);
+
+    $('.fantasies__gallery__items__one').css('backgroundImage', `url('../img/fantasies/fantasies-${e}-a.jpg')`);
+    $('.fantasies__gallery__items__two').css('backgroundImage', `url('../img/fantasies/fantasies-${e}-b.jpg')`);
+    $('.fantasies__gallery__items__three').css('backgroundImage', `url('../img/fantasies/fantasies-${e}-c.jpg')`);
+    $('.fantasies__gallery__items__four').css('backgroundImage', `url('../img/fantasies/fantasies-${e}-d.jpg')`);
+  });
+
+  $('.fantasies__nav__prev').on('click', function () {
+    let e = $('.fantasies__slyles--active').data('index') - 1;
+    if (e === 0) { e = 11 }
+    $('.fantasies__background__image').css('backgroundImage', `url('../img/fantasies/fantasies-${e}.jpg')`);
+    e--;
+    if (e === 12) { e = 1 }
+    $('.fantasies__slyles__items').removeClass('fantasies__slyles--active');
+    $('.fantasies__slyles__items').eq(e).addClass('fantasies__slyles--active');
+  });
+  $('.fantasies__nav__next').on('click', function () {
+    let e = $('.fantasies__slyles--active').data('index') + 1;
+    if (e === 12) { e = 1 }
+    $('.fantasies__background__image').css('backgroundImage', `url('../img/fantasies/fantasies-${e}.jpg')`);
+    e--;
+    if (e === 12) { e = 1 }
+    $('.fantasies__slyles__items').removeClass('fantasies__slyles--active');
+    $('.fantasies__slyles__items').eq(e).addClass('fantasies__slyles--active');
+  });
 
   new WOW().init();
 

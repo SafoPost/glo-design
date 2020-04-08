@@ -37,6 +37,13 @@
         margin: 0
         &::after
           content: none
+  .fantasies
+    &__title
+      font-size: 1.7rem
+      max-width: 20rem
+    &__gallery
+      width: 50.2rem
+      
   // .footer
   //   &__map
   //     width: 90%
@@ -80,6 +87,18 @@
           font-size: 1.2rem
     .scroll-up
       display: none !important
+    .fantasies
+      &__title
+        font-size: 1.9rem
+        max-width: 23rem
+      &__gallery
+        margin-left: 2rem
+        text-align: left
+        width: 27.2rem
+        &__start
+          display: none
+        &__items
+          margin: 0.5rem
 @media screen and ( max-width: 760px )
   html
     .swiper-slider
@@ -213,7 +232,36 @@
         padding: 1rem 1rem
         min-width: 16rem
         bottom: -2rem
+    .fantasies
+      margin-top: 7.3rem
+      height: 16rem
+      &__background
+        height: 32rem
+        background-color: transparent
+        position: relative
+        margin-bottom: -50%
+        &__image
+          width: 90%
+          height: 32rem
+          margin: auto
+          &::before
+            display: none
+      &__title
+        font-size: 1.85rem
+        max-width: 30rem
+        margin: auto
+        margin-top: -15.4rem
+        text-align: center
+      &__slyles
+        display: none
+      &__gallery
+        display: none
+      &__nav
+        &__prev, &__next
+          display: inline-block
     .design
+      margin-top: 0
+      padding-top: 19.5rem
       padding-bottom: 0
       background-color: $dark
       &__section-title
@@ -242,9 +290,54 @@
         display: none
       &-mobile
         display: block
+    .steps
+      display: none
+    .team
+      background-color: $dark
+      margin-top: 30rem
+      padding-top: 0.5rem
+      &__container
+        padding: 0
+      &__card
+        min-width: 91%
+        margin-top: 2.9rem
+        &__image
+          margin-right: -2.8rem
+          min-width: 25.4rem
+          &-desktop
+            display: none
+          &-mobile
+            display: block
+        &__icon
+          width: 5.8rem
+          height: 5.8rem
+          margin-top: -2.9rem
+          margin-left: -2.8rem
+        &__text
+          width: 19.4rem
+          padding: 0
+          margin: auto
+          left: 1.4rem
+          margin-top: -6.8rem
+          margin-bottom: 4.5rem
+        &__title
+          padding-top: 1.8rem
+          font-size: 1.5rem
+        &__value
+          font-size: 1.5rem
+        &__experience
+          font-size: 1.07rem
+          margin-top: 1.8rem
+          padding-top: 1.3rem
+          padding-bottom: 2.5rem
+      &__text
+        display: none
+    .clients
+      display: none
     .footer
       background: $dark
-      margin-top: -1rem
+      margin-top: 0
+      padding-top: 0.2rem
       &::before
         display: none
       &__wrap
@@ -323,6 +416,14 @@
       &__text  
         line-height: 2rem
         margin-bottom: 2.8rem
+    .fantasies
+      height: 14rem
+      &__background
+        height: 28rem
+        &__image
+          height: 28rem
+    .design
+      padding-top: 18.2rem
     .footer
       &__map
         width: 100%
@@ -372,6 +473,15 @@
         padding: 12px auto
         margin-bottom: 2rem
         font-size: 1.11rem
+    .fantasies
+      // margin-top: 7.3rem
+      height: 10rem
+      &__background
+        height: 20rem
+        &__image
+          height: 20rem
+    .design
+      padding-top: 14.2rem
 @media screen and ( max-width: 320px )
   html
     .hero
@@ -388,6 +498,21 @@
     .control
       &__policy
         margin-bottom: 3.3rem
+    .fantasies
+      &__title
+        font-size: 1.54rem
+        max-width: 24rem
+    .team
+      &__card
+        &__image
+          margin-right: 0
+          min-width: 22.6rem
+        &__icon
+          margin-top: -2.9rem
+          margin-left: 0.8rem
+        &__text
+
+          left: 0
     .footer
       &__policy
         margin-bottom: 3.3rem
