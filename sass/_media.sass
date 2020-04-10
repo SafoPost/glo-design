@@ -25,28 +25,59 @@
     font-size: 13px
     .scroll-up
       right: 40px
+    .fantasies
+      &__gallery
+        margin-left: -2.5rem
+    .steps
+      &__text
+        &--right
+          50rem
+      &__swiper
+        &-container
+          &--right
+            width: 50rem
+        &-slide
+          &--right
+            width: 50rem
+            height: 25rem
+        
 @media screen and ( max-width: 1200px )
-  .menu 
-    margin-top: -0.6rem
-    &__item
-      margin-right: 1rem
-    .contacts
-      &__button
-        display: none
-      &__phone
-        margin: 0
-        &::after
-          content: none
-  .fantasies
-    &__title
-      font-size: 1.7rem
-      max-width: 20rem
-    &__gallery
-      width: 50.2rem
-      
-  // .footer
-  //   &__map
-  //     width: 90%
+  html
+    .menu 
+      margin-top: -0.6rem
+      &__item
+        margin-right: 1rem
+      .contacts
+        &__button
+          display: none
+        &__phone
+          margin: 0
+          &::after
+            content: none
+    .fantasies
+      &__title
+        font-size: 1.7rem
+        max-width: 20rem
+      &__gallery
+        width: 44rem
+        &__items
+          &__one, &__two, &__three, &__four
+            width: 22rem
+            margin: 1rem
+    .steps
+      &__swiper
+        &-container
+          &--right
+            width: 40rem
+            // margin-left: 14rem
+        &-slide
+          &--right
+            width: 40rem
+            height: 20rem
+    .clients
+      &__card
+        width: 22.8rem
+
 @media screen and ( max-width: 992px )
   html
     font-size: 12px
@@ -89,16 +120,39 @@
       display: none !important
     .fantasies
       &__title
-        font-size: 1.9rem
-        max-width: 23rem
+        font-size: 1.7rem
+        max-width: 19rem
       &__gallery
-        margin-left: 2rem
-        text-align: left
-        width: 27.2rem
-        &__start
-          display: none
+        width: 36rem
         &__items
-          margin: 0.5rem
+          &__one, &__two, &__three, &__four
+            width: 18rem
+            margin: 0.7rem
+    .steps
+      &__text
+        margin-top: 2.6rem
+        margin-bottom: 1.7rem
+        margin-right: -4rem
+        &--right
+          margin-bottom: 0.7rem
+      &__items
+        width: 36rem
+      &__swiper
+        &-container
+          &--right
+            width: 32rem
+            // margin-left: 7.8rem
+        &-slide
+          &--right
+            width: 32rem
+            height: 16rem
+        &-navigation
+          width: max-content
+        &-pagination
+          width: max-content
+    .clients
+      &__card
+        width: 18rem
 @media screen and ( max-width: 760px )
   html
     .swiper-slider
@@ -233,7 +287,7 @@
         min-width: 16rem
         bottom: -2rem
     .fantasies
-      margin-top: 7.3rem
+      margin-top: 9.3rem
       height: 16rem
       &__background
         height: 32rem
@@ -250,7 +304,7 @@
         font-size: 1.85rem
         max-width: 30rem
         margin: auto
-        margin-top: -15.4rem
+        margin-top: -12.4rem
         text-align: center
       &__slyles
         display: none

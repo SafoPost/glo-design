@@ -10,27 +10,22 @@
     margin-bottom: 2.7rem
     &--right
       cursor: pointer
-      // width: 18rem
-      // min-width: 30%
+      width: 8rem
       margin-top: 0
       margin-bottom: 1.7rem
-      margin-left: 7.2rem
+      margin-left: 7.3rem
       opacity: 0.3
       &-active
         opacity: 1
-
-
     &__index
       font-family: 'Yeseva One', serif
       font-size: 1.2rem
       font-weight: 300
       &--right
         cursor: pointer
-
         display: flex
         flex-direction: column
         color: $light
-        
         &::after
           content: ''
           width: 18px
@@ -38,9 +33,6 @@
           background-color: $primary
         &-active
           color: $light
-
-
-
     &__title
       margin-top: 1.6rem
       font-size: 1.07rem
@@ -63,24 +55,22 @@
     display: flex
     flex-wrap: wrap
     justify-content: space-between
-    margin-right: -1.8rem
+    width: 100%
     margin-top: 8rem
-    // flex-direction: row
-    
-    // display: inline
-    // margin: 0
-    // width: max-content
-
   &__swiper
     &-container
-      width: 27rem
+      // width: 27rem
+      max-width: 100%
       &--right
-        width: 54.6rem
+        width: 90%
+        // max-width: 100%
         height: 26.9rem
         margin-left: 7.3rem
         margin-top: 0.7rem
     &-slide
       &--right
+        width: 90%
+        // max-width: 100%
     &-button
       &-prev, &-next
         width: 40px
@@ -89,4 +79,4 @@
       margin-top: 0.7rem
       // margin-bottom: -1rem
     &-pagination
-      margin-top: 1.1rem
+      margin-top: 1.4rem
